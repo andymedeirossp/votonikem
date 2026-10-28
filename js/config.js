@@ -6,9 +6,9 @@ window.VOTONIKEM_CONFIG = {
   SUPABASE_ANON_KEY: "sb_publishable_kWlOHA3mmh4vetrifiDUcg_6HeTk9_B",
 
   // PIX — os dados precisam bater com o cadastro da chave no banco
-  PIX_CHAVE: "pix@votonikem.com.br",
-  PIX_RECEBEDOR: "VOTONIKEM",   // nome do titular, até 25 caracteres, sem acentos
-  PIX_CIDADE: "SAO PAULO",      // cidade do titular, até 15 caracteres, sem acentos
+  PIX_CHAVE: "12608403000105",            // chave CNPJ (só números)
+  PIX_RECEBEDOR: "ANDERSON DE SA MEDEIROS", // titular, até 25 caracteres, sem acentos
+  PIX_CIDADE: "SAO PAULO",                  // cidade do titular, até 15 caracteres, sem acentos
   PIX_DESCRICAO: "APOIO VOTONIKEM",
 
   // Meta do servidor (atualize à mão por enquanto)

@@ -104,7 +104,7 @@
   if (btnCopiaECola) btnCopiaECola.addEventListener("click", () => copiar(copiaECola, btnCopiaECola));
 
   const btnCopyPix = $("btn-copy-pix");
-  if (btnCopyPix) btnCopyPix.addEventListener("click", () => copiar($("pix-key").innerText.trim(), btnCopyPix));
+  if (btnCopyPix) btnCopyPix.addEventListener("click", () => copiar($("pix-key").dataset.copiar || $("pix-key").innerText.trim(), btnCopyPix));
 
   /* ---------------- Meta do servidor ---------------- */
 
