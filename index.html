@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VotoniKem - Em Breve | O Ecossistema de Negócios da Liberdade</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#0F3822',
+              greenHover: '#0A2617',
+              gold: '#D97706',
+              goldHover: '#B45309',
+              yellow: '#F59E0B',
+              navy: '#0F172A',
+              navyLight: '#1E293B',
+              bgLight: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-navy text-white antialiased font-sans min-h-screen flex flex-col justify-between">
+
+  <!-- Top Bar de Status da Infraestrutura -->
+  <div class="bg-slate-950 text-slate-400 text-xs py-2.5 px-4 border-b border-slate-800">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 720 504" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="720" height="504" fill="#009B3A"/>
+          <path d="M360 72L648 252L360 432L72 252L360 72Z" fill="#FEDF00"/>
+          <circle cx="360" cy="252" r="126" fill="#002776"/>
+        </svg>
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-medium text-slate-300">VotoniKem Brasil • Plataforma em Desenvolvimento & Criptografia LGPD</span>
+      </div>
+      <div class="flex items-center gap-2 text-slate-400">
+        <i class="fa-solid fa-shield-halved text-brand-yellow"></i>
+        <span>Servidor Blindado Anti-DDoS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Simplificado -->
+  <header class="py-6 px-4 border-b border-slate-800/60 bg-brand-navy/80 backdrop-blur">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-brand-gold rounded-xl flex items-center justify-center font-black text-xl text-brand-navy shadow-md">
+          VK
+        </div>
+        <div>
+          <span class="text-xl font-black tracking-wider uppercase text-white flex items-center gap-1.5">
+            Votoni<span class="text-brand-yellow">Kem</span>
+          </span>
+          <p class="text-[9px] text-emerald-400 tracking-widest uppercase font-bold">Liberdade • Segurança • União</p>
+        </div>
+      </div>
+      <a href="#apoie" class="bg-brand-gold hover:bg-brand-goldHover text-brand-navy font-bold px-4 py-2 rounded-xl transition text-xs flex items-center gap-1.5 shadow">
+        <i class="fa-solid fa-heart text-red-700"></i> Apoiar Projeto
+      </a>
+    </div>
+  </header>
+
+  <!-- Principal: Chamada de Lançamento e Formulários -->
+  <main class="max-w-5xl mx-auto px-4 py-12 flex-1 flex flex-col justify-center">
+    
+    <div class="text-center space-y-4 mb-12">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950 text-emerald-300 text-xs font-semibold border border-emerald-800">
+        <i class="fa-solid fa-rocket text-brand-yellow"></i> Lançamento Oficial Em Breve
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight max-w-3xl mx-auto">
+        O Maior Diretório de Negócios e Serviços da <span class="text-brand-yellow underline decoration-brand-gold">Direita no Brasil</span>
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
+        Estamos construindo uma plataforma 100% blindada para conectar empresários, profissionais liberais e consumidores que compartilham dos mesmos valores de liberdade.
+      </p>
+    </div>
+
+    <!-- Cards de Ação (Esquerda: Pré-Cadastro de Leads / Direita: Doação PIX) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      
+      <!-- Card 1: Pré-Cadastro de Empresa / Apoiador -->
+      <div class="bg-brand-navyLight border border-slate-700 p-6 sm:p-8 rounded-3xl shadow-2xl">
+        <div class="mb-6">
+          <span class="text-[10px] font-bold text-brand-yellow uppercase tracking-wider">Garanta sua Vaga na Fila</span>
+          <h2 class="text-xl font-black text-white mt-0.5">Seja um dos Primeiros Anunciantes</h2>
+          <p class="text-xs text-slate-400 mt-1">Cadastre seus dados para receber o aviso prioritário de triagem quando liberarmos os primeiros anúncios por R$ 9,90/mês.</p>
+        </div>
+
+        <form id="leadForm" onsubmit="handleLeadSubmit(event)" class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1">Nome Completo ou Razão Social *</label>
+            <input type="text" id="leadName" required placeholder="Ex: João da Silva / Confeitaria Pátria" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-yellow">
+          </div>
+
+          <div class="grid grid-cols-2 gap-2.5">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">WhatsApp *</label>
+              <input type="tel" id="leadPhone" required placeholder="(11) 99999-9999" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-yellow">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Estado (UF) e Cidade *</label>
+              <input type="text" id="leadLocation" required placeholder="Ex: SP - São Paulo" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-yellow">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1">Instagram ou Rede Social Principal *</label>
+            <input type="text" id="leadSocial" required placeholder="@seu.perfil.oficial" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-yellow">
+          </div>
+
+          <button type="submit" class="w-full bg-brand-green hover:bg-brand-greenHover text-white font-bold py-3.5 rounded-xl transition shadow-lg text-xs sm:text-sm flex items-center justify-center gap-2 mt-2">
+            <i class="fa-solid fa-paper-plane"></i> Entrar para a Lista VIP de Lançamento
+          </button>
+        </form>
+      </div>
+
+      <!-- Card 2: Módulo de Doação Voluntária via PIX -->
+      <div id="apoie" class="bg-brand-navyLight border border-slate-700 p-6 sm:p-8 rounded-3xl shadow-2xl relative">
+        <div class="mb-6">
+          <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Apoie a Infraestrutura</span>
+          <h2 class="text-xl font-black text-white mt-0.5">Contribua para Manter o Servidor</h2>
+          <p class="text-xs text-slate-400 mt-1">Não temos verba pública. Toda contribuição via PIX ajuda a pagar os custos do servidor anti-censura, licenças e banco de dados.</p>
+        </div>
+
+        <!-- Meta de Custos do Servidor -->
+        <div class="mb-6 bg-slate-900/90 p-4 rounded-2xl border border-slate-800">
+          <div class="flex justify-between text-xs font-semibold mb-2">
+            <span class="text-slate-400">Meta do Servidor & Segurança:</span>
+            <span class="text-brand-yellow">R$ 240,00 de R$ 600,00</span>
+          </div>
+          <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden p-0.5 border border-slate-700">
+            <div class="h-full bg-gradient-to-r from-emerald-500 to-brand-yellow rounded-full" style="width: 40%"></div>
+          </div>
+        </div>
+
+        <!-- Presets PIX -->
+        <div class="space-y-3">
+          <label class="block text-xs font-bold text-slate-300">Escolha o Valor do Apoio Voluntário:</label>
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="copyPixWithVal(5)" class="bg-slate-900 hover:border-brand-yellow border border-slate-700 py-2.5 rounded-xl font-bold text-xs text-white transition">R$ 5</button>
+            <button onclick="copyPixWithVal(10)" class="bg-slate-900 hover:border-brand-yellow border border-slate-700 py-2.5 rounded-xl font-bold text-xs text-white transition">R$ 10</button>
+            <button onclick="copyPixWithVal(25)" class="bg-slate-900 hover:border-brand-yellow border border-slate-700 py-2.5 rounded-xl font-bold text-xs text-white transition">R$ 25</button>
+            <button onclick="copyPixWithVal(50)" class="bg-slate-900 hover:border-brand-yellow border border-slate-700 py-2.5 rounded-xl font-bold text-xs text-white transition">R$ 50</button>
+          </div>
+
+          <!-- Caixa com a Chave PIX Oficial -->
+          <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-center space-y-2.5 mt-3">
+            <p class="text-[11px] text-slate-400">Chave PIX Oficial (E-mail):</p>
+            <div class="flex items-center justify-center gap-2 bg-slate-900 py-2 px-3 rounded-xl border border-slate-800">
+              <code id="pixKey" class="text-xs sm:text-sm font-mono text-brand-yellow font-bold">pix@votonikem.com.br</code>
+              <button onclick="copyPixKey()" class="text-xs bg-brand-gold hover:bg-brand-goldHover text-brand-navy font-bold px-3 py-1 rounded-lg transition whitespace-nowrap">
+                Copiar
+              </button>
+            </div>
+            <p id="copyMsg" class="text-[10px] text-emerald-400 hidden font-bold">✓ Chave PIX copiada para a área de transferência!</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Rodapé Simples -->
+  <footer class="py-6 px-4 border-t border-slate-800/80 bg-slate-950 text-center text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+      <p>© 2026 VotoniKem. Todos os direitos reservados. Plataforma privada de anúncios e conexões.</p>
+      <div class="flex gap-4 text-slate-400">
+        <span><i class="fa-solid fa-lock text-emerald-500 mr-1"></i> LGPD Compliant</span>
+        <span><i class="fa-solid fa-shield-halved text-brand-yellow mr-1"></i> SSL 256-Bit</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script da Página -->
+  <script>
+    function copyPixKey() {
+      const key = document.getElementById('pixKey').innerText;
+      navigator.clipboard.writeText(key);
+      const msg = document.getElementById('copyMsg');
+      msg.classList.remove('hidden');
+      setTimeout(() => { msg.classList.add('hidden'); }, 3000);
+    }
+
+    function copyPixWithVal(val) {
+      copyPixKey();
+      alert(`Obrigado pelo apoio de R$ ${val},00! A chave PIX (pix@votonikem.com.br) foi copiada. Faça a transferência diretamente no seu aplicativo bancário.`);
+    }
+
+    function handleLeadSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('leadName').value;
+      alert(`Obrigado pelo interesse, ${name}! Seu pré-cadastro foi gravado. Você será notificado via WhatsApp assim que abrirmos a triagem de anúncios.`);
+      document.getElementById('leadForm').reset();
+    }
+  </script>
+</body>
+</html>
