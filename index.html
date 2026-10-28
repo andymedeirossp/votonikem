@@ -56,8 +56,31 @@
     </div>
   </header>
 
+  <!-- Topo com a bandeira do Brasil em marca d'água -->
+  <div class="hero-bandeira relative overflow-hidden isolate">
+    <div class="bandeira-fundo" aria-hidden="true">
+      <svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <path id="faixa-texto" d="M 352 372 Q 500 300 648 372" />
+        </defs>
+        <rect width="1000" height="700" fill="#009C3B"/>
+        <path d="M500 85 L915 350 L500 615 L85 350 Z" fill="#FFDF00"/>
+        <circle cx="500" cy="350" r="175" fill="#002776"/>
+        <path d="M 330 390 Q 500 290 670 390 L 666 415 Q 500 318 334 415 Z" fill="#FFFFFF"/>
+        <text font-family="Inter, sans-serif" font-weight="800" font-size="17" letter-spacing="3" fill="#009C3B">
+          <textPath href="#faixa-texto" startOffset="50%" text-anchor="middle">ORDEM E PROGRESSO</textPath>
+        </text>
+        <g fill="#FFFFFF">
+          <circle cx="450" cy="440" r="5"/><circle cx="500" cy="465" r="6"/><circle cx="550" cy="440" r="5"/>
+          <circle cx="420" cy="480" r="4"/><circle cx="580" cy="480" r="4"/><circle cx="475" cy="500" r="4"/>
+          <circle cx="525" cy="500" r="4"/><circle cx="500" cy="420" r="4"/><circle cx="560" cy="345" r="5"/>
+          <circle cx="390" cy="430" r="3"/><circle cx="610" cy="430" r="3"/><circle cx="500" cy="270" r="4"/>
+        </g>
+      </svg>
+    </div>
+
   <!-- Hero Section -->
-  <section id="diretorio" class="py-16 px-4 text-center max-w-4xl mx-auto">
+  <section id="diretorio" class="relative py-16 px-4 text-center max-w-4xl mx-auto">
     <div class="inline-flex items-center gap-2 bg-emerald-950/80 border border-emerald-500/30 px-3.5 py-1 rounded-full text-xs font-semibold text-emerald-400 mb-6">
       <span>🇧🇷</span> Lançamento Nacional Em Breve
     </div>
@@ -201,6 +224,8 @@
 
     </div>
   </section>
+  </div>
+
 
   <!-- Seção de Serviços de TI (Anderson Cyber) -->
   <section id="servicos-ti" class="py-16 bg-[#0b0f19] border-t border-slate-800 px-4">

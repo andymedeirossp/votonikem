@@ -25,6 +25,40 @@ a, button {
   background: #10b981;
 }
 
+/* Bandeira do Brasil em marca d'água no topo */
+.bandeira-fundo {
+  position: absolute;
+  z-index: -1;
+  top: -150px;
+  left: 50%;
+  width: min(1150px, 170vw);
+  aspect-ratio: 10 / 7;
+  transform: translateX(-50%);
+  opacity: 0.2;
+  pointer-events: none;
+  /* bordas esmaecidas para se misturar ao azul */
+  -webkit-mask-image: radial-gradient(ellipse 52% 50% at 50% 50%, #000 45%, transparent 78%);
+          mask-image: radial-gradient(ellipse 52% 50% at 50% 50%, #000 45%, transparent 78%);
+}
+.bandeira-fundo svg {
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 50%;
+  animation: bandeira-tremular 9s ease-in-out infinite;
+}
+@keyframes bandeira-tremular {
+  0%, 100% { transform: perspective(1200px) rotateY(0deg) skewY(0deg); }
+  25%      { transform: perspective(1200px) rotateY(-6deg) skewY(1.2deg); }
+  50%      { transform: perspective(1200px) rotateY(3deg) skewY(-0.8deg); }
+  75%      { transform: perspective(1200px) rotateY(-4deg) skewY(0.9deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bandeira-fundo svg { animation: none; }
+}
+@media (max-width: 640px) {
+  .bandeira-fundo { opacity: 0.17; top: -60px; }
+}
+
 /* Janela da Política / Termos */
 .modal-legal::backdrop {
   background: rgba(2, 6, 23, 0.75);
