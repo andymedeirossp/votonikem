@@ -82,23 +82,63 @@
   };
   window.__gerarPix = gerarPix; // usado nos testes
 
+  const PIX_MIN = 1;
+  const PIX_MAX = 10000;
   let copiaECola = "";
+
+  const mostrarPix = (valor, botaoAtivo) => {
+    document.querySelectorAll(".pix-valor").forEach((b) =>
+      b.classList.toggle("!border-amber-500", b === botaoAtivo));
+    copiaECola = gerarPix(valor);
+    $("pix-valor-texto").textContent =
+      valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    const qr = $("pix-qr");
+    qr.innerHTML = "";
+    if (window.QRCode) {
+      new QRCode(qr, { text: copiaECola, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M });
+    }
+    const box = $("pix-cobranca");
+    box.classList.remove("hidden");
+    if (window.innerWidth < 768) box.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   document.querySelectorAll(".pix-valor").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const valor = Number(btn.dataset.valor);
-      document.querySelectorAll(".pix-valor").forEach((b) =>
-        b.classList.toggle("!border-amber-500", b === btn));
-      copiaECola = gerarPix(valor);
-      $("pix-valor-texto").textContent =
-        valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-      const qr = $("pix-qr");
-      qr.innerHTML = "";
-      if (window.QRCode) {
-        new QRCode(qr, { text: copiaECola, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M });
-      }
-      $("pix-cobranca").classList.remove("hidden");
+      $("pix-outro").value = "";
+      $("pix-outro-erro").classList.add("hidden");
+      mostrarPix(Number(btn.dataset.valor), btn);
     });
   });
+
+  // Converte "1.234,56", "15,5", "20" ou "20.50" em número
+  const lerValor = (texto) => {
+    let t = texto.replace(/[^\d,.]/g, "");
+    if (t.includes(",")) t = t.replace(/\./g, "").replace(",", ".");
+    else if (/\.\d{3}$/.test(t)) t = t.replace(/\./g, "");
+    const n = Math.round(parseFloat(t) * 100) / 100;
+    return Number.isFinite(n) ? n : NaN;
+  };
+
+  const inputOutro = $("pix-outro");
+  if (inputOutro) {
+    inputOutro.addEventListener("input", () => {
+      inputOutro.value = inputOutro.value.replace(/[^\d,.]/g, "").slice(0, 10);
+    });
+    $("pix-outro-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const erro = $("pix-outro-erro");
+      const valor = lerValor(inputOutro.value);
+      const brl = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      if (!(valor >= PIX_MIN && valor <= PIX_MAX)) {
+        erro.textContent = `Digite um valor entre ${brl(PIX_MIN)} e ${brl(PIX_MAX)}.`;
+        erro.classList.remove("hidden");
+        return;
+      }
+      erro.classList.add("hidden");
+      inputOutro.value = valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
+      mostrarPix(valor, null);
+    });
+  }
 
   const btnCopiaECola = $("btn-copy-copiaecola");
   if (btnCopiaECola) btnCopiaECola.addEventListener("click", () => copiar(copiaECola, btnCopiaECola));
