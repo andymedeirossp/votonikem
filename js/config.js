@@ -2,8 +2,8 @@
 // Tudo aqui é visível no navegador — não coloque senhas nem a chave "service_role".
 window.VOTONIKEM_CONFIG = {
   // Supabase → Project Settings → API (ou "Connect")
-  SUPABASE_URL: "https://SEU-PROJETO.supabase.co",
-  SUPABASE_ANON_KEY: "SUA_CHAVE_ANON_PUBLICA",
+  SUPABASE_URL: "https://jmvdgwtvyubwmhfyqras.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_kWlOHA3mmh4vetrifiDUcg_6HeTk9_B",
 
   // PIX — os dados precisam bater com o cadastro da chave no banco
   PIX_CHAVE: "pix@votonikem.com.br",

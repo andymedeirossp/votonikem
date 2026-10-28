@@ -13,7 +13,8 @@
       method: "POST",
       headers: {
         apikey: CFG.SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${CFG.SUPABASE_ANON_KEY}`,
+        // Chaves "sb_publishable_" vão só no apikey; chaves antigas (JWT) também no Authorization
+        ...(CFG.SUPABASE_ANON_KEY.startsWith("eyJ") ? { Authorization: `Bearer ${CFG.SUPABASE_ANON_KEY}` } : {}),
         "Content-Type": "application/json",
         Prefer: "return=minimal"
       },

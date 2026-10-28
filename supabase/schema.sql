@@ -1,5 +1,5 @@
 -- VotoniKem — Lista VIP de lançamento
--- Rode este arquivo uma vez no Supabase: SQL Editor → New query → colar → Run.
+-- Já aplicado no projeto Supabase "votonikem" (sa-east-1). Guardado aqui como referência.
 
 create table if not exists public.leads (
   id            bigint generated always as identity primary key,
