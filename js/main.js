@@ -215,6 +215,55 @@
       .catch(() => {});
   }
 
+  /* ---------------- Política e Termos em janela ---------------- */
+
+  const modal = $("modal-legal");
+  const cacheLegal = {};
+
+  const carregarLegal = async (url) => {
+    if (cacheLegal[url]) return cacheLegal[url];
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const doc = new DOMParser().parseFromString(await resp.text(), "text/html");
+    const titulo = doc.getElementById("titulo-legal");
+    const conteudo = doc.getElementById("conteudo-legal");
+    if (!titulo || !conteudo) throw new Error("conteúdo não encontrado");
+    return (cacheLegal[url] = { titulo: titulo.textContent.trim(), html: conteudo.innerHTML });
+  };
+
+  const fecharModal = () => {
+    if (modal.open) modal.close();
+  };
+
+  if (modal && typeof modal.showModal === "function") {
+    modal.addEventListener("close", () => document.body.classList.remove("modal-aberto"));
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.closest("[data-fechar-modal]")) fecharModal();
+    });
+
+    document.addEventListener("click", async (e) => {
+      const link = e.target.closest('a[href$="politica-de-privacidade.html"], a[href$="termos-de-uso.html"]');
+      if (!link || link.id === "modal-legal-link" || e.metaKey || e.ctrlKey) return;
+      e.preventDefault();
+      const url = link.getAttribute("href");
+      const corpo = $("modal-legal-corpo");
+      $("modal-legal-titulo").textContent = "Carregando...";
+      corpo.innerHTML = "";
+      $("modal-legal-link").href = url;
+      document.body.classList.add("modal-aberto");
+      if (!modal.open) modal.showModal();
+      try {
+        const { titulo, html } = await carregarLegal(url);
+        $("modal-legal-titulo").textContent = titulo;
+        corpo.innerHTML = html;
+        corpo.scrollTop = 0;
+      } catch (err) {
+        console.error("Erro ao abrir documento:", err);
+        window.location.href = url; // sem conexão: abre a página normal
+      }
+    });
+  }
+
   /* ---------------- Banner de cookies (LGPD) ---------------- */
 
   const cookieBanner = $("cookie-banner");
