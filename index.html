@@ -69,6 +69,12 @@
       Estamos construindo uma plataforma 100% blindada para conectar empresários, profissionais liberais e consumidores que compartilham dos mesmos valores de liberdade.
     </p>
 
+    <!-- Prova social (aparece quando houver cadastros) -->
+    <div id="estatisticas" class="hidden justify-center gap-8 mb-2">
+      <div><div id="stat-total" class="text-2xl font-black text-amber-400">0</div><div class="text-[11px] uppercase tracking-wider text-slate-400">na fila</div></div>
+      <div><div id="stat-estados" class="text-2xl font-black text-emerald-400">0</div><div class="text-[11px] uppercase tracking-wider text-slate-400">estados</div></div>
+    </div>
+
     <!-- Formulário Lista VIP + Meta Servidor (Lado a Lado como na imagem) -->
     <div id="planos" class="grid md:grid-cols-2 gap-6 text-left mt-8">
       
@@ -78,32 +84,62 @@
         <h3 class="text-xl font-bold text-white mb-2">Seja um dos Primeiros Anunciantes</h3>
         <p class="text-slate-400 text-xs mb-5">Cadastre seus dados para receber o aviso prioritário de triagem quando liberarmos os anúncios por R$ 9,90/mês.</p>
 
-        <form class="space-y-4">
+        <form id="lead-form" class="space-y-4" novalidate>
           <div>
-            <label class="block text-xs font-medium text-slate-300 mb-1">Nome Completo ou Razão Social *</label>
-            <input type="text" placeholder="Ex: João da Silva / Confeitaria Pátria" class="w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-          </div>
-
-          <div class="grid grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1">WhatsApp *</label>
-              <input type="text" placeholder="(11) 99999-9999" class="w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            </div>
-            <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1">Estado (UF) e Cidade *</label>
-              <input type="text" placeholder="Ex: SP - São Paulo" class="w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            </div>
+            <label for="lead-nome" class="block text-xs font-medium text-slate-300 mb-1">Nome Completo ou Razão Social *</label>
+            <input id="lead-nome" name="nome" type="text" required minlength="3" maxlength="120" autocomplete="name" placeholder="Ex: João da Silva / Confeitaria Pátria" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
           </div>
 
           <div>
-            <label class="block text-xs font-medium text-slate-300 mb-1">Instagram ou Rede Social Principal *</label>
-            <input type="text" placeholder="@seu.perfil.oficial" class="w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            <label for="lead-whatsapp" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp *</label>
+            <input id="lead-whatsapp" name="whatsapp" type="tel" inputmode="numeric" required autocomplete="tel-national" placeholder="(11) 99999-9999" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
           </div>
 
-          <a id="btn-assinar" href="#" target="_blank" class="w-full bg-[#064e3b] hover:bg-[#047857] text-white text-xs font-bold py-3 rounded-lg transition flex items-center justify-center gap-2 border border-emerald-600/30 shadow-lg mt-2">
-            <span>🚀</span> Entrar para a Lista VIP de Lançamento
-          </a>
+          <div class="grid grid-cols-[6rem_1fr] gap-3">
+            <div>
+              <label for="lead-uf" class="block text-xs font-medium text-slate-300 mb-1">UF *</label>
+              <select id="lead-uf" name="uf" required class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-2.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                <option value="">--</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+            <div>
+              <label for="lead-cidade" class="block text-xs font-medium text-slate-300 mb-1">Cidade *</label>
+              <input id="lead-cidade" name="cidade" type="text" required minlength="2" maxlength="80" autocomplete="address-level2" placeholder="Ex: São Paulo" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            </div>
+          </div>
+
+          <div>
+            <label for="lead-social" class="block text-xs font-medium text-slate-300 mb-1">Instagram ou Rede Social Principal *</label>
+            <input id="lead-social" name="rede_social" type="text" required minlength="2" maxlength="120" placeholder="@seu.perfil.oficial" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+          </div>
+
+          <!-- Anti-spam: campo invisível que só robôs preenchem -->
+          <div class="hidden" aria-hidden="true">
+            <label>Não preencha <input type="text" name="site" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <label class="flex items-start gap-2.5 text-[11px] text-slate-400 leading-relaxed cursor-pointer">
+            <input id="lead-consentimento" name="consentimento" type="checkbox" required class="mt-0.5 accent-amber-500 w-4 h-4 shrink-0">
+            <span>Autorizo o VotoniKem a usar estes dados para me avisar sobre o lançamento, conforme a <a href="politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
+          </label>
+
+          <p id="lead-erro" class="hidden text-xs text-red-400 font-semibold" role="alert"></p>
+
+          <button id="lead-enviar" type="submit" class="w-full bg-[#064e3b] hover:bg-[#047857] disabled:opacity-60 disabled:cursor-wait text-white text-sm font-bold py-3 rounded-lg transition flex items-center justify-center gap-2 border border-emerald-600/30 shadow-lg mt-2">
+            <span>🚀</span> <span id="lead-enviar-texto">Entrar para a Lista VIP de Lançamento</span>
+          </button>
         </form>
+
+        <!-- Estado de sucesso -->
+        <div id="lead-sucesso" class="hidden text-center py-8" role="status">
+          <div class="text-4xl mb-3">✅</div>
+          <h4 class="text-lg font-bold text-white mb-2">Você está na fila!</h4>
+          <p class="text-xs text-slate-400 mb-5">Vamos avisar pelo WhatsApp assim que a triagem de anúncios abrir.</p>
+          <a id="btn-compartilhar" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-sm font-bold px-5 py-2.5 rounded-lg transition">
+            Compartilhar no WhatsApp
+          </a>
+        </div>
       </div>
 
       <!-- Card Direito: Doação / Meta do Servidor -->
@@ -117,29 +153,36 @@
           <div class="bg-[#0d1424] p-3.5 rounded-xl border border-slate-800 mb-5">
             <div class="flex justify-between items-center text-xs mb-2">
               <span class="text-slate-400 font-medium">Meta do Servidor & Segurança:</span>
-              <span class="text-amber-500 font-bold">R$ 240,00 de R$ 600,00</span>
+              <span id="meta-texto" class="text-amber-500 font-bold">R$ 240,00 de R$ 600,00</span>
             </div>
             <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div class="bg-gradient-to-r from-emerald-500 to-amber-500 h-full w-[40%] rounded-full"></div>
+              <div id="meta-barra" class="bg-gradient-to-r from-emerald-500 to-amber-500 h-full rounded-full transition-[width] duration-1000 ease-out" style="width:0%"></div>
             </div>
           </div>
 
           <!-- Botões Rápidos de Valor -->
           <label class="block text-xs font-medium text-slate-300 mb-2">Escolha o Valor do Apoio Voluntário:</label>
-          <div class="grid grid-cols-4 gap-2 mb-5">
-            <button class="bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-xs font-bold py-2 rounded-lg border border-slate-700 transition">R$ 5</button>
-            <button class="bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-xs font-bold py-2 rounded-lg border border-slate-700 transition">R$ 10</button>
-            <button class="bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-xs font-bold py-2 rounded-lg border border-slate-700 transition">R$ 25</button>
-            <button class="bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-xs font-bold py-2 rounded-lg border border-slate-700 transition">R$ 50</button>
+          <div id="pix-valores" class="grid grid-cols-4 gap-2 mb-5">
+            <button type="button" data-valor="5" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 5</button>
+            <button type="button" data-valor="10" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 10</button>
+            <button type="button" data-valor="25" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 25</button>
+            <button type="button" data-valor="50" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 50</button>
+          </div>
+
+          <!-- PIX com valor (aparece ao escolher um valor) -->
+          <div id="pix-cobranca" class="hidden bg-[#0d1424] p-4 rounded-xl border border-amber-500/40 mb-5 text-center">
+            <p class="text-xs text-slate-300 mb-3">PIX de <strong id="pix-valor-texto" class="text-amber-400">R$ 0,00</strong> — escaneie no app do banco ou use o copia e cola:</p>
+            <div id="pix-qr" class="bg-white p-2.5 rounded-lg inline-block mb-3"></div>
+            <button type="button" id="btn-copy-copiaecola" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm px-3 py-2.5 rounded-lg transition shadow">Copiar PIX copia e cola</button>
           </div>
         </div>
 
-        <!-- Chave PIX -->
+        <!-- Chave PIX (valor livre) -->
         <div class="bg-[#0d1424] p-3 rounded-xl border border-slate-800">
-          <label class="block text-[10px] font-semibold text-slate-400 mb-1 text-center">Chave PIX Oficial (E-mail):</label>
+          <label class="block text-[10px] font-semibold text-slate-400 mb-1 text-center">Ou envie qualquer valor para a Chave PIX (E-mail):</label>
           <div class="flex items-center justify-between gap-2 bg-[#162032] p-2 rounded-lg border border-slate-800">
             <code id="pix-key" class="text-xs text-amber-400 font-mono select-all font-semibold pl-2">pix@votonikem.com.br</code>
-            <button id="btn-copy-pix" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-3 py-1.5 rounded-md transition shadow">Copiar</button>
+            <button type="button" id="btn-copy-pix" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-3 py-1.5 rounded-md transition shadow">Copiar</button>
           </div>
         </div>
       </div>
@@ -221,6 +264,8 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
