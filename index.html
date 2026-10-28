@@ -16,8 +16,8 @@
       <div class="flex items-center gap-2">
         <span>🇧🇷</span>
         <span class="font-semibold text-slate-300">VotoniKem Brasil</span>
-        <span>•</span>
-        <span>Plataforma em Desenvolvimento & Criptografia LGPD</span>
+        <span class="hidden sm:inline">•</span>
+        <span class="hidden sm:inline">Plataforma em Desenvolvimento & Criptografia LGPD</span>
       </div>
       <div class="hidden sm:flex items-center gap-1.5 text-amber-500 font-medium">
         <span>🛡️</span> Servidor Blindado Anti-DDoS
@@ -27,18 +27,18 @@
 
   <!-- Header / Navbar -->
   <header class="border-b border-slate-800/80 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-3">
       <!-- Logo VK Patria Liberdade Uniao -->
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="bg-amber-500 text-slate-950 font-black text-xl px-2.5 py-1 rounded-lg border border-amber-400">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <div class="shrink-0 bg-amber-500 text-slate-950 font-black text-lg sm:text-xl px-2 sm:px-2.5 py-1 rounded-lg border border-amber-400">
           VK
         </div>
         <div>
           <div class="flex items-center gap-1.5">
-            <span class="text-2xl font-extrabold text-white tracking-wider">VOTONI KEM</span>
+            <span class="text-lg sm:text-2xl font-extrabold text-white tracking-wider whitespace-nowrap">VOTONI KEM</span>
             <span class="text-xs">🇧🇷</span>
           </div>
-          <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">PÁTRIA • LIBERDADE • UNIÃO</p>
+          <p class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">PÁTRIA • LIBERDADE • UNIÃO</p>
         </div>
       </a>
 
@@ -50,8 +50,8 @@
         <a href="politica-de-privacidade.html" class="hover:text-amber-400 transition inline-flex items-center gap-1.5"><span aria-hidden="true">🔒</span> LGPD</a>
       </nav>
 
-      <a href="#doacao" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-2">
-        <span>❤️</span> Apoiar Projeto
+      <a href="#doacao" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+        <span>❤️</span> Apoiar<span class="hidden sm:inline"> Projeto</span>
       </a>
     </div>
   </header>
@@ -89,9 +89,25 @@
       O Maior Diretório de Negócios e Serviços da <span class="text-amber-500 border-b-2 border-amber-500 pb-0.5">Direita no Brasil</span>
     </h1>
     
-    <p class="text-sm md:text-base text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+    <p class="text-sm md:text-base text-slate-400 mb-7 max-w-2xl mx-auto leading-relaxed">
       Estamos construindo uma plataforma 100% blindada para conectar empresários, profissionais liberais e consumidores que compartilham dos mesmos valores de liberdade.
     </p>
+
+    <!-- Posicionamento: negócios, não debate -->
+    <div class="faixa-negocios grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto mb-8 text-left">
+      <div class="flex items-center gap-3 bg-slate-950/70 backdrop-blur border border-red-500/30 rounded-xl px-4 py-3">
+        <span class="shrink-0 w-9 h-9 rounded-full bg-red-500/15 text-red-400 flex items-center justify-center" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.6A8 8 0 1 1 21 12z"/><path d="M4 4l16 16"/></svg>
+        </span>
+        <p class="text-xs sm:text-sm font-bold text-white leading-snug">Não é grupo de<br><span class="text-red-400">debates políticos</span></p>
+      </div>
+      <div class="flex items-center gap-3 bg-slate-950/70 backdrop-blur border border-emerald-500/40 rounded-xl px-4 py-3">
+        <span class="shrink-0 w-9 h-9 rounded-full bg-emerald-500/15 text-emerald-400 flex items-center justify-center" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </span>
+        <p class="text-xs sm:text-sm font-bold text-white leading-snug">É uma comunidade de<br><span class="text-emerald-400">negócios e oportunidades</span></p>
+      </div>
+    </div>
 
     <!-- Prova social (aparece quando houver cadastros) -->
     <div id="estatisticas" class="hidden justify-center gap-8 mb-2">
@@ -112,6 +128,14 @@
           <div>
             <label for="lead-nome" class="block text-xs font-medium text-slate-300 mb-1">Nome Completo ou Razão Social *</label>
             <input id="lead-nome" name="nome" type="text" required minlength="3" maxlength="120" autocomplete="name" placeholder="Ex: João da Silva / Confeitaria Pátria" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+          </div>
+
+          <div>
+            <label for="lead-profissao" class="block text-xs font-medium text-slate-300 mb-1">Profissão ou Área de Atuação *</label>
+            <input id="lead-profissao" name="profissao" type="text" list="lista-profissoes" required minlength="2" maxlength="80" autocomplete="organization-title" placeholder="Ex: Confeitaria, Eletricista, Advogado" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            <datalist id="lista-profissoes">
+              <option value="Advocacia"><option value="Alimentação / Confeitaria"><option value="Arquitetura e Engenharia"><option value="Beleza e Estética"><option value="Construção e Reformas"><option value="Contabilidade"><option value="Consultoria"><option value="Educação e Aulas"><option value="Elétrica"><option value="Encanamento / Hidráulica"><option value="Eventos e Festas"><option value="Fotografia e Vídeo"><option value="Imóveis / Corretagem"><option value="Marketing e Design"><option value="Mecânica e Auto"><option value="Moda e Vestuário"><option value="Pet"><option value="Saúde"><option value="Seguros"><option value="Tecnologia / TI"><option value="Transporte e Fretes"><option value="Comércio / Loja">
+            </datalist>
           </div>
 
           <div>
@@ -226,6 +250,49 @@
   </section>
   </div>
 
+
+  <!-- Benefícios da comunidade -->
+  <section id="beneficios" class="py-14 px-4 border-t border-slate-800/80">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">De Norte a Sul do Brasil</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-4 mb-3">O que você ganha fazendo parte</h2>
+        <p class="text-slate-400 text-xs md:text-sm">Do empresário ao autônomo que está começando agora: aqui o assunto é cliente, parceria e crescimento.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
+        <div class="beneficio bg-[#162032] border border-slate-800 rounded-2xl p-5 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 17l2 2a1.4 1.4 0 0 0 2-2"/><path d="M14 14l2.5 2.5a1.4 1.4 0 0 0 2-2l-3.9-3.9a2.8 2.8 0 0 0-4 0l-.9.9a1.4 1.4 0 0 1-2-2l2.8-2.8a4 4 0 0 1 5.2-.4L16 7"/><path d="M21 11l-2 2"/><path d="M3 11l5.5 5.5a1.4 1.4 0 0 0 2-2"/><path d="M3 4l3-1 5 5"/><path d="M21 4l-3-1-2 2"/></svg>
+          <h3 class="text-sm font-extrabold text-white mb-1">Networking</h3>
+          <p class="text-[11px] text-slate-400 leading-snug">Conheça quem pensa como você e faz negócio sério.</p>
+        </div>
+        <div class="beneficio bg-[#162032] border border-slate-800 rounded-2xl p-5 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg>
+          <h3 class="text-sm font-extrabold text-white mb-1">Parcerias</h3>
+          <p class="text-[11px] text-slate-400 leading-snug">Junte forças com outros profissionais e feche mais.</p>
+        </div>
+        <div class="beneficio bg-[#162032] border border-slate-800 rounded-2xl p-5 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V14"/><path d="M9 20V10"/><path d="M14 20V12"/><path d="M19 20V6"/><path d="M4 9l5-4 5 3 6-5"/><path d="M17 3h3v3"/></svg>
+          <h3 class="text-sm font-extrabold text-white mb-1">Oportunidades</h3>
+          <p class="text-[11px] text-slate-400 leading-snug">Seja encontrado por clientes da sua cidade e região.</p>
+        </div>
+        <div class="beneficio bg-[#162032] border border-slate-800 rounded-2xl p-5 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4h3l6 4V6L6 10H3z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6.5a8 8 0 0 1 0 11"/></svg>
+          <h3 class="text-sm font-extrabold text-white mb-1">Indicações</h3>
+          <p class="text-[11px] text-slate-400 leading-snug">Quem confia indica. Cresça no boca a boca da rede.</p>
+        </div>
+        <div class="beneficio col-span-2 md:col-span-1 bg-[#162032] border border-slate-800 rounded-2xl p-5 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><path d="M12 12l7-7"/><path d="M16 4.5V8h3.5"/></svg>
+          <h3 class="text-sm font-extrabold text-white mb-1">Novos Negócios</h3>
+          <p class="text-[11px] text-slate-400 leading-snug">Vitrine para vender mais, do docinho à consultoria.</p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-center text-[11px] sm:text-xs font-bold tracking-wider text-slate-400">
+        <span class="text-amber-400">NORTE</span> · <span class="text-amber-400">NORDESTE</span> · <span class="text-amber-400">CENTRO-OESTE</span> · <span class="text-amber-400">SUDESTE</span> · <span class="text-amber-400">SUL</span>
+      </p>
+    </div>
+  </section>
 
   <!-- Seção de Serviços de TI (Anderson Cyber) -->
   <section id="servicos-ti" class="py-16 bg-[#0b0f19] border-t border-slate-800 px-4">

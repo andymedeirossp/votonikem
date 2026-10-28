@@ -201,6 +201,7 @@
 
       const dados = {
         nome: form.nome.value.trim(),
+        profissao: form.profissao.value.trim(),
         whatsapp: form.whatsapp.value.replace(/\D/g, ""),
         uf: form.uf.value,
         cidade: form.cidade.value.trim(),
@@ -210,6 +211,7 @@
       };
 
       if (dados.nome.length < 3) return mostrarErro("Informe seu nome ou a razão social.");
+      if (dados.profissao.length < 2) return mostrarErro("Informe sua profissão ou área de atuação.");
       if (!/^\d{10,11}$/.test(dados.whatsapp)) return mostrarErro("Informe um WhatsApp válido com DDD.");
       if (!dados.uf) return mostrarErro("Selecione o seu estado.");
       if (dados.cidade.length < 2) return mostrarErro("Informe a sua cidade.");
@@ -253,6 +255,23 @@
         box.classList.add("flex");
       })
       .catch(() => {});
+  }
+
+  /* ---------------- Benefícios surgem ao rolar ---------------- */
+
+  const cardsBeneficio = document.querySelectorAll(".beneficio");
+  if (cardsBeneficio.length && "IntersectionObserver" in window &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("js-animar");
+    const obsBeneficio = new IntersectionObserver((entradas) => {
+      entradas.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const i = [...cardsBeneficio].indexOf(e.target);
+        setTimeout(() => e.target.classList.add("visivel"), i * 90);
+        obsBeneficio.unobserve(e.target);
+      });
+    }, { threshold: 0.2 });
+    cardsBeneficio.forEach((c) => obsBeneficio.observe(c));
   }
 
   /* ---------------- Política e Termos em janela ---------------- */

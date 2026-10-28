@@ -46,3 +46,8 @@ $$;
 
 revoke all on function public.estatisticas_fila() from public;
 grant execute on function public.estatisticas_fila() to anon;
+
+-- Migração 2026-10-28: área de atuação na lista VIP
+alter table public.leads
+  add column if not exists profissao text check (profissao is null or char_length(profissao) between 2 and 80);
+grant insert (profissao) on public.leads to anon;
