@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VotoniKem | O Maior Diretório da Direita no Brasil</title>
+  <script>
+    // Abertura com partículas: só na primeira visita da sessão e sem "reduzir movimento".
+    (function () {
+      try {
+        var r = document.documentElement;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (sessionStorage.getItem("vk_intro")) return;
+        sessionStorage.setItem("vk_intro", "1");
+        r.classList.add("intro-ativa");
+        setTimeout(function () { r.classList.remove("intro-ativa"); }, 5000); // segurança
+      } catch (e) {}
+    })();
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/styles.css">
   <meta name="description" content="Comunidade de negócios de Norte a Sul do Brasil: conecte-se a empresários, profissionais e autônomos que compartilham dos mesmos valores. Entre na Lista VIP de lançamento.">
@@ -658,6 +671,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
   <script src="js/config.js" defer></script>
+  <script src="js/intro.js" defer></script>
   <script src="js/confete.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/kit.js" defer></script>
