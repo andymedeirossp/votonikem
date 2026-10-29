@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+/* A fonte Inter é carregada no <head> do index.html (sem @import, que atrasa a página). */
 
 body {
   font-family: 'Inter', sans-serif;
