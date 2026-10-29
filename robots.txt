@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /anuncio
+
+Sitemap: https://votonikem.com.br/sitemap.xml

@@ -4,7 +4,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
-import { buscarAnuncio, escaparHtml, resumir, slugValido } from "./_lib/anuncio.js";
+import { SITE, buscarAnuncio, escaparHtml, resumir, slugValido } from "./_lib/anuncio.js";
 
 let modelo;
 const lerModelo = () => (modelo ??= readFileSync(join(process.cwd(), "anuncio.html"), "utf8"));
@@ -38,7 +38,7 @@ export async function GET(request) {
   }
 
   const origem = `https://${request.headers.get("x-forwarded-host") || url.host}`;
-  const endereco = `${origem}/a/${a.slug}`;
+  const endereco = `${SITE}/a/${a.slug}`; // endereço oficial; a imagem vem do domínio em uso
   const local = `${a.cidade}/${a.uf}`;
   const titulo = `${a.nome} · ${a.profissao} em ${local}`;
   const descricao = a.descricao

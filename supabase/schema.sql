@@ -123,3 +123,7 @@ grant insert (consentimento_versao) on public.clientes_interessados to anon;
 
 -- Migração 2026-10-29: contagem_por_uf() e estatisticas_fila() passam a contar os anúncios visíveis
 -- (status em_verificacao ou verificado); estatisticas_fila() também devolve "cidades".
+
+-- 2026-10-29: contadores passam a rodar como SECURITY INVOKER (só leem colunas públicas, respeitando a RLS)
+alter function public.contagem_por_uf() security invoker;
+alter function public.estatisticas_fila() security invoker;

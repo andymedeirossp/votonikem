@@ -1,4 +1,4 @@
-// Mapa do Brasil em 3D: estados com cadastros na Lista VIP acendem em verde e amarelo.
+// Mapa do Brasil em 3D: estados com anúncios publicados acendem em verde e amarelo.
 (() => {
   const DADOS = window.MAPA_BRASIL;
   const CFG = window.VOTONIKEM_CONFIG || {};
@@ -52,7 +52,7 @@
 
     // Camada de cima, interativa
     const topo = el("svg", { viewBox: DADOS.viewBox, class: "mapa-camada mapa-topo", role: "img",
-      "aria-label": "Mapa do Brasil com os estados que já têm cadastros na Lista VIP" });
+      "aria-label": "Mapa do Brasil com os estados que já têm anúncios no diretório" });
     const defs = el("defs");
     defs.innerHTML = `
       <linearGradient id="mapa-grad-ativo" x1="0" y1="0" x2="1" y2="1">

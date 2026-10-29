@@ -1,6 +1,9 @@
 // Busca um anúncio público no Supabase (mesma visão e chave pública usadas pelo site).
-const SUPABASE_URL = "https://jmvdgwtvyubwmhfyqras.supabase.co";
-const SUPABASE_KEY = "sb_publishable_kWlOHA3mmh4vetrifiDUcg_6HeTk9_B";
+export const SUPABASE_URL = "https://jmvdgwtvyubwmhfyqras.supabase.co";
+export const SUPABASE_KEY = "sb_publishable_kWlOHA3mmh4vetrifiDUcg_6HeTk9_B";
+
+// Endereço oficial do site (links canônicos e sitemap)
+export const SITE = "https://votonikem.com.br";
 
 export const COLUNAS = "slug,tipo,nome,profissao,descricao,uf,cidade,logo_url,status,destaque";
 

@@ -1,8 +1,8 @@
 (() => {
   const CFG = window.VOTONIKEM_CONFIG || {};
-  const SITE_URL = window.location.origin; // segue o domínio em uso (vercel.app hoje, .com.br no lançamento)
+  const SITE_URL = window.location.origin; // segue o domínio em uso
   const MIN_PARA_MOSTRAR_ESTATISTICAS = 20; // evita exibir números baixos no começo
-  const VERSAO_CONSENTIMENTO = "2026-10-29-v2"; // inclui o consentimento específico do art. 11 (opinião política)
+  const VERSAO_CONSENTIMENTO = "2026-10-29-v3"; // aviso de novos profissionais na região + art. 11 (opinião política)
 
   const $ = (id) => document.getElementById(id);
   const supabaseConfigurado = () =>
@@ -269,7 +269,7 @@
     const sucessoCli = () => {
       formCli.classList.add("hidden");
       $("cli-sucesso").classList.remove("hidden");
-      const texto = `Achei o VotoniKem: um diretório para encontrar profissionais de confiança perto de você. Entra na lista: ${SITE_URL}`;
+      const texto = `Achei o VotoniKem: um diretório para encontrar profissionais de confiança perto de você. Dá uma olhada: ${SITE_URL}/diretorio`;
       $("cli-compartilhar").href = `https://wa.me/?text=${encodeURIComponent(texto)}`;
     };
     formCli.addEventListener("submit", async (e) => {
