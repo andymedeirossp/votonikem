@@ -56,3 +56,12 @@ grant insert (profissao) on public.leads to anon;
 alter table public.leads
   add column if not exists site text check (site is null or char_length(site) between 4 and 200);
 grant insert (site) on public.leads to anon;
+
+-- Migração 2026-10-28: totais por estado para o mapa (somente contagens)
+create or replace function public.contagem_por_uf()
+returns json language sql security definer set search_path = public stable as $$
+  select coalesce(json_agg(json_build_object('uf', uf, 'total', total) order by total desc), '[]'::json)
+  from (select uf, count(*)::int as total from public.leads group by uf) t;
+$$;
+revoke all on function public.contagem_por_uf() from public, anon, authenticated;
+grant execute on function public.contagem_por_uf() to anon;
