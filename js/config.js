@@ -11,8 +11,14 @@ window.VOTONIKEM_CONFIG = {
   PIX_CIDADE: "SAO PAULO",                  // cidade do titular, até 15 caracteres, sem acentos
   PIX_DESCRICAO: "APOIO VOTONIKEM",
 
+  // WhatsApp do projeto para dúvidas (DDI + DDD + número, só dígitos, ex: "5511999998888").
+  // Enquanto estiver vazio, os botões de WhatsApp do site ficam escondidos.
+  WHATSAPP_CONTATO: "",
+
   // Meta do servidor: valores reserva. O site lê a meta real da tabela meta_arrecadacao
   // no Supabase (Table Editor), então normalmente não é preciso mudar aqui.
   META_ARRECADADO: 240,
-  META_TOTAL: 600
+  META_TOTAL: 600,
+  // A barra e os valores só aparecem quando a arrecadação passar desta porcentagem da meta
+  META_MIN_PCT_EXIBIR: 15
 };

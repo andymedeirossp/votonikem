@@ -162,10 +162,19 @@
     const pintar = () => {
       if (visivel && pctAtual !== null) requestAnimationFrame(() => (metaBarra.style.width = pctAtual + "%"));
     };
+    const META_MIN_PCT = Number(CFG.META_MIN_PCT_EXIBIR ?? 15); // abaixo disso, mostra convite em vez do valor
     const mostrarMeta = (arrecadado, total, atualizadoEm) => {
       if (!(total > 0)) return;
-      $("meta-texto").textContent = `${brl(arrecadado)} de ${brl(total)}`;
       pctAtual = Math.min(100, (arrecadado / total) * 100);
+      const inicio = pctAtual < META_MIN_PCT;
+      metaBarra.parentElement.hidden = inicio;
+      if (inicio) {
+        $("meta-texto").textContent = "Seja um dos primeiros apoiadores 💚";
+        const info = $("meta-info");
+        if (info) info.textContent = "Cada apoio ajuda a manter o anúncio grátis para quem está começando.";
+        return;
+      }
+      $("meta-texto").textContent = `${brl(arrecadado)} de ${brl(total)}`;
       const info = $("meta-info");
       if (info) {
         const partes = [];
@@ -208,15 +217,15 @@
   const form = $("lead-form");
   const inputZap = $("lead-whatsapp");
 
-  if (inputZap) {
-    inputZap.addEventListener("input", () => {
-      const d = inputZap.value.replace(/\D/g, "").slice(0, 11);
-      let v = d;
-      if (d.length > 2) v = `(${d.slice(0, 2)}) ${d.slice(2)}`;
-      if (d.length > 6) v = `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}`;
-      inputZap.value = v;
-    });
+  function mascararZap(valor) {
+    const d = valor.replace(/\D/g, "").slice(0, 11);
+    let v = d;
+    if (d.length > 2) v = `(${d.slice(0, 2)}) ${d.slice(2)}`;
+    if (d.length > 6) v = `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}`;
+    return v;
   }
+
+  if (inputZap) inputZap.addEventListener("input", () => { inputZap.value = mascararZap(inputZap.value); });
 
   const mostrarErro = (msg) => {
     const el = $("lead-erro");
@@ -302,6 +311,83 @@
     });
   }
 
+  /* ---------------- Abas: Quero anunciar / Procuro profissionais ---------------- */
+
+  const abas = { anunciar: $("aba-anunciar"), cliente: $("aba-cliente") };
+  const paineis = { anunciar: $("painel-anunciar"), cliente: $("painel-cliente") };
+  const trocarAba = (qual, focar = false) => {
+    Object.keys(abas).forEach((k) => {
+      if (!abas[k]) return;
+      const ativo = k === qual;
+      abas[k].setAttribute("aria-selected", String(ativo));
+      abas[k].tabIndex = ativo ? 0 : -1;
+      paineis[k].hidden = !ativo;
+    });
+    if (focar && abas[qual]) abas[qual].focus();
+  };
+  if (abas.anunciar && abas.cliente) {
+    abas.anunciar.addEventListener("click", () => trocarAba("anunciar"));
+    abas.cliente.addEventListener("click", () => trocarAba("cliente"));
+    [abas.anunciar, abas.cliente].forEach((b) => b.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") trocarAba(b === abas.anunciar ? "cliente" : "anunciar", true);
+    }));
+    // links com #procuro abrem direto a aba do consumidor
+    document.querySelectorAll('a[href="#procuro"]').forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      trocarAba("cliente");
+      $("planos").scrollIntoView({ behavior: "smooth", block: "start" });
+    }));
+  }
+
+  /* ---------------- Formulário do consumidor ---------------- */
+
+  const formCli = $("cliente-form");
+  const zapCli = $("cli-whatsapp");
+  if (zapCli) zapCli.addEventListener("input", () => { zapCli.value = mascararZap(zapCli.value); });
+
+  if (formCli) {
+    const erroCli = (msg) => { const el = $("cli-erro"); el.textContent = msg; el.classList.toggle("hidden", !msg); };
+    const sucessoCli = () => {
+      formCli.classList.add("hidden");
+      $("cli-sucesso").classList.remove("hidden");
+      const texto = `Achei o VotoniKem: um diretório para encontrar profissionais de confiança perto de você. Entra na lista: ${SITE_URL}`;
+      $("cli-compartilhar").href = `https://wa.me/?text=${encodeURIComponent(texto)}`;
+    };
+    formCli.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      erroCli("");
+      if (formCli.confirmar_email.value) return sucessoCli(); // robô
+      const cidade = formCli.cidade.value.trim();
+      const procura = formCli.procura.value.trim();
+      const dados = {
+        whatsapp: formCli.whatsapp.value.replace(/\D/g, ""),
+        uf: formCli.uf.value,
+        ...(cidade.length >= 2 ? { cidade } : {}),
+        ...(procura ? { procura: procura.slice(0, 120) } : {}),
+        consentimento: formCli.consentimento.checked,
+        origem: (document.referrer || "direto").slice(0, 200)
+      };
+      if (!/^\d{10,11}$/.test(dados.whatsapp)) return erroCli("Informe um WhatsApp válido com DDD.");
+      if (!dados.uf) return erroCli("Selecione o seu estado.");
+      if (!dados.consentimento) return erroCli("Marque a autorização para podermos te avisar.");
+      if (!supabaseConfigurado()) return erroCli("O cadastro está em configuração. Tente novamente em instantes.");
+      const botao = $("cli-enviar");
+      botao.disabled = true;
+      $("cli-enviar-texto").textContent = "Enviando...";
+      try {
+        const resp = await supabaseFetch("clientes_interessados", dados);
+        if (resp.ok || resp.status === 409) return sucessoCli();
+        throw new Error(`HTTP ${resp.status}`);
+      } catch (err) {
+        console.error("Erro ao enviar cadastro de cliente:", err);
+        erroCli("Não foi possível enviar agora. Verifique sua conexão e tente de novo.");
+      } finally {
+        botao.disabled = false;
+        $("cli-enviar-texto").textContent = "Quero ser avisado";
+      }
+    });
+  }
+
   /* ---------------- Prova social ---------------- */
 
   if (supabaseConfigurado()) {
@@ -381,6 +467,21 @@
         console.error("Erro ao abrir documento:", err);
         window.location.href = url; // sem conexão: abre a página normal
       }
+    });
+  }
+
+  /* ---------------- WhatsApp do projeto ---------------- */
+
+  const zapContato = String(CFG.WHATSAPP_CONTATO || "").replace(/\D/g, "");
+  if (/^\d{12,13}$/.test(zapContato)) {
+    const link = `https://wa.me/${zapContato}?text=${encodeURIComponent("Olá! Vim pelo site do VotoniKem e tenho uma dúvida.")}`;
+    ["whatsapp-flutuante", "rodape-whatsapp", "quem-whatsapp"].forEach((id) => {
+      const el = $(id);
+      if (!el) return;
+      el.href = link;
+      el.hidden = false;
+      el.classList.remove("hidden");
+      if (id === "quem-whatsapp") el.classList.add("inline-flex");
     });
   }
 

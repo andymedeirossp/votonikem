@@ -82,3 +82,21 @@ alter table public.meta_arrecadacao enable row level security;
 create policy "site pode ler a meta" on public.meta_arrecadacao for select to anon using (true);
 revoke all on public.meta_arrecadacao from anon, authenticated;
 grant select (arrecadado, total, atualizado_em) on public.meta_arrecadacao to anon;
+
+-- Migração 2026-10-28: consumidores interessados (avisar quando a busca abrir)
+create table if not exists public.clientes_interessados (
+  id bigint generated always as identity primary key,
+  nome text check (nome is null or char_length(nome) between 2 and 80),
+  whatsapp text not null check (whatsapp ~ '^[0-9]{10,11}$'),
+  uf char(2) not null check (uf ~ '^[A-Z]{2}$'),
+  cidade text check (cidade is null or char_length(cidade) between 2 and 80),
+  procura text check (procura is null or char_length(procura) <= 120),
+  consentimento boolean not null check (consentimento = true),
+  origem text check (char_length(origem) <= 200),
+  criado_em timestamptz not null default now()
+);
+create unique index if not exists clientes_whatsapp_unico on public.clientes_interessados (whatsapp);
+alter table public.clientes_interessados enable row level security;
+create policy "site pode inserir cliente" on public.clientes_interessados for insert to anon with check (consentimento = true);
+revoke all on public.clientes_interessados from anon, authenticated;
+grant insert (nome, whatsapp, uf, cidade, procura, consentimento, origem) on public.clientes_interessados to anon;

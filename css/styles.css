@@ -475,6 +475,63 @@ html { scroll-padding-top: 76px; } /* âncoras não ficam escondidas atrás do t
 }
 .btn-site-ativo:hover { background: #fbbf24; }
 
+/* "Por que entrar agora" ao lado do cadastro */
+.motivo { display: flex; gap: 12px; align-items: flex-start; }
+.motivo-icone {
+  flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px;
+  background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.25);
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+.motivo strong { display: block; color: #fff; font-size: 14px; font-weight: 800; }
+.motivo p { color: #94a3b8; font-size: 13px; line-height: 1.45; margin-top: 2px; }
+
+/* Abas do cadastro: anunciar / procurar profissionais */
+.cadastro-abas {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+  background: #0d1424; border: 1px solid #1e293b; border-radius: 12px;
+  padding: 4px; margin-bottom: 20px;
+}
+.cadastro-abas button {
+  font-size: 13px; font-weight: 800; color: #94a3b8;
+  padding: 9px 6px; border-radius: 9px; white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.cadastro-abas button:hover { color: #e2e8f0; }
+#aba-anunciar[aria-selected="true"] { background: #f59e0b; color: #020617; }
+#aba-cliente[aria-selected="true"] { background: #059669; color: #fff; }
+@media (max-width: 380px) { .cadastro-abas button { font-size: 12px; padding: 9px 4px; } }
+
+/* Parceiro fundador */
+.tag-fundador {
+  font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 999px;
+  background: rgba(250, 204, 21, 0.15); color: #fde047; border: 1px solid rgba(250, 204, 21, 0.35);
+}
+
+/* Quem somos */
+.quem-selo {
+  width: 148px; height: 148px; border-radius: 36px;
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 24px 50px -20px rgba(245, 158, 11, 0.6), inset 0 0 0 3px rgba(255, 255, 255, 0.15);
+  transform: rotate(-6deg);
+}
+.quem-selo span { color: #020617; font-weight: 900; font-size: 62px; letter-spacing: -2px; transform: rotate(6deg); }
+
+/* WhatsApp flutuante */
+.whatsapp-flutuante {
+  position: fixed; right: 16px; bottom: 16px; z-index: 45;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #25D366; color: #052e16;
+  font-weight: 800; font-size: 14px;
+  padding: 12px 16px 12px 14px; border-radius: 999px;
+  box-shadow: 0 12px 30px -10px rgba(37, 211, 102, 0.6);
+  transition: transform 0.2s ease;
+}
+.whatsapp-flutuante[hidden] { display: none; }
+.whatsapp-flutuante:hover { transform: translateY(-2px); }
+.whatsapp-flutuante svg { width: 22px; height: 22px; }
+@media (max-width: 480px) { .whatsapp-flutuante span { display: none; } .whatsapp-flutuante { padding: 13px; } }
+
 /* Janela da Política / Termos */
 .modal-legal::backdrop {
   background: rgba(2, 6, 23, 0.75);

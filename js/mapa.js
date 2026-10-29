@@ -3,6 +3,7 @@
   const DADOS = window.MAPA_BRASIL;
   const CFG = window.VOTONIKEM_CONFIG || {};
   const MIN_PARA_NUMEROS = 20; // abaixo disso, não mostramos quantidades
+  const MIN_ESTADOS_PAINEL = 5; // abaixo disso, o painel de estados/regiões fica escondido
   const CAMADAS_RELEVO = 7;
   const NS = "http://www.w3.org/2000/svg";
 
@@ -94,6 +95,10 @@
       grupoPulsos.appendChild(g);
     });
 
+    // Painel lateral: no começo da rede, mostra um convite em vez de números baixos
+    const poucos = ativos.length < MIN_ESTADOS_PAINEL;
+    $("mapa-numeros").hidden = poucos;
+    $("mapa-teaser").classList.toggle("hidden", !poucos);
     // Painel lateral
     $("mapa-estados-ativos").textContent = ativos.length;
     const regioesAtivas = Object.entries(REGIOES).filter(([, ufs]) => ufs.some((u) => porUf[u]));

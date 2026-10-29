@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VotoniKem | O Maior Diretório da Direita no Brasil</title>
+  <title>VotoniKem | Diretório de Negócios e Serviços da Direita no Brasil</title>
   <script>
     // Abertura com partículas: só na primeira visita da sessão e sem "reduzir movimento".
     (function () {
@@ -30,7 +30,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="VotoniKem">
-  <meta property="og:title" content="VotoniKem | O Maior Diretório de Negócios da Direita no Brasil">
+  <meta property="og:title" content="VotoniKem | Diretório de Negócios e Serviços da Direita no Brasil">
   <meta property="og:description" content="Comunidade de negócios, não de debates. Networking, parcerias e novos clientes de Norte a Sul. Entre na Lista VIP de lançamento.">
   <meta property="og:url" content="https://votonikem.vercel.app/">
   <meta property="og:image" content="https://votonikem.vercel.app/img/og-image.jpg">
@@ -38,7 +38,7 @@
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="VotoniKem: O Maior Diretório de Negócios e Serviços da Direita no Brasil">
+  <meta property="og:image:alt" content="VotoniKem: o diretório de negócios e serviços da direita no Brasil">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
@@ -88,8 +88,11 @@
       </nav>
 
       <div class="flex items-center gap-2 shrink-0">
-        <a href="#doacao" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
-          <span>❤️</span> Apoiar<span class="hidden sm:inline"> Projeto</span>
+        <a href="#doacao" class="hidden lg:inline-flex items-center gap-1.5 text-sm font-bold text-slate-300 hover:text-amber-400 px-3 py-2 rounded-xl border border-slate-700 hover:border-amber-500/60 transition whitespace-nowrap">
+          <span aria-hidden="true">❤️</span> Apoiar
+        </a>
+        <a href="#planos" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+          <span aria-hidden="true">🚀</span> <span class="sm:hidden">Lista VIP</span><span class="hidden sm:inline">Entrar na Lista VIP</span>
         </a>
         <button type="button" id="btn-menu" class="menu-botao md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-celular">
           <span></span><span></span><span></span>
@@ -105,6 +108,7 @@
         <li><a href="#precos" class="menu-item"><span aria-hidden="true">📣</span> Anunciar</a></li>
         <li><a href="#mapa" class="menu-item"><span aria-hidden="true">🗺️</span> Rede pelo Brasil</a></li>
         <li><a href="#faq" class="menu-item"><span aria-hidden="true">💬</span> Perguntas frequentes</a></li>
+        <li><a href="#doacao" class="menu-item"><span aria-hidden="true">❤️</span> Apoiar o projeto</a></li>
         <li><a href="politica-de-privacidade.html" class="menu-item"><span aria-hidden="true">🔒</span> LGPD e Privacidade</a></li>
         <li class="pt-3"><a href="#planos" class="block text-center bg-[#064e3b] hover:bg-[#047857] border border-emerald-600/40 text-white text-sm font-extrabold py-3 rounded-xl">🚀 Entrar na Lista VIP</a></li>
       </ul>
@@ -141,11 +145,11 @@
     </div>
 
     <h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-5">
-      O Maior Diretório de Negócios e Serviços da <span class="titulo-ouro">Direita no Brasil</span>
+      O Diretório de Negócios e Serviços da <span class="titulo-ouro">Direita no Brasil</span>
     </h1>
     
     <p class="text-sm md:text-base text-slate-400 mb-7 max-w-2xl mx-auto leading-relaxed">
-      Estamos construindo uma plataforma segura para conectar empresários, profissionais liberais e consumidores que compartilham dos mesmos valores de liberdade.
+      <strong class="text-slate-200 font-semibold">Valores em comum, foco em negócios.</strong> Estamos construindo uma plataforma segura para conectar empresários, autônomos e clientes de todo o Brasil que acreditam na liberdade e no trabalho.
     </p>
 
     <!-- Posicionamento: negócios, não debate -->
@@ -170,19 +174,31 @@
       <div><div id="stat-estados" class="text-2xl font-black text-emerald-400">0</div><div class="text-[11px] uppercase tracking-wider text-slate-400">estados</div></div>
     </div>
 
-    <!-- Formulário Lista VIP + Meta Servidor (Lado a Lado como na imagem) -->
-    <div id="planos" class="grid md:grid-cols-2 gap-6 text-left mt-8">
-      
-      <!-- Card Esquerdo: Lista VIP / Anunciante -->
-      <div class="bg-[#162032] border border-slate-800 p-6 rounded-2xl shadow-xl">
+    <!-- Cadastro na Lista VIP -->
+    <div id="planos" class="grid md:grid-cols-[0.85fr_1.15fr] gap-6 md:gap-8 items-start text-left mt-8">
+
+      <!-- Por que entrar agora -->
+      <div class="order-2 md:order-1 md:pt-4">
+        <h2 class="text-lg font-extrabold text-white mb-4">Por que entrar agora?</h2>
+        <ul class="space-y-4">
+          <li class="motivo"><span class="motivo-icone" aria-hidden="true">🆓</span><div><strong>Anúncio Básico grátis</strong><p>Para autônomos e MEIs que estão começando. Sem cartão, sem pegadinha.</p></div></li>
+          <li class="motivo"><span class="motivo-icone" aria-hidden="true">🎁</span><div><strong>Kit de divulgação na hora</strong><p>Logo, post e cartão com o seu nome e WhatsApp, prontos para postar.</p></div></li>
+          <li class="motivo"><span class="motivo-icone" aria-hidden="true">⏱️</span><div><strong>Prioridade no lançamento</strong><p>Quem está na Lista VIP é avisado primeiro e entra antes na triagem.</p></div></li>
+          <li class="motivo"><span class="motivo-icone" aria-hidden="true">✅</span><div><strong>Selo de perfil verificado</strong><p>Mostre aos clientes que o seu negócio é real e confiável.</p></div></li>
+        </ul>
+      </div>
+
+      <!-- Formulário -->
+      <div class="order-1 md:order-2 bg-[#162032] border border-slate-800 p-6 rounded-2xl shadow-xl">
+        <div class="cadastro-abas" role="tablist" aria-label="Tipo de cadastro">
+          <button type="button" role="tab" id="aba-anunciar" aria-controls="painel-anunciar" aria-selected="true">📣 Quero anunciar</button>
+          <button type="button" role="tab" id="aba-cliente" aria-controls="painel-cliente" aria-selected="false">🔎 Procuro profissionais</button>
+        </div>
+
+        <div id="painel-anunciar" role="tabpanel" aria-labelledby="aba-anunciar">
         <span class="text-[11px] font-bold uppercase tracking-wider text-amber-500 block mb-1">Garanta sua vaga na fila</span>
         <h3 class="text-xl font-bold text-white mb-2">Seja um dos Primeiros Anunciantes</h3>
         <p class="text-slate-400 text-xs mb-5">Cadastre seus dados para receber o aviso prioritário de triagem quando liberarmos os anúncios: grátis para autônomos e MEIs, ou Destaque por R$ 9,90/mês.</p>
-
-        <div class="flex items-center gap-3 bg-amber-500/10 border border-amber-500/30 rounded-xl px-3.5 py-2.5 -mt-2 mb-5">
-          <span class="text-xl leading-none" aria-hidden="true">🎁</span>
-          <p class="text-[11px] sm:text-xs text-slate-300 leading-snug"><strong class="text-amber-400">Ganhe na hora um kit de divulgação grátis:</strong> logo, post para Instagram e cartão para o status, com o seu nome e WhatsApp.</p>
-        </div>
 
         <form id="lead-form" class="space-y-4" novalidate>
           <div>
@@ -238,7 +254,7 @@
             <span>Autorizo o VotoniKem a usar estes dados para me avisar sobre o lançamento, conforme a <a href="politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
           </label>
 
-          <p class="text-[11px] text-slate-500 leading-relaxed">Ao se cadastrar, você concorda com os <a href="termos-de-uso.html" class="text-slate-300 underline">Termos de Uso</a> e com o <a href="codigo-de-conduta.html" class="text-slate-300 underline">Código de Conduta</a> da comunidade.</p>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Ao se cadastrar, você concorda com os <a href="termos-de-uso.html" class="text-slate-300 underline">Termos de Uso</a> e com o <a href="codigo-de-conduta.html" class="text-slate-300 underline">Código de Conduta</a> da comunidade.</p>
 
           <p id="lead-erro" class="hidden text-xs text-red-400 font-semibold" role="alert"></p>
 
@@ -261,61 +277,53 @@
             </a>
           </div>
         </div>
-      </div>
-
-      <!-- Card Direito: Doação / Meta do Servidor -->
-      <div id="doacao" class="bg-[#162032] border border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col justify-between">
-        <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">Apoie a Infraestrutura</span>
-          <h3 class="text-xl font-bold text-white mb-2">Contribua para Manter o Servidor</h3>
-          <p class="text-slate-400 text-xs mb-5">Não temos verba pública. Toda contribuição via PIX ajuda a pagar hospedagem, segurança e banco de dados <strong class="text-slate-200">e a manter o anúncio gratuito para autônomos e MEIs</strong> que estão começando.</p>
-
-          <!-- Barra de Meta -->
-          <div class="bg-[#0d1424] p-3.5 rounded-xl border border-slate-800 mb-5">
-            <div class="flex justify-between items-center text-xs mb-2">
-              <span class="text-slate-400 font-medium">Meta do Servidor & Segurança:</span>
-              <span id="meta-texto" class="text-amber-500 font-bold">R$ 240,00 de R$ 600,00</span>
-            </div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div id="meta-barra" class="bg-gradient-to-r from-emerald-500 to-amber-500 h-full rounded-full transition-[width] duration-1000 ease-out" style="width:0%"></div>
-            </div>
-            <p id="meta-info" class="text-[10px] text-slate-500 mt-1.5 text-right"></p>
-          </div>
-
-          <!-- Botões Rápidos de Valor -->
-          <label class="block text-xs font-medium text-slate-300 mb-2">Escolha o Valor do Apoio Voluntário:</label>
-          <div id="pix-valores" class="grid grid-cols-4 gap-2 mb-5">
-            <button type="button" data-valor="5" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 5</button>
-            <button type="button" data-valor="10" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 10</button>
-            <button type="button" data-valor="25" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 25</button>
-            <button type="button" data-valor="50" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 50</button>
-          </div>
-
-          <!-- Valor livre -->
-          <form id="pix-outro-form" class="flex gap-2 -mt-2 mb-5" novalidate>
-            <label for="pix-outro" class="sr-only">Outro valor em reais</label>
-            <div class="relative flex-1">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500 pointer-events-none">R$</span>
-              <input id="pix-outro" type="text" inputmode="decimal" autocomplete="off" placeholder="Outro valor" class="w-full bg-[#0d1424] border border-slate-700 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            </div>
-            <button type="submit" class="bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-bold px-4 rounded-lg border border-emerald-600/40 transition whitespace-nowrap">Gerar PIX</button>
-          </form>
-          <p id="pix-outro-erro" class="hidden -mt-3 mb-4 text-xs text-red-400 font-semibold" role="alert"></p>
-
-          <!-- PIX com valor (aparece ao escolher um valor) -->
-          <div id="pix-cobranca" class="hidden bg-[#0d1424] p-4 rounded-xl border border-amber-500/40 mb-5 text-center">
-            <p class="text-xs text-slate-300 mb-3">PIX de <strong id="pix-valor-texto" class="text-amber-400">R$ 0,00</strong> — escaneie no app do banco ou use o copia e cola:</p>
-            <div id="pix-qr" class="bg-white p-2.5 rounded-lg inline-block mb-3"></div>
-            <button type="button" id="btn-copy-copiaecola" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm px-3 py-2.5 rounded-lg transition shadow">Copiar PIX copia e cola</button>
-          </div>
         </div>
 
-        <!-- Chave PIX (valor livre) -->
-        <div class="bg-[#0d1424] p-3 rounded-xl border border-slate-800">
-          <label class="block text-[10px] font-semibold text-slate-400 mb-1 text-center">Ou envie qualquer valor para a Chave PIX (CNPJ):</label>
-          <div class="flex items-center justify-between gap-2 bg-[#162032] p-2 rounded-lg border border-slate-800">
-            <code id="pix-key" data-copiar="12608403000105" class="text-sm text-amber-400 font-mono select-all font-semibold pl-2">12.608.403/0001-05</code>
-            <button type="button" id="btn-copy-pix" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-3 py-1.5 rounded-md transition shadow">Copiar</button>
+        <div id="painel-cliente" role="tabpanel" aria-labelledby="aba-cliente" hidden>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">Para quem contrata</span>
+          <h3 class="text-xl font-bold text-white mb-2">Procurando um profissional de confiança?</h3>
+          <p class="text-slate-400 text-xs mb-5">Deixe seu WhatsApp e avisamos assim que a busca for liberada na sua região. É grátis e leva 20 segundos.</p>
+
+          <form id="cliente-form" class="space-y-4" novalidate>
+            <div>
+              <label for="cli-whatsapp" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp *</label>
+              <input id="cli-whatsapp" name="whatsapp" type="tel" inputmode="numeric" required autocomplete="tel-national" placeholder="(11) 99999-9999" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+            </div>
+            <div class="grid grid-cols-[6rem_1fr] gap-3">
+              <div>
+                <label for="cli-uf" class="block text-xs font-medium text-slate-300 mb-1">UF *</label>
+                <select id="cli-uf" name="uf" required class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-2.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                  <option value="">--</option>
+                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+                </select>
+              </div>
+              <div>
+                <label for="cli-cidade" class="block text-xs font-medium text-slate-300 mb-1">Cidade <span class="text-slate-500">(opcional)</span></label>
+                <input id="cli-cidade" name="cidade" type="text" maxlength="80" autocomplete="address-level2" placeholder="Ex: Campinas" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+              </div>
+            </div>
+            <div>
+              <label for="cli-procura" class="block text-xs font-medium text-slate-300 mb-1">O que você costuma procurar? <span class="text-slate-500">(opcional)</span></label>
+              <input id="cli-procura" name="procura" type="text" list="lista-profissoes" maxlength="120" placeholder="Ex: Eletricista, Advogado, Confeitaria" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+            </div>
+            <div class="hidden" aria-hidden="true">
+              <label>Não preencha <input type="text" name="confirmar_email" tabindex="-1" autocomplete="off"></label>
+            </div>
+            <label class="flex items-start gap-2.5 text-[11px] text-slate-400 leading-relaxed cursor-pointer">
+              <input id="cli-consentimento" name="consentimento" type="checkbox" required class="mt-0.5 accent-emerald-500 w-4 h-4 shrink-0">
+              <span>Autorizo o VotoniKem a me avisar pelo WhatsApp quando a busca de profissionais for liberada, conforme a <a href="politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
+            </label>
+            <p id="cli-erro" class="hidden text-xs text-red-400 font-semibold" role="alert"></p>
+            <button id="cli-enviar" type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 disabled:cursor-wait text-white text-sm font-bold py-3 rounded-lg transition flex items-center justify-center gap-2 shadow-lg">
+              <span>🔔</span> <span id="cli-enviar-texto">Quero ser avisado</span>
+            </button>
+          </form>
+
+          <div id="cli-sucesso" class="hidden text-center py-8" role="status">
+            <div class="text-4xl mb-3">🔔</div>
+            <h4 class="text-lg font-bold text-white mb-2">Pronto, você será avisado!</h4>
+            <p class="text-xs text-slate-400 mb-5">Assim que a busca abrir na sua região, mandamos uma mensagem no seu WhatsApp.</p>
+            <a id="cli-compartilhar" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-sm font-bold px-5 py-2.5 rounded-lg transition">Indicar para um amigo</a>
           </div>
         </div>
       </div>
@@ -383,6 +391,12 @@
         <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-4 mb-3">O Brasil se conectando, estado por estado</h2>
         <p class="text-slate-400 text-sm mb-6">Cada estado aceso já tem empresários e profissionais na Lista VIP. Passe o dedo ou o mouse pelo mapa e veja o seu.</p>
 
+        <div id="mapa-teaser" class="hidden bg-emerald-950/40 border border-emerald-500/30 rounded-xl p-4 mb-6">
+          <p class="text-sm text-slate-200 font-bold">A rede está começando agora.</p>
+          <p class="text-sm text-slate-400 mt-1">Seja o primeiro da sua cidade e coloque o seu estado no mapa.</p>
+        </div>
+
+        <div id="mapa-numeros">
         <div class="grid grid-cols-2 gap-3 mb-5">
           <div class="bg-[#162032] border border-slate-800 rounded-xl p-4">
             <div class="text-3xl font-black text-amber-400"><span id="mapa-estados-ativos">0</span><span class="text-lg text-slate-500">/27</span></div>
@@ -395,9 +409,10 @@
         </div>
 
         <ul id="mapa-lista-regioes" class="space-y-2 mb-6" aria-label="Estados acesos por região"></ul>
+        </div>
 
         <a href="#planos" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl shadow-lg shadow-amber-500/20">Acenda o seu estado <span aria-hidden="true">→</span></a>
-        <p class="text-[10px] text-slate-600 mt-4">Mapa: <a href="https://mapsvg.com/maps/brazil" target="_blank" rel="noopener" class="underline">MapSVG</a>, licença CC BY 4.0.</p>
+        <p class="text-[11px] text-slate-400 mt-4">Mapa: <a href="https://mapsvg.com/maps/brazil" target="_blank" rel="noopener" class="underline">MapSVG</a>, licença CC BY 4.0.</p>
       </div>
     </div>
   </section>
@@ -453,7 +468,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-1.5 mb-3">
-            <span class="tag-prof">Segurança Digital e LGPD</span><span class="tag-ok">✓ Verificado</span>
+            <span class="tag-prof">Segurança Digital e LGPD</span><span class="tag-ok">✓ Verificado</span><span class="tag-fundador">Parceiro fundador</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed mb-5 flex-1">Proteção de WhatsApp, Instagram e e-mails contra invasões e clonagem, adequação à LGPD e hospedagem com proteção anti-DDoS.</p>
           <a href="https://andersoncyber.com.br/" target="_blank" rel="noopener" class="btn-link btn-site btn-site-ativo">Visitar site</a>
@@ -514,7 +529,41 @@
         </article>
       </div>
 
-      <p class="text-center text-[11px] text-slate-500 mt-6">O anúncio em destaque é real. Os demais são exemplos ilustrativos com nomes fictícios; os anúncios da comunidade serão publicados após o lançamento.</p>
+      <p class="text-center text-xs text-slate-400 mt-6">O anúncio em destaque é real. Os demais são exemplos ilustrativos com nomes fictícios; os anúncios da comunidade serão publicados após o lançamento.</p>
+    </div>
+  </section>
+
+  <!-- Como vamos divulgar -->
+  <section id="divulgacao" class="py-14 px-4 bg-[#0b0f19] border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Para quem anuncia</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-4 mb-3">Como os clientes vão encontrar você</h2>
+        <p class="text-slate-400 text-xs md:text-sm">Não basta estar no diretório: o VotoniKem trabalha para levar gente até o seu anúncio.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="beneficio bg-[#162032] border border-slate-800 rounded-2xl p-5">
+          <div class="text-2xl mb-3" aria-hidden="true">📸</div>
+          <h3 class="text-sm font-extrabold text-white mb-1">Instagram e redes</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Perfil oficial apresentando os membros da comunidade, por área e por região.</p>
+        </div>
+        <div class="beneficio bg-[#162032] border border-slate-800 rounded-2xl p-5">
+          <div class="text-2xl mb-3" aria-hidden="true">💬</div>
+          <h3 class="text-sm font-extrabold text-white mb-1">Comunidade no WhatsApp</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Grupos por região, onde os anúncios novos são divulgados para quem procura serviços.</p>
+        </div>
+        <div class="beneficio bg-[#162032] border border-slate-800 rounded-2xl p-5">
+          <div class="text-2xl mb-3" aria-hidden="true">🔎</div>
+          <h3 class="text-sm font-extrabold text-white mb-1">Busca no Google</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Páginas pensadas para aparecer quando alguém pesquisa "profissão + cidade".</p>
+        </div>
+        <div class="beneficio bg-[#162032] border border-slate-800 rounded-2xl p-5">
+          <div class="text-2xl mb-3" aria-hidden="true">🤝</div>
+          <h3 class="text-sm font-extrabold text-white mb-1">A própria rede</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Cada membro que posta o seu kit de divulgação leva o VotoniKem a novos clientes.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-slate-300 mt-8">E quem procura profissionais já pode entrar na lista: <a href="#procuro" class="text-emerald-400 font-bold underline">quero ser avisado</a>.</p>
     </div>
   </section>
 
@@ -561,7 +610,94 @@
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed"><strong class="text-emerald-400">O anúncio gratuito existe graças aos apoiadores.</strong> Cada PIX voluntário ajuda a manter o Básico sem custo para quem vende docinho, faz bico ou está abrindo o próprio negócio. <a href="#doacao" class="text-amber-400 underline font-semibold">Apoiar o projeto</a></p>
       </div>
 
-      <p class="text-center text-[11px] text-slate-500 mt-4">Recursos e valores previstos para o lançamento. As condições completas serão apresentadas antes de qualquer contratação.</p>
+      <p class="text-center text-xs text-slate-400 mt-4">Recursos e valores previstos para o lançamento. As condições completas serão apresentadas antes de qualquer contratação.</p>
+    </div>
+  </section>
+
+  <!-- Apoio voluntário via PIX -->
+  <section id="apoio" class="py-14 px-4 border-t border-slate-800/80">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.1fr] gap-8 items-center">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Apoie o projeto</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-4 mb-3">Feito pela comunidade, para a comunidade</h2>
+        <p class="text-slate-400 text-sm mb-4">O VotoniKem não tem verba pública nem investidor por trás. Quem acredita no projeto pode ajudar com qualquer valor, de forma voluntária.</p>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li class="item-ok">Mantém o anúncio <strong class="text-white">Básico gratuito</strong> para quem está começando</li>
+          <li class="item-ok">Paga hospedagem, segurança e banco de dados</li>
+          <li class="item-ok">PIX direto para o CNPJ do projeto, com o nome do recebedor visível no seu banco</li>
+        </ul>
+      </div>
+      <!-- Card Direito: Doação / Meta do Servidor -->
+      <div id="doacao" class="bg-[#162032] border border-slate-800 p-6 rounded-2xl shadow-xl text-left">
+        <div>
+          <!-- Barra de Meta -->
+          <div class="bg-[#0d1424] p-3.5 rounded-xl border border-slate-800 mb-5">
+            <div class="flex justify-between items-center text-xs mb-2">
+              <span class="text-slate-400 font-medium">Meta do Servidor & Segurança:</span>
+              <span id="meta-texto" class="text-amber-500 font-bold">R$ 240,00 de R$ 600,00</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div id="meta-barra" class="bg-gradient-to-r from-emerald-500 to-amber-500 h-full rounded-full transition-[width] duration-1000 ease-out" style="width:0%"></div>
+            </div>
+            <p id="meta-info" class="text-[11px] text-slate-400 mt-1.5 text-right"></p>
+          </div>
+
+          <!-- Botões Rápidos de Valor -->
+          <label class="block text-xs font-medium text-slate-300 mb-2">Escolha o Valor do Apoio Voluntário:</label>
+          <div id="pix-valores" class="grid grid-cols-4 gap-2 mb-5">
+            <button type="button" data-valor="5" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 5</button>
+            <button type="button" data-valor="10" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 10</button>
+            <button type="button" data-valor="25" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 25</button>
+            <button type="button" data-valor="50" class="pix-valor bg-[#0d1424] hover:bg-slate-800 text-slate-200 text-sm font-bold py-2.5 rounded-lg border border-slate-700 transition">R$ 50</button>
+          </div>
+
+          <!-- Valor livre -->
+          <form id="pix-outro-form" class="flex gap-2 -mt-2 mb-5" novalidate>
+            <label for="pix-outro" class="sr-only">Outro valor em reais</label>
+            <div class="relative flex-1">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500 pointer-events-none">R$</span>
+              <input id="pix-outro" type="text" inputmode="decimal" autocomplete="off" placeholder="Outro valor" class="w-full bg-[#0d1424] border border-slate-700 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            </div>
+            <button type="submit" class="bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-bold px-4 rounded-lg border border-emerald-600/40 transition whitespace-nowrap">Gerar PIX</button>
+          </form>
+          <p id="pix-outro-erro" class="hidden -mt-3 mb-4 text-xs text-red-400 font-semibold" role="alert"></p>
+
+          <!-- PIX com valor (aparece ao escolher um valor) -->
+          <div id="pix-cobranca" class="hidden bg-[#0d1424] p-4 rounded-xl border border-amber-500/40 mb-5 text-center">
+            <p class="text-xs text-slate-300 mb-3">PIX de <strong id="pix-valor-texto" class="text-amber-400">R$ 0,00</strong> — escaneie no app do banco ou use o copia e cola:</p>
+            <div id="pix-qr" class="bg-white p-2.5 rounded-lg inline-block mb-3"></div>
+            <button type="button" id="btn-copy-copiaecola" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm px-3 py-2.5 rounded-lg transition shadow">Copiar PIX copia e cola</button>
+          </div>
+        </div>
+
+        <!-- Chave PIX (valor livre) -->
+        <div class="bg-[#0d1424] p-3 rounded-xl border border-slate-800">
+          <label class="block text-[10px] font-semibold text-slate-400 mb-1 text-center">Ou envie qualquer valor para a Chave PIX (CNPJ):</label>
+          <div class="flex items-center justify-between gap-2 bg-[#162032] p-2 rounded-lg border border-slate-800">
+            <code id="pix-key" data-copiar="12608403000105" class="text-sm text-amber-400 font-mono select-all font-semibold pl-2">12.608.403/0001-05</code>
+            <button type="button" id="btn-copy-pix" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-3 py-1.5 rounded-md transition shadow">Copiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quem somos -->
+  <section id="quem-somos" class="py-14 px-4 bg-[#0b0f19] border-t border-slate-800">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-[auto_1fr] gap-8 items-center">
+      <div class="mx-auto">
+        <div class="quem-selo" aria-hidden="true"><span>VK</span></div>
+      </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Quem está por trás</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-4 mb-3">Um projeto feito por quem entende de segurança</h2>
+        <p class="text-slate-400 text-sm leading-relaxed mb-3">O VotoniKem nasceu da vontade de ver empreendedores que compartilham os mesmos valores se fortalecendo: comprando, vendendo e indicando uns aos outros, de Norte a Sul.</p>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">Por trás do projeto está <strong class="text-white">Anderson Medeiros</strong>, profissional de segurança digital e proteção de dados (LGPD) e fundador da <a href="https://andersoncyber.com.br/" target="_blank" rel="noopener" class="text-amber-400 underline">Anderson Cyber</a>. Por isso, aqui segurança e privacidade não são detalhe: são a base da plataforma.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#planos" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl">Entrar na Lista VIP</a>
+          <a id="quem-whatsapp" href="#" target="_blank" rel="noopener" class="hidden items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl">Falar no WhatsApp</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -612,15 +748,22 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="space-y-1 md:text-left">
         <p>© 2026 VotoniKem. Todos os direitos reservados. Segurança e infraestrutura por <a href="https://andersoncyber.com.br/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:underline">Anderson Cyber</a>.</p>
-        <p class="text-[11px] text-slate-600">Anderson de Sá Medeiros ME · CNPJ 12.608.403/0001-05 · São Paulo/SP</p>
+        <p class="text-[11px] text-slate-400">Anderson de Sá Medeiros ME · CNPJ 12.608.403/0001-05 · São Paulo/SP</p>
       </div>
       <div class="flex items-center space-x-6">
         <a href="politica-de-privacidade.html" class="hover:text-amber-400 transition">Política de Privacidade (LGPD)</a>
         <a href="termos-de-uso.html" class="hover:text-amber-400 transition">Termos de Uso</a>
         <a href="codigo-de-conduta.html" class="hover:text-amber-400 transition">Código de Conduta</a>
+        <a id="rodape-whatsapp" href="#" target="_blank" rel="noopener" class="hover:text-amber-400 transition" hidden>WhatsApp</a>
       </div>
     </div>
   </footer>
+
+  <!-- WhatsApp do projeto (aparece só quando WHATSAPP_CONTATO estiver preenchido no config.js) -->
+  <a id="whatsapp-flutuante" href="#" target="_blank" rel="noopener" class="whatsapp-flutuante" aria-label="Falar com o VotoniKem no WhatsApp" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+    <span>Dúvidas?</span>
+  </a>
 
   <!-- Banner Cookies -->
   <div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md bg-[#0b0f19] border border-amber-500/30 p-4 rounded-2xl shadow-2xl z-50 transform translate-y-full opacity-0 transition-all duration-300">
@@ -644,7 +787,7 @@
       <div class="flex items-start justify-between gap-4 px-5 sm:px-8 pt-5 sm:pt-7 pb-4 border-b border-slate-800">
         <div>
           <h2 id="modal-legal-titulo" class="text-lg sm:text-2xl font-extrabold text-white leading-tight">Carregando...</h2>
-          <p class="text-[11px] text-slate-500 mt-1">Última atualização: Outubro de 2026</p>
+          <p class="text-[11px] text-slate-400 mt-1">Última atualização: Outubro de 2026</p>
         </div>
         <button type="button" data-fechar-modal aria-label="Fechar" class="shrink-0 w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-white text-lg leading-none flex items-center justify-center">✕</button>
       </div>
@@ -678,7 +821,7 @@
         <div class="bg-[#0d1424] border border-slate-800 rounded-xl p-3 flex items-center justify-center">
           <img id="kit-preview" alt="" class="kit-preview">
         </div>
-        <p class="text-[11px] text-slate-500 mt-3 text-center">Dica: use o post no feed, o cartão no status do WhatsApp e nos stories, e o logo como foto de perfil.</p>
+        <p class="text-[11px] text-slate-400 mt-3 text-center">Dica: use o post no feed, o cartão no status do WhatsApp e nos stories, e o logo como foto de perfil.</p>
       </div>
       <div class="flex flex-wrap items-center justify-end gap-2 px-5 sm:px-7 py-4 border-t border-slate-800">
         <button type="button" id="kit-baixar-tudo" class="text-xs text-slate-300 hover:text-amber-400 underline mr-auto">Baixar as 3 peças</button>
