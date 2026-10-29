@@ -318,6 +318,9 @@
             <button type="button" id="btn-abrir-kit" class="kit-cta inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-lg shadow-lg shadow-amber-500/25">
               🎁 Gerar meu kit de divulgação grátis
             </button>
+            <button type="button" data-abrir-destaque class="w-full inline-flex items-center justify-center gap-2 bg-[#0d1424] hover:bg-slate-800 border border-amber-500/60 text-amber-400 text-sm font-extrabold px-5 py-3 rounded-xl transition">
+              ⭐ Quero aparecer primeiro: Destaque por R$ 9,90
+            </button>
             <a id="btn-compartilhar" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-sm font-bold px-5 py-2.5 rounded-lg transition">
               Contar no WhatsApp
             </a>
@@ -639,17 +642,17 @@
         </div>
 
         <div class="plano plano-destaque relative bg-[#162032] border-2 border-amber-500/70 rounded-2xl p-6 flex flex-col">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">Em breve</span>
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">Mais visibilidade</span>
           <h3 class="text-lg font-extrabold text-white">Destaque</h3>
           <p class="text-xs text-slate-400 mb-4">Para quem quer ser encontrado primeiro</p>
-          <p class="mb-5"><span class="text-sm text-slate-400 align-top">R$</span> <span class="text-4xl font-black text-amber-400">9,90</span><span class="text-sm text-slate-400">/mês</span></p>
+          <p class="mb-5"><span class="text-sm text-slate-400 align-top">R$</span> <span class="text-4xl font-black text-amber-400">9,90</span><span class="text-sm text-slate-400"> por 30 dias</span></p>
           <ul class="space-y-2.5 text-sm text-slate-300 mb-6 flex-1">
             <li class="item-ok">Tudo do Básico</li>
-            <li class="item-ok"><strong class="text-white">Aparece primeiro</strong> nas buscas da sua cidade</li>
-            <li class="item-ok">Selo <strong class="text-amber-400">Destaque</strong> no anúncio</li>
-            <li class="item-ok">Mais fotos e links extras (cardápio, portfólio, catálogo)</li>
+            <li class="item-ok"><strong class="text-white">Aparece primeiro</strong> no diretório e nas buscas</li>
+            <li class="item-ok">Selo <strong class="text-amber-400">Destaque</strong> e borda dourada no anúncio</li>
+            <li class="item-ok">Pagamento único por PIX, <strong class="text-white">sem renovação automática</strong></li>
           </ul>
-          <span class="block text-center bg-[#0d1424] border border-slate-700 text-slate-400 text-sm font-bold py-3 rounded-xl cursor-default">Em breve</span>
+          <button type="button" data-abrir-destaque class="block w-full text-center bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold py-3 rounded-xl transition">⭐ Quero o Destaque</button>
         </div>
       </div>
 
@@ -658,7 +661,7 @@
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed"><strong class="text-emerald-400">O anúncio gratuito existe graças aos apoiadores.</strong> Cada PIX voluntário ajuda a manter o Básico sem custo para quem vende docinho, faz bico ou está abrindo o próprio negócio. <a href="#doacao" class="text-amber-400 underline font-semibold">Apoiar o projeto</a></p>
       </div>
 
-      <p class="text-center text-xs text-slate-400 mt-4">O Destaque ainda não está disponível. Valores e condições serão apresentados antes de qualquer contratação.</p>
+      <p class="text-center text-xs text-slate-400 mt-4">O Destaque vale por 30 dias a partir da ativação e não renova sozinho. Condições completas nos <a href="termos-de-uso.html" class="underline hover:text-amber-400">Termos de Uso</a>.</p>
     </div>
   </section>
 
@@ -757,7 +760,7 @@
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Quanto custa?<span class="faq-icone" aria-hidden="true">+</span></summary>
-          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Publicar o anúncio Básico é grátis, para qualquer negócio. Em breve, quem quiser mais visibilidade poderá contratar o Destaque, com valor previsto de R$ 9,90 por mês. As condições completas serão apresentadas antes de qualquer cobrança.</p>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Publicar o anúncio Básico é grátis, para qualquer negócio. Quem quiser mais visibilidade pode contratar o Destaque: R$ 9,90 por 30 dias, pago por PIX, sem renovação automática. O anúncio aparece primeiro no diretório e ganha o selo Destaque.</p>
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Quem pode anunciar?<span class="faq-icone" aria-hidden="true">+</span></summary>
@@ -841,6 +844,43 @@
   </dialog>
 
   <!-- Janela do Kit de divulgação -->
+  <dialog id="modal-destaque" aria-labelledby="modal-destaque-titulo" class="modal-legal bg-transparent p-0 m-auto w-full max-w-lg max-h-[100dvh] sm:max-h-[92vh] text-slate-300">
+    <div class="bg-slate-950 border border-amber-500/40 sm:rounded-2xl shadow-2xl flex flex-col max-h-[100dvh] sm:max-h-[92vh]">
+      <div class="flex items-start justify-between gap-4 px-5 sm:px-7 pt-5 pb-4 border-b border-slate-800">
+        <div>
+          <h2 id="modal-destaque-titulo" class="text-lg sm:text-xl font-extrabold text-white">⭐ Destaque por 30 dias</h2>
+          <p class="text-[11px] text-slate-400 mt-1">R$ 9,90 · pagamento único por PIX · sem renovação automática</p>
+        </div>
+        <button type="button" data-fechar-destaque aria-label="Fechar" class="shrink-0 w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-white text-lg leading-none flex items-center justify-center">✕</button>
+      </div>
+      <div class="overflow-y-auto px-5 sm:px-7 py-5 space-y-5 text-sm">
+        <div>
+          <p class="font-bold text-white mb-1"><span class="text-amber-400">1.</span> Tenha um anúncio publicado</p>
+          <p class="text-slate-400 text-xs leading-relaxed">Ainda não tem? <a href="#planos" data-fechar-destaque class="text-amber-400 underline">Publique grátis primeiro</a>. Já tem? Cole o link dele (ou o nome do negócio):</p>
+          <input id="destaque-anuncio" type="text" maxlength="200" placeholder="votonikem.com.br/a/seu-negocio" class="mt-2 w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+        </div>
+        <div>
+          <p class="font-bold text-white mb-2"><span class="text-amber-400">2.</span> Pague R$ 9,90 pelo PIX</p>
+          <div class="flex flex-col sm:flex-row items-center gap-4 bg-[#0d1424] border border-slate-800 rounded-xl p-4">
+            <div id="destaque-qr" class="bg-white p-2 rounded-lg shrink-0" aria-label="QR Code PIX de R$ 9,90"></div>
+            <div class="w-full min-w-0">
+              <p class="text-[11px] text-slate-400 mb-1">PIX copia e cola</p>
+              <textarea id="destaque-copia" readonly rows="3" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-[10px] text-slate-300 font-mono break-all resize-none"></textarea>
+              <button type="button" id="destaque-copiar" class="mt-2 w-full bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-2 rounded-lg">Copiar código PIX</button>
+              <p class="text-[11px] text-slate-500 mt-2">Recebedor: Anderson de Sá Medeiros ME · CNPJ 12.608.403/0001-05</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold text-white mb-1"><span class="text-amber-400">3.</span> Mande o comprovante</p>
+          <p class="text-slate-400 text-xs leading-relaxed mb-3">Ativamos em até 1 dia útil após conferir o pagamento. Os 30 dias contam a partir da ativação.</p>
+          <a id="destaque-zap" href="#" target="_blank" rel="noopener" class="btn-zap w-full !py-3">Enviar comprovante pelo WhatsApp</a>
+        </div>
+        <p class="text-[11px] text-slate-500 leading-relaxed">Ao pagar, você concorda com as condições do Destaque nos <a href="termos-de-uso.html" class="underline hover:text-amber-400">Termos de Uso</a>. Desistiu em até 7 dias? Devolvemos o valor (Código de Defesa do Consumidor, art. 49).</p>
+      </div>
+    </div>
+  </dialog>
+
   <dialog id="modal-kit" aria-labelledby="modal-kit-titulo" class="modal-legal bg-transparent p-0 m-auto w-full max-w-2xl max-h-[100dvh] sm:max-h-[92vh] text-slate-300">
     <div class="bg-slate-950 border border-slate-800 sm:rounded-2xl shadow-2xl flex flex-col max-h-[100dvh] sm:max-h-[92vh]">
       <div class="flex items-start justify-between gap-4 px-5 sm:px-7 pt-5 pb-4 border-b border-slate-800">
@@ -880,6 +920,7 @@
   <script src="js/main.js" defer></script>
   <script src="js/previa.js" defer></script>
   <script src="js/anunciar.js" defer></script>
+  <script src="js/destaque.js" defer></script>
   <script src="js/kit.js" defer></script>
   <script src="js/mapa-brasil.js" defer></script>
   <script src="js/mapa.js" defer></script>

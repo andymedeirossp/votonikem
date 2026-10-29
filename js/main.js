@@ -69,11 +69,11 @@
     return crc.toString(16).toUpperCase().padStart(4, "0");
   };
 
-  const gerarPix = (valor) => {
+  const gerarPix = (valor, descricao = CFG.PIX_DESCRICAO) => {
     const contaRecebedor =
       campo("00", "br.gov.bcb.pix") +
       campo("01", CFG.PIX_CHAVE) +
-      (CFG.PIX_DESCRICAO ? campo("02", semAcento(CFG.PIX_DESCRICAO, 40)) : "");
+      (descricao ? campo("02", semAcento(descricao, 40)) : "");
     const payload =
       campo("00", "01") +
       campo("26", contaRecebedor) +
@@ -87,7 +87,7 @@
       "6304";
     return payload + crc16(payload);
   };
-  window.__gerarPix = gerarPix; // usado nos testes
+  window.__gerarPix = gerarPix; // usado nos testes e no Destaque (js/destaque.js)
 
   const PIX_MIN = 1;
   const PIX_MAX = 10000;

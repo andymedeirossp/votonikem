@@ -309,6 +309,7 @@
       if (!r.ok) throw new Error(`HTTP ${r.status} ${await r.text()}`);
       const slug = await r.json();
       publicado = { ...dados, slug: typeof slug === "string" ? slug : null };
+      window.VKUltimoAnuncio = publicado.slug ? `${location.origin}/a/${publicado.slug}` : publicado.nome;
 
       form.classList.add("hidden");
       const previa = { ...publicado, status: "em_verificacao", destaque: false, logo_url: publicado.logo_url ? logoLocal || publicado.logo_url : "" };

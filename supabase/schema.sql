@@ -136,3 +136,9 @@ alter table public.anuncios add constraint anuncios_logo_url_origem_check check 
   logo_url is null or logo_url like 'https://jmvdgwtvyubwmhfyqras.supabase.co/storage/v1/object/public/logos/anuncios/%');
 grant insert (imagem_url), select (imagem_url) on public.anuncios to anon;
 -- anuncios_publicos passou a incluir imagem_url; publicar_anuncio passou a gravar p->>'imagem_url'
+
+-- 2026-10-29: Destaque pago com validade. destaque_ate vazio = sem prazo (parceiros).
+-- Ativar: update anuncios set destaque = true, destaque_ate = current_date + 30 where slug = '...';
+alter table public.anuncios add column if not exists destaque_ate date;
+-- anuncios_publicos: destaque = destaque and (destaque_ate is null or destaque_ate >= hoje em America/Sao_Paulo)
+grant select (destaque_ate) on public.anuncios to anon;
