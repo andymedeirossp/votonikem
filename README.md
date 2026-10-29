@@ -1,6 +1,6 @@
 # VotoniKem
 
-Site estático do VotoniKem, publicado na Vercel a partir da branch `main`.
+Site do VotoniKem (https://votonikem.com.br), publicado na Cloudflare Pages a partir da branch `main`. O endereço antigo da Vercel só redireciona para o domínio (vercel.json).
 A branch `melhorias` gera uma prévia antes de ir ao ar.
 
 ## Estrutura
