@@ -75,6 +75,43 @@ a, button {
   .js-animar .beneficio { opacity: 1; transform: none; }
 }
 
+/* Como funciona */
+.passo-num {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #020617;
+  font-weight: 900;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px -6px rgba(245, 158, 11, 0.6);
+}
+.passo { padding-top: 1.75rem; }
+
+/* FAQ */
+.faq summary { list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq-icone {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+.faq[open] .faq-icone { transform: rotate(45deg); }
+.faq[open] { border-color: rgba(245, 158, 11, 0.35); }
+
 /* Janela da Política / Termos */
 .modal-legal::backdrop {
   background: rgba(2, 6, 23, 0.75);
