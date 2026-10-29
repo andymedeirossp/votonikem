@@ -170,6 +170,7 @@
       if (info) {
         const partes = [];
         if (pctAtual >= 100) partes.push("Meta batida! Obrigado a todos os apoiadores 🎉");
+        else if (arrecadado <= 0) partes.push("Seja o primeiro a apoiar 💚");
         else partes.push(`${Math.floor(pctAtual)}% da meta`);
         if (atualizadoEm) {
           const d = new Date(atualizadoEm);
