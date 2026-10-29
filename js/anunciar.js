@@ -165,10 +165,8 @@
       ctx.fillRect(0, 0, LOGO_LADO, LOGO_LADO);
       ctx.drawImage(img, sx, sy, lado, lado, 0, 0, LOGO_LADO, LOGO_LADO);
       URL.revokeObjectURL(url);
-      c.toBlob((b) => {
-        if (b && b.type === "image/webp") return ok(b);
-        c.toBlob((j) => (j ? ok(j) : falha(new Error("conversao"))), "image/jpeg", 0.85);
-      }, "image/webp", 0.85);
+      // JPEG: funciona em todo lugar, inclusive na imagem de prévia do link no WhatsApp
+      c.toBlob((j) => (j ? ok(j) : falha(new Error("conversao"))), "image/jpeg", 0.88);
     };
     img.onerror = () => { URL.revokeObjectURL(url); falha(new Error("leitura")); };
     img.src = url;

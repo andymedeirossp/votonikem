@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/a/:slug", "destination": "/anuncio" }
-  ]
+    { "source": "/a/:slug", "destination": "/api/a?slug=:slug" }
+  ],
+  "functions": {
+    "api/a.js": { "includeFiles": "anuncio.html", "maxDuration": 10 },
+    "api/og.js": { "includeFiles": "api/_lib/fonts/**", "maxDuration": 10 }
+  }
 }

@@ -3,10 +3,14 @@
   "private": true,
   "description": "Site do VotoniKem",
   "scripts": {
-    "css": "tailwindcss -c tailwind.config.js -i css/tailwind.src.css -o css/tailwind.css --minify",
-    "css:watch": "tailwindcss -c tailwind.config.js -i css/tailwind.src.css -o css/tailwind.css --watch"
+    "css": "tailwindcss -c tailwind.config.cjs -i css/tailwind.src.css -o css/tailwind.css --minify",
+    "css:watch": "tailwindcss -c tailwind.config.cjs -i css/tailwind.src.css -o css/tailwind.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "3.4.19"
-  }
+  },
+  "dependencies": {
+    "@vercel/og": "0.11.1"
+  },
+  "type": "module"
 }
