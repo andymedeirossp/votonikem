@@ -67,7 +67,7 @@
       <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
         <a href="#exemplos" class="hover:text-amber-400 transition">Diretório</a>
         <a href="#como-funciona" class="hover:text-amber-400 transition">Como funciona</a>
-        <a href="#planos" class="hover:text-amber-400 transition">Anunciar</a>
+        <a href="#precos" class="hover:text-amber-400 transition">Anunciar</a>
         <a href="politica-de-privacidade.html" class="hover:text-amber-400 transition inline-flex items-center gap-1.5"><span aria-hidden="true">🔒</span> LGPD</a>
       </nav>
 
@@ -143,7 +143,7 @@
       <div class="bg-[#162032] border border-slate-800 p-6 rounded-2xl shadow-xl">
         <span class="text-[11px] font-bold uppercase tracking-wider text-amber-500 block mb-1">Garanta sua vaga na fila</span>
         <h3 class="text-xl font-bold text-white mb-2">Seja um dos Primeiros Anunciantes</h3>
-        <p class="text-slate-400 text-xs mb-5">Cadastre seus dados para receber o aviso prioritário de triagem quando liberarmos os anúncios por R$ 9,90/mês.</p>
+        <p class="text-slate-400 text-xs mb-5">Cadastre seus dados para receber o aviso prioritário de triagem quando liberarmos os anúncios: grátis para autônomos e MEIs, ou Destaque por R$ 9,90/mês.</p>
 
         <form id="lead-form" class="space-y-4" novalidate>
           <div>
@@ -216,7 +216,7 @@
         <div>
           <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">Apoie a Infraestrutura</span>
           <h3 class="text-xl font-bold text-white mb-2">Contribua para Manter o Servidor</h3>
-          <p class="text-slate-400 text-xs mb-5">Não temos verba pública. Toda contribuição via PIX ajuda a pagar os custos de hospedagem, segurança, licenças e banco de dados.</p>
+          <p class="text-slate-400 text-xs mb-5">Não temos verba pública. Toda contribuição via PIX ajuda a pagar hospedagem, segurança e banco de dados <strong class="text-slate-200">e a manter o anúncio gratuito para autônomos e MEIs</strong> que estão começando.</p>
 
           <!-- Barra de Meta -->
           <div class="bg-[#0d1424] p-3.5 rounded-xl border border-slate-800 mb-5">
@@ -422,6 +422,53 @@
     </div>
   </section>
 
+  <!-- Planos -->
+  <section id="precos" class="py-14 px-4 bg-[#0b0f19] border-t border-slate-800">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Planos previstos no lançamento</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-4 mb-3">Todo mundo pode anunciar</h2>
+        <p class="text-slate-400 text-xs md:text-sm">Quem está começando não paga nada. Quem quer aparecer mais escolhe o Destaque.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 items-stretch">
+        <div class="plano bg-[#162032] border border-slate-800 rounded-2xl p-6 flex flex-col">
+          <h3 class="text-lg font-extrabold text-white">Básico</h3>
+          <p class="text-xs text-slate-400 mb-4">Para autônomos e MEIs que estão começando</p>
+          <p class="mb-5"><span class="text-4xl font-black text-white">Grátis</span></p>
+          <ul class="space-y-2.5 text-sm text-slate-300 mb-6 flex-1">
+            <li class="item-ok">Perfil verificado no diretório</li>
+            <li class="item-ok">Profissão, cidade e descrição</li>
+            <li class="item-ok">Botão direto para o seu WhatsApp</li>
+            <li class="item-ok">Link do seu Instagram</li>
+          </ul>
+          <a href="#planos" class="block text-center bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-white text-sm font-bold py-3 rounded-xl">Garantir minha vaga</a>
+        </div>
+
+        <div class="plano plano-destaque relative bg-[#162032] border-2 border-amber-500/70 rounded-2xl p-6 flex flex-col">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">Mais visibilidade</span>
+          <h3 class="text-lg font-extrabold text-white">Destaque</h3>
+          <p class="text-xs text-slate-400 mb-4">Para quem quer ser encontrado primeiro</p>
+          <p class="mb-5"><span class="text-sm text-slate-400 align-top">R$</span> <span class="text-4xl font-black text-amber-400">9,90</span><span class="text-sm text-slate-400">/mês</span></p>
+          <ul class="space-y-2.5 text-sm text-slate-300 mb-6 flex-1">
+            <li class="item-ok">Tudo do Básico</li>
+            <li class="item-ok"><strong class="text-white">Aparece primeiro</strong> nas buscas da sua cidade</li>
+            <li class="item-ok">Selo <strong class="text-amber-400">Destaque</strong> no anúncio</li>
+            <li class="item-ok">Mais fotos e links (site, cardápio, portfólio)</li>
+          </ul>
+          <a href="#planos" class="block text-center bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold py-3 rounded-xl shadow-lg shadow-amber-500/20">Garantir minha vaga</a>
+        </div>
+      </div>
+
+      <div class="mt-6 flex items-start gap-3 bg-emerald-950/40 border border-emerald-500/30 rounded-xl p-4">
+        <span class="text-xl leading-none" aria-hidden="true">💚</span>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed"><strong class="text-emerald-400">O anúncio gratuito existe graças aos apoiadores.</strong> Cada PIX voluntário ajuda a manter o Básico sem custo para quem vende docinho, faz bico ou está abrindo o próprio negócio. <a href="#doacao" class="text-amber-400 underline font-semibold">Apoiar o projeto</a></p>
+      </div>
+
+      <p class="text-center text-[11px] text-slate-500 mt-4">Recursos e valores previstos para o lançamento. As condições completas serão apresentadas antes de qualquer contratação.</p>
+    </div>
+  </section>
+
   <!-- Perguntas frequentes -->
   <section id="faq" class="py-14 px-4 border-t border-slate-800/80">
     <div class="max-w-3xl mx-auto">
@@ -437,11 +484,11 @@
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Quanto custa?<span class="faq-icone" aria-hidden="true">+</span></summary>
-          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Entrar na Lista VIP é gratuito. Quando os anúncios forem liberados, o valor previsto é de R$ 9,90 por mês, e as condições completas serão apresentadas antes de qualquer cobrança.</p>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Entrar na Lista VIP é gratuito. Quando os anúncios forem liberados, autônomos e MEIs que estão começando terão o anúncio Básico gratuito. Quem quiser mais visibilidade poderá contratar o Destaque, com valor previsto de R$ 9,90 por mês. As condições completas serão apresentadas antes de qualquer cobrança.</p>
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Quem pode anunciar?<span class="faq-icone" aria-hidden="true">+</span></summary>
-          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Empresas, MEIs, autônomos e profissionais liberais de todo o Brasil, de qualquer área: do docinho caseiro à consultoria. Basta passar pela triagem e seguir as regras da comunidade.</p>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Empresas, MEIs, autônomos e profissionais liberais de todo o Brasil, de qualquer área: do docinho caseiro à consultoria. Basta passar pela triagem e seguir as regras da comunidade. Quem está começando tem o anúncio Básico gratuito.</p>
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Meus dados ficam seguros?<span class="faq-icone" aria-hidden="true">+</span></summary>
@@ -453,7 +500,7 @@
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Para que serve o apoio via PIX?<span class="faq-icone" aria-hidden="true">+</span></summary>
-          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">É voluntário e ajuda a pagar hospedagem, segurança, licenças e banco de dados. O apoio não dá direito a anúncio ou benefício e não é doação eleitoral. Confira sempre o nome do recebedor no app do seu banco.</p>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">É voluntário e ajuda a pagar hospedagem, segurança e banco de dados, além de manter o anúncio gratuito para autônomos e MEIs que estão começando. O apoio não dá direito a anúncio ou benefício e não é doação eleitoral. Confira sempre o nome do recebedor no app do seu banco.</p>
         </details>
       </div>
     </div>
