@@ -317,6 +317,7 @@
         if (!s || s.total < MIN_PARA_MOSTRAR_ESTATISTICAS) return;
         $("stat-total").textContent = s.total.toLocaleString("pt-BR");
         $("stat-estados").textContent = s.estados;
+        if ($("stat-cidades")) $("stat-cidades").textContent = (s.cidades ?? "").toLocaleString("pt-BR");
         const box = $("estatisticas");
         box.classList.remove("hidden");
         box.classList.add("flex");

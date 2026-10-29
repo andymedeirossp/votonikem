@@ -66,8 +66,8 @@
     const grupoEstados = el("g", { class: "mapa-estados" });
     const grupoPulsos = el("g", { class: "mapa-pulsos", "aria-hidden": "true" });
     DADOS.estados.forEach((e, i) => {
-      const p = el("path", { d: e.d, class: "mapa-estado", "data-uf": e.uf, tabindex: "0",
-        "aria-label": e.nome });
+      const p = el("path", { d: e.d, class: "mapa-estado", "data-uf": e.uf, tabindex: "0", role: "link",
+        "aria-label": `${e.nome}: ver anúncios` });
       p.style.setProperty("--atraso", `${i * 35}ms`);
       grupoEstados.appendChild(p);
     });
@@ -120,9 +120,10 @@
     const mostrar = (p, x, y) => {
       const uf = p.dataset.uf, n = porUf[uf];
       let msg;
-      if (n && mostrarNumeros) msg = `${n.toLocaleString("pt-BR")} na fila`;
-      else if (n) msg = "Já tem gente daqui na fila!";
-      else msg = "Seja o primeiro do seu estado";
+      const toque = p.dataset.toque === "1";
+      if (n && mostrarNumeros) msg = `${n.toLocaleString("pt-BR")} ${n === 1 ? "anúncio" : "anúncios"} · ${toque ? "toque de novo para ver" : "clique para ver"}`;
+      else if (n) msg = toque ? "Já tem anúncios aqui · toque de novo para ver" : "Já tem anúncios aqui · clique para ver";
+      else msg = "Seja o primeiro do seu estado: anuncie grátis";
       tip.innerHTML = `<strong>${nomePorUf[uf]}</strong><span>${msg}</span>`;
       tip.classList.toggle("ativo-tip", !!n);
       const r = cena.getBoundingClientRect();
@@ -138,14 +139,34 @@
       p ? mostrar(p, e.clientX, e.clientY) : esconder();
     });
     topo.addEventListener("pointerleave", (e) => { if (e.pointerType !== "touch") esconder(); });
-    // No celular: tocar no estado mostra a dica por alguns segundos
+    // Clique (ou Enter) num estado: abre o diretório filtrado; estado sem anúncios leva ao cadastro
+    const abrirEstado = (p) => {
+      const uf = p.dataset.uf;
+      location.href = porUf[uf] ? `/diretorio?uf=${uf}` : "#planos";
+    };
+    // No celular: o 1º toque mostra a dica; o 2º toque no mesmo estado abre
+    let ultimoToque = null;
+    let tipoPonteiro = "mouse"; // Safari antigo não informa pointerType no "click"; guardamos o do pointerdown
+    topo.addEventListener("pointerdown", (e) => { tipoPonteiro = e.pointerType || "mouse"; }, true);
     topo.addEventListener("pointerdown", (e) => {
       if (e.pointerType !== "touch") return;
       const p = e.target.closest(".mapa-estado");
-      if (!p) return esconder();
+      if (!p) { ultimoToque = null; return esconder(); }
+      if (ultimoToque === p) { esconder(); return abrirEstado(p); }
+      ultimoToque = p;
+      p.dataset.toque = "1";
       mostrar(p, e.clientX, e.clientY);
       clearTimeout(timerToque);
-      timerToque = setTimeout(esconder, 2800);
+      timerToque = setTimeout(() => { esconder(); ultimoToque = null; }, 3200);
+    });
+    topo.addEventListener("click", (e) => {
+      if (tipoPonteiro === "touch" || e.pointerType === "touch") return;
+      const p = e.target.closest(".mapa-estado");
+      if (p) abrirEstado(p);
+    });
+    topo.addEventListener("keydown", (e) => {
+      const p = e.target.closest(".mapa-estado");
+      if (p && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); abrirEstado(p); }
     });
     topo.addEventListener("focusin", (e) => {
       const p = e.target.closest(".mapa-estado");

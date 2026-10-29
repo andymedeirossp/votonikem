@@ -120,3 +120,6 @@ grant insert (consentimento_versao) on public.clientes_interessados to anon;
 
 -- Migração 2026-10-29: função publicar_anuncio(p jsonb) -> slug (security invoker; anon pode executar).
 -- Motivo: inserir pela API com "return=representation" exige ler todas as colunas, inclusive as privadas.
+
+-- Migração 2026-10-29: contagem_por_uf() e estatisticas_fila() passam a contar os anúncios visíveis
+-- (status em_verificacao ou verificado); estatisticas_fila() também devolve "cidades".
