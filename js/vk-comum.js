@@ -88,7 +88,7 @@
         <p class="text-[11px] text-slate-400">${escapar(a.cidade)} · ${escapar(a.uf)}</p></div></div>
       <div class="flex flex-wrap gap-1.5 mb-3">${selos(a)}</div>
       ${a.descricao ? `<p class="text-xs text-slate-400 leading-relaxed mb-5 flex-1 line-clamp-3">${escapar(a.descricao)}</p>` : `<div class="flex-1"></div>`}
-      <div class="space-y-2">${botao(linkZap(a.whatsapp, a.nome), "btn-zap", "WhatsApp")}${extras ? `<div class="flex gap-2">${extras}</div>` : ""}</div>
+      <div class="space-y-2">${a.whatsapp ? botao(linkZap(a.whatsapp, a.nome), "btn-zap", "WhatsApp") : ""}${extras ? `<div class="flex gap-2">${extras}</div>` : ""}</div>
     </article>`;
   };
 

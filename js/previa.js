@@ -127,7 +127,7 @@
     ctx.fillText("VOTONI KEM", 156, ry + 54);
     ctx.fillStyle = "#94a3b8"; ctx.font = `600 20px ${FONTE}`;
     ctx.fillText("Diretório de negócios e serviços", 156, ry + 82);
-    const cta = "Fale direto pelo WhatsApp";
+    const cta = a.semWhatsapp ? "Visite o site" : "Fale direto pelo WhatsApp";
     ctx.font = `800 28px ${FONTE}`;
     const cw = ctx.measureText(cta).width + 60;
     retangulo(ctx, W - 72 - cw, ry + 25, cw, 62, 31);

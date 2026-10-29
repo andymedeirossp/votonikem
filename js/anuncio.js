@@ -59,8 +59,12 @@
       $("an-descricao").textContent = a.descricao;
       $("an-descricao").classList.remove("hidden");
     }
-    $("an-zap").href = VK.linkZap(a.whatsapp, a.nome);
-    $("an-zap").textContent = `WhatsApp  ${VK.formatarZap(a.whatsapp)}`;
+    if (a.whatsapp) {
+      $("an-zap").href = VK.linkZap(a.whatsapp, a.nome);
+      $("an-zap").textContent = `WhatsApp  ${VK.formatarZap(a.whatsapp)}`;
+    } else {
+      $("an-zap").classList.add("hidden"); // anunciante preferiu não mostrar o WhatsApp
+    }
     const insta = VK.linkInstagram(a.instagram);
     if (insta) {
       $("an-insta").href = insta;
