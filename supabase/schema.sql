@@ -127,3 +127,12 @@ grant insert (consentimento_versao) on public.clientes_interessados to anon;
 -- 2026-10-29: contadores passam a rodar como SECURITY INVOKER (só leem colunas públicas, respeitando a RLS)
 alter function public.contagem_por_uf() security invoker;
 alter function public.estatisticas_fila() security invoker;
+
+-- 2026-10-29: imagem de prévia (1200x630) gerada no navegador ao publicar
+alter table public.anuncios add column if not exists imagem_url text;
+alter table public.anuncios add constraint anuncios_imagem_url_check check (
+  imagem_url is null or (char_length(imagem_url) <= 300 and imagem_url like 'https://jmvdgwtvyubwmhfyqras.supabase.co/storage/v1/object/public/logos/anuncios/%'));
+alter table public.anuncios add constraint anuncios_logo_url_origem_check check (
+  logo_url is null or logo_url like 'https://jmvdgwtvyubwmhfyqras.supabase.co/storage/v1/object/public/logos/anuncios/%');
+grant insert (imagem_url), select (imagem_url) on public.anuncios to anon;
+-- anuncios_publicos passou a incluir imagem_url; publicar_anuncio passou a gravar p->>'imagem_url'
