@@ -2,6 +2,7 @@
   const CFG = window.VOTONIKEM_CONFIG || {};
   const SITE_URL = window.location.origin; // segue o domínio em uso (vercel.app hoje, .com.br no lançamento)
   const MIN_PARA_MOSTRAR_ESTATISTICAS = 20; // evita exibir números baixos no começo
+  const VERSAO_CONSENTIMENTO = "2026-10-29-v2"; // inclui o consentimento específico do art. 11 (opinião política)
 
   const $ = (id) => document.getElementById(id);
   const supabaseConfigurado = () =>
@@ -277,6 +278,7 @@
         rede_social: form.rede_social.value.trim(),
         ...(site ? { site: site.slice(0, 200) } : {}),
         consentimento: form.consentimento.checked,
+        consentimento_versao: VERSAO_CONSENTIMENTO,
         origem: (document.referrer || "direto").slice(0, 200)
       };
 
@@ -365,6 +367,7 @@
         ...(cidade.length >= 2 ? { cidade } : {}),
         ...(procura ? { procura: procura.slice(0, 120) } : {}),
         consentimento: formCli.consentimento.checked,
+        consentimento_versao: VERSAO_CONSENTIMENTO,
         origem: (document.referrer || "direto").slice(0, 200)
       };
       if (!/^\d{10,11}$/.test(dados.whatsapp)) return erroCli("Informe um WhatsApp válido com DDD.");

@@ -100,3 +100,9 @@ alter table public.clientes_interessados enable row level security;
 create policy "site pode inserir cliente" on public.clientes_interessados for insert to anon with check (consentimento = true);
 revoke all on public.clientes_interessados from anon, authenticated;
 grant insert (nome, whatsapp, uf, cidade, procura, consentimento, origem) on public.clientes_interessados to anon;
+
+-- Migração 2026-10-29: versão do texto de consentimento (art. 11 a partir da v2)
+alter table public.leads add column if not exists consentimento_versao text check (consentimento_versao is null or char_length(consentimento_versao) <= 40);
+alter table public.clientes_interessados add column if not exists consentimento_versao text check (consentimento_versao is null or char_length(consentimento_versao) <= 40);
+grant insert (consentimento_versao) on public.leads to anon;
+grant insert (consentimento_versao) on public.clientes_interessados to anon;
