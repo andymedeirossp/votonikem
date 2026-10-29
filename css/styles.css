@@ -171,6 +171,27 @@ a, button {
 .plano:hover { transform: translateY(-4px); }
 .plano-destaque { box-shadow: 0 20px 50px -24px rgba(245, 158, 11, 0.45); }
 
+/* Kit de divulgação */
+.kit-abas button {
+  font-size: 12px; font-weight: 700; color: #94a3b8;
+  padding: 6px 12px; border-radius: 8px;
+}
+.kit-abas button[aria-pressed="true"] { background: #f59e0b; color: #020617; }
+.kit-cor {
+  width: 28px; height: 28px; border-radius: 999px;
+  border: 2px solid transparent; outline: 2px solid transparent;
+}
+.kit-cor[aria-pressed="true"] { border-color: #020617; outline-color: #fbbf24; }
+.kit-preview { display: block; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.6); }
+.kit-preview-post, .kit-preview-logo { width: min(100%, 420px); }
+.kit-preview-cartao { width: auto; max-height: 52vh; }
+.kit-cta { animation: kit-pulsar 2.4s ease-in-out infinite; }
+@keyframes kit-pulsar {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.45); }
+  50%      { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .kit-cta { animation: none; } }
+
 /* Janela da Política / Termos */
 .modal-legal::backdrop {
   background: rgba(2, 6, 23, 0.75);

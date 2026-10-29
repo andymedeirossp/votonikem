@@ -145,6 +145,11 @@
         <h3 class="text-xl font-bold text-white mb-2">Seja um dos Primeiros Anunciantes</h3>
         <p class="text-slate-400 text-xs mb-5">Cadastre seus dados para receber o aviso prioritário de triagem quando liberarmos os anúncios: grátis para autônomos e MEIs, ou Destaque por R$ 9,90/mês.</p>
 
+        <div class="flex items-center gap-3 bg-amber-500/10 border border-amber-500/30 rounded-xl px-3.5 py-2.5 -mt-2 mb-5">
+          <span class="text-xl leading-none" aria-hidden="true">🎁</span>
+          <p class="text-[11px] sm:text-xs text-slate-300 leading-snug"><strong class="text-amber-400">Ganhe na hora um kit de divulgação grátis:</strong> logo, post para Instagram e cartão para o status, com o seu nome e WhatsApp.</p>
+        </div>
+
         <form id="lead-form" class="space-y-4" novalidate>
           <div>
             <label for="lead-nome" class="block text-xs font-medium text-slate-300 mb-1">Nome Completo ou Razão Social *</label>
@@ -205,9 +210,14 @@
           <div class="text-4xl mb-3">✅</div>
           <h4 class="text-lg font-bold text-white mb-2">Você está na fila!</h4>
           <p class="text-xs text-slate-400 mb-5">Vamos avisar pelo WhatsApp assim que a triagem de anúncios abrir.</p>
-          <a id="btn-compartilhar" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-sm font-bold px-5 py-2.5 rounded-lg transition">
-            Compartilhar no WhatsApp
-          </a>
+          <div class="flex flex-col items-center gap-3">
+            <button type="button" id="btn-abrir-kit" class="kit-cta inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-lg shadow-lg shadow-amber-500/25">
+              🎁 Gerar meu kit de divulgação grátis
+            </button>
+            <a id="btn-compartilhar" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-sm font-bold px-5 py-2.5 rounded-lg transition">
+              Compartilhar no WhatsApp
+            </a>
+          </div>
         </div>
       </div>
 
@@ -491,6 +501,10 @@
           <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Empresas, MEIs, autônomos e profissionais liberais de todo o Brasil, de qualquer área: do docinho caseiro à consultoria. Basta passar pela triagem e seguir as regras da comunidade. Quem está começando tem o anúncio Básico gratuito.</p>
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">O que é o kit de divulgação grátis?<span class="faq-icone" aria-hidden="true">+</span></summary>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Assim que você entra na Lista VIP, o site gera três imagens com o seu nome, profissão, cidade e WhatsApp: um logo para a foto de perfil, um post para o Instagram e um cartão para o status e os stories. Você escolhe a cor e baixa na hora, de graça. É ideal para quem está começando e ainda não tem uma marca.</p>
+        </details>
+        <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Meus dados ficam seguros?<span class="faq-icone" aria-hidden="true">+</span></summary>
           <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Sim. Os cadastros ficam em banco de dados no Brasil, tratados conforme a LGPD, e não são publicados sem a sua autorização. Veja os detalhes na <a href="politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</p>
         </details>
@@ -555,8 +569,41 @@
     </div>
   </dialog>
 
+  <!-- Janela do Kit de divulgação -->
+  <dialog id="modal-kit" aria-labelledby="modal-kit-titulo" class="modal-legal bg-transparent p-0 m-auto w-full max-w-2xl max-h-[100dvh] sm:max-h-[92vh] text-slate-300">
+    <div class="bg-slate-950 border border-slate-800 sm:rounded-2xl shadow-2xl flex flex-col max-h-[100dvh] sm:max-h-[92vh]">
+      <div class="flex items-start justify-between gap-4 px-5 sm:px-7 pt-5 pb-4 border-b border-slate-800">
+        <div>
+          <h2 id="modal-kit-titulo" class="text-lg sm:text-xl font-extrabold text-white">🎁 Seu kit de divulgação</h2>
+          <p class="text-[11px] text-slate-400 mt-1">Feito com os seus dados. Escolha a cor, baixe e poste.</p>
+        </div>
+        <button type="button" data-fechar-kit aria-label="Fechar" class="shrink-0 w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-white text-lg leading-none flex items-center justify-center">✕</button>
+      </div>
+      <div class="overflow-y-auto px-5 sm:px-7 py-5">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div class="kit-abas inline-flex bg-[#0d1424] border border-slate-800 rounded-xl p-1" role="group" aria-label="Peça do kit">
+            <button type="button" data-kit-peca="post" aria-pressed="true">Post</button>
+            <button type="button" data-kit-peca="cartao" aria-pressed="false">Cartão / Status</button>
+            <button type="button" data-kit-peca="logo" aria-pressed="false">Logo</button>
+          </div>
+          <div id="kit-cores" class="flex gap-2" role="group" aria-label="Cor"></div>
+        </div>
+        <div class="bg-[#0d1424] border border-slate-800 rounded-xl p-3 flex items-center justify-center">
+          <img id="kit-preview" alt="" class="kit-preview">
+        </div>
+        <p class="text-[11px] text-slate-500 mt-3 text-center">Dica: use o post no feed, o cartão no status do WhatsApp e nos stories, e o logo como foto de perfil.</p>
+      </div>
+      <div class="flex flex-wrap items-center justify-end gap-2 px-5 sm:px-7 py-4 border-t border-slate-800">
+        <button type="button" id="kit-baixar-tudo" class="text-xs text-slate-300 hover:text-amber-400 underline mr-auto">Baixar as 3 peças</button>
+        <button type="button" id="kit-compartilhar" class="hidden bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 font-bold text-sm px-4 py-2 rounded-lg">Compartilhar</button>
+        <button type="button" id="kit-baixar" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm px-5 py-2 rounded-lg">Baixar imagem</button>
+      </div>
+    </div>
+  </dialog>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
   <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/kit.js" defer></script>
 </body>
 </html>

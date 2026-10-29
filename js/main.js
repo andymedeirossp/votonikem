@@ -45,7 +45,7 @@
   /* ---------------- PIX (BR Code / EMV) ---------------- */
 
   const semAcento = (s, max) =>
-    s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9 .\-@]/g, "")
+    s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Za-z0-9 .\-@]/g, "")
       .toUpperCase().trim().slice(0, max);
 
   const campo = (id, valor) => id + String(valor.length).padStart(2, "0") + valor;
@@ -183,14 +183,26 @@
     el.classList.toggle("hidden", !msg);
   };
 
-  const mostrarSucesso = (jaCadastrado) => {
+  let ultimoCadastro = null;
+
+  const mostrarSucesso = (jaCadastrado, dados) => {
     form.classList.add("hidden");
     const box = $("lead-sucesso");
     if (jaCadastrado) box.querySelector("h4").textContent = "Você já está na fila!";
     box.classList.remove("hidden");
     const texto = `Conheça o VotoniKem, o diretório de negócios da direita no Brasil. Entrei na lista VIP de lançamento: ${SITE_URL}`;
     $("btn-compartilhar").href = `https://wa.me/?text=${encodeURIComponent(texto)}`;
+    ultimoCadastro = dados || null;
+    const btnKit = $("btn-abrir-kit");
+    if (btnKit) btnKit.classList.toggle("hidden", !ultimoCadastro || !window.VotoniKit);
   };
+
+  const btnAbrirKit = $("btn-abrir-kit");
+  if (btnAbrirKit) {
+    btnAbrirKit.addEventListener("click", () => {
+      if (ultimoCadastro && window.VotoniKit) window.VotoniKit.abrir(ultimoCadastro);
+    });
+  }
 
   if (form) {
     form.addEventListener("submit", async (e) => {
@@ -228,8 +240,8 @@
 
       try {
         const resp = await supabaseFetch("leads", dados);
-        if (resp.ok) return mostrarSucesso(false);
-        if (resp.status === 409) return mostrarSucesso(true);
+        if (resp.ok) return mostrarSucesso(false, dados);
+        if (resp.status === 409) return mostrarSucesso(true, dados);
         throw new Error(`HTTP ${resp.status}`);
       } catch (err) {
         console.error("Erro ao enviar cadastro:", err);
