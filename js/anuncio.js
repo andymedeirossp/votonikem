@@ -50,9 +50,10 @@
     $("an-nome").textContent = a.nome;
     $("an-local").textContent = `${a.cidade} · ${a.uf}${a.tipo === "autonomo" ? " · Autônomo" : ""}`;
     $("an-selos").innerHTML = VK.selos(a);
+    // Destaque: só o selo acima do nome e a borda dourada (sem a etiqueta do canto, que fica para os cards)
     if (a.destaque) {
       $("an-selo-destaque").classList.remove("hidden");
-      $("an-card").classList.add("anuncio-destaque", "!border-amber-500/70");
+      $("an-card").classList.add("!border-amber-500/70");
     }
     if (a.descricao) {
       $("an-descricao").textContent = a.descricao;
@@ -72,7 +73,8 @@
       $("an-site").textContent = site.replace(/^https?:\/\//, "").replace(/\/$/, "").slice(0, 40);
       $("an-site").classList.remove("hidden");
     }
-    if (!insta && !site) $("an-zap").classList.remove("sm:col-span-2");
+    // Só Instagram ou só site: o botão ocupa a linha inteira
+    if (!!insta !== !!site) (insta ? $("an-insta") : $("an-site")).classList.add("sm:col-span-2");
     if (a.status !== "verificado") $("an-aviso-verificacao").classList.remove("hidden");
 
     // Compartilhar e denunciar
