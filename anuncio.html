@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anúncio | VotoniKem</title>
+  <meta name="description" content="Anúncio no diretório VotoniKem: fale direto com o negócio pelo WhatsApp.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="VotoniKem">
+  <meta property="og:title" content="Anúncio | VotoniKem">
+  <meta property="og:description" content="Anúncio no diretório VotoniKem: fale direto com o negócio pelo WhatsApp.">
+  <meta property="og:image" content="https://votonikem.vercel.app/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <meta name="robots" content="index,follow">
+</head>
+<body class="bg-[#0f172a] text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+  <header class="border-b border-slate-800/80 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <div class="logo-vk shrink-0 text-lg sm:text-xl px-2 sm:px-2.5 py-1 rounded-lg">VK</div>
+        <div>
+          <span class="text-lg sm:text-2xl font-extrabold text-white tracking-wider whitespace-nowrap">VOTONI KEM</span>
+          <p class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">PÁTRIA • LIBERDADE • UNIÃO</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+        <a href="/diretorio" class="hover:text-amber-400 transition">Diretório</a>
+        <a href="/#como-funciona" class="hover:text-amber-400 transition">Como funciona</a>
+        <a href="/#precos" class="hover:text-amber-400 transition">Anunciar</a>
+      </nav>
+      <a href="/#planos" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+        <span aria-hidden="true">🚀</span> <span class="sm:hidden">Anunciar</span><span class="hidden sm:inline">Anunciar grátis</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 px-4 py-8 md:py-12">
+    <div class="max-w-3xl mx-auto">
+      <a href="/diretorio" class="text-sm text-slate-400 hover:text-amber-400">← Voltar ao diretório</a>
+
+      <div id="carregando" class="text-center text-slate-400 py-20">Carregando anúncio...</div>
+
+      <div id="nao-encontrado" class="hidden text-center py-16">
+        <div class="text-4xl mb-3" aria-hidden="true">🙈</div>
+        <h1 class="text-xl font-extrabold text-white mb-2">Anúncio não encontrado</h1>
+        <p class="text-sm text-slate-400 mb-6">Ele pode ter sido removido ou o endereço está incompleto.</p>
+        <a href="/diretorio" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl">Ver o diretório</a>
+      </div>
+
+      <article id="anuncio" class="hidden mt-6">
+        <div id="an-card" class="pagina-anuncio bg-[#162032] border border-slate-800 rounded-3xl p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-5 mb-6">
+            <div id="an-avatar"></div>
+            <div class="min-w-0">
+              <div id="an-selo-destaque" class="hidden text-[11px] font-black uppercase tracking-wider text-amber-400 mb-1">★ Destaque</div>
+              <h1 id="an-nome" class="text-2xl md:text-3xl font-black text-white leading-tight"></h1>
+              <p id="an-local" class="text-sm text-slate-400 mt-1"></p>
+              <div id="an-selos" class="flex flex-wrap gap-1.5 mt-3"></div>
+            </div>
+          </div>
+          <p id="an-descricao" class="hidden text-slate-300 leading-relaxed mb-7 whitespace-pre-line"></p>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <a id="an-zap" href="#" target="_blank" rel="noopener nofollow" class="btn-zap sm:col-span-2 !py-3.5 !text-base">WhatsApp</a>
+            <a id="an-insta" href="#" target="_blank" rel="noopener nofollow" class="hidden btn-link btn-insta !py-3 !text-sm">Instagram</a>
+            <a id="an-site" href="#" target="_blank" rel="noopener nofollow" class="hidden btn-link btn-site !py-3 !text-sm">Site</a>
+          </div>
+          <p id="an-aviso-verificacao" class="hidden text-xs text-slate-400 mt-5 leading-relaxed">Este anúncio está <strong class="text-slate-200">em verificação</strong>: a equipe do VotoniKem ainda está conferindo os dados. Antes de fechar negócio, confira referências.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 mt-5">
+          <div class="flex flex-wrap gap-2">
+            <a id="compartilhar-zap" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-sm font-bold text-white px-4 py-2 rounded-xl">Compartilhar no WhatsApp</a>
+            <button type="button" id="copiar-link" class="bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-sm font-bold text-white px-4 py-2 rounded-xl">Copiar link</button>
+          </div>
+          <a id="denunciar" href="#" class="text-xs text-slate-500 hover:text-red-400 underline">Denunciar este anúncio</a>
+        </div>
+      </article>
+
+      <section class="mt-12 bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-6 text-center">
+        <h2 class="text-lg font-extrabold text-white mb-1">Tem um negócio também?</h2>
+        <p class="text-sm text-slate-400 mb-4">Publique grátis no VotoniKem e seja encontrado por clientes que compartilham os seus valores.</p>
+        <a href="/#planos" class="inline-flex bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-3 rounded-xl">Anunciar grátis</a>
+      </section>
+    </div>
+  </main>
+  <footer class="mt-auto bg-[#0b0f19] border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="space-y-1 md:text-left">
+        <p>© 2026 VotoniKem. Todos os direitos reservados.</p>
+        <p class="text-[11px] text-slate-400">Anderson de Sá Medeiros ME · CNPJ 12.608.403/0001-05 · São Paulo/SP</p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+        <a href="/politica-de-privacidade.html" class="hover:text-amber-400 transition">Política de Privacidade (LGPD)</a>
+        <a href="/termos-de-uso.html" class="hover:text-amber-400 transition">Termos de Uso</a>
+        <a href="/codigo-de-conduta.html" class="hover:text-amber-400 transition">Código de Conduta</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/config.js" defer></script>
+  <script src="/js/vk-comum.js" defer></script>
+  <script src="/js/confete.js" defer></script>
+  <script src="/js/anuncio.js" defer></script>
+</body>
+</html>

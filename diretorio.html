@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diretório | VotoniKem</title>
+  <meta name="description" content="Encontre empresas, autônomos e profissionais que compartilham os seus valores, por estado, cidade e profissão.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="VotoniKem">
+  <meta property="og:title" content="Diretório | VotoniKem">
+  <meta property="og:description" content="Encontre empresas, autônomos e profissionais que compartilham os seus valores, por estado, cidade e profissão.">
+  <meta property="og:image" content="https://votonikem.vercel.app/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+</head>
+<body class="bg-[#0f172a] text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+  <header class="border-b border-slate-800/80 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <div class="logo-vk shrink-0 text-lg sm:text-xl px-2 sm:px-2.5 py-1 rounded-lg">VK</div>
+        <div>
+          <span class="text-lg sm:text-2xl font-extrabold text-white tracking-wider whitespace-nowrap">VOTONI KEM</span>
+          <p class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">PÁTRIA • LIBERDADE • UNIÃO</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+        <a href="/diretorio" class="hover:text-amber-400 transition">Diretório</a>
+        <a href="/#como-funciona" class="hover:text-amber-400 transition">Como funciona</a>
+        <a href="/#precos" class="hover:text-amber-400 transition">Anunciar</a>
+      </nav>
+      <a href="/#planos" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+        <span aria-hidden="true">🚀</span> <span class="sm:hidden">Anunciar</span><span class="hidden sm:inline">Anunciar grátis</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="px-4 pt-10 pb-6 border-b border-slate-800/80 bandeira-sutil">
+      <div class="max-w-6xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Diretório VotoniKem</span>
+        <h1 class="text-2xl md:text-4xl font-black text-white mt-2 mb-2">Encontre quem compartilha os seus valores</h1>
+        <p class="text-slate-400 text-sm mb-6">Empresas, autônomos e profissionais de todo o Brasil. Fale direto pelo WhatsApp.</p>
+
+        <form id="busca" class="busca grid gap-3 md:grid-cols-[1.4fr_0.9fr_1fr_1fr_auto]" role="search">
+          <div>
+            <label for="f-q" class="sr-only">O que você procura</label>
+            <input id="f-q" name="q" type="search" maxlength="60" placeholder="O que você procura? Ex: bolo, eletricista" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+          </div>
+          <div>
+            <label for="f-uf" class="sr-only">Estado</label>
+            <select id="f-uf" name="uf" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"><option value="">Todos os estados</option><option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option><option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option><option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option><option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option><option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option><option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option><option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option><option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option><option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option></select>
+          </div>
+          <div>
+            <label for="f-cidade" class="sr-only">Cidade</label>
+            <input id="f-cidade" name="cidade" type="text" list="lista-cidades" maxlength="60" placeholder="Cidade" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            <datalist id="lista-cidades"></datalist>
+          </div>
+          <div>
+            <label for="f-profissao" class="sr-only">Profissão</label>
+            <input id="f-profissao" name="profissao" type="text" list="lista-profissoes" maxlength="60" placeholder="Profissão ou área" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            <datalist id="lista-profissoes">
+              <option value="Advocacia"><option value="Alimentação / Confeitaria"><option value="Arquitetura e Engenharia"><option value="Beleza e Estética"><option value="Construção e Reformas"><option value="Contabilidade"><option value="Consultoria"><option value="Educação e Aulas"><option value="Elétrica"><option value="Encanamento / Hidráulica"><option value="Eventos e Festas"><option value="Fotografia e Vídeo"><option value="Imóveis / Corretagem"><option value="Marketing e Design"><option value="Mecânica e Auto"><option value="Moda e Vestuário"><option value="Pet"><option value="Saúde"><option value="Seguros"><option value="Tecnologia / TI"><option value="Transporte e Fretes"><option value="Comércio / Loja">
+            </datalist>
+          </div>
+          <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-2.5 rounded-lg">Buscar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="px-4 py-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <p id="resumo" class="text-sm text-slate-300" aria-live="polite">Carregando anúncios...</p>
+          <button type="button" id="limpar" class="hidden text-xs text-slate-400 hover:text-amber-400 underline">Limpar filtros</button>
+        </div>
+        <div id="resultados" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+        <div id="vazio" class="hidden text-center py-14 px-4 bg-[#162032] border border-slate-800 rounded-2xl">
+          <div class="text-4xl mb-3" aria-hidden="true">🔎</div>
+          <h2 class="text-lg font-extrabold text-white mb-2">Ainda não há anúncios por aqui</h2>
+          <p class="text-sm text-slate-400 mb-6 max-w-md mx-auto">A rede está crescendo. Tente outra cidade ou estado, ou seja o primeiro a anunciar nessa região.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a href="/#planos" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl">Anunciar grátis</a>
+            <a href="/#procuro" class="bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl">Me avise quando chegar</a>
+          </div>
+        </div>
+        <p id="erro" class="hidden text-center text-sm text-red-400 py-10" role="alert">Não foi possível carregar os anúncios agora. Atualize a página em instantes.</p>
+        <div class="text-center mt-8"><button type="button" id="mais" class="hidden bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-white text-sm font-bold px-6 py-3 rounded-xl">Carregar mais</button></div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-14">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-6">
+        <div>
+          <h2 class="text-lg font-extrabold text-white">Tem um negócio? Apareça aqui também.</h2>
+          <p class="text-sm text-slate-400">É grátis, leva poucos minutos e o anúncio entra no ar na hora.</p>
+        </div>
+        <a href="/#planos" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-3 rounded-xl">Publicar meu anúncio</a>
+      </div>
+    </section>
+  </main>
+  <footer class="mt-auto bg-[#0b0f19] border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="space-y-1 md:text-left">
+        <p>© 2026 VotoniKem. Todos os direitos reservados.</p>
+        <p class="text-[11px] text-slate-400">Anderson de Sá Medeiros ME · CNPJ 12.608.403/0001-05 · São Paulo/SP</p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+        <a href="/politica-de-privacidade.html" class="hover:text-amber-400 transition">Política de Privacidade (LGPD)</a>
+        <a href="/termos-de-uso.html" class="hover:text-amber-400 transition">Termos de Uso</a>
+        <a href="/codigo-de-conduta.html" class="hover:text-amber-400 transition">Código de Conduta</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/config.js" defer></script>
+  <script src="/js/vk-comum.js" defer></script>
+  <script src="/js/diretorio.js" defer></script>
+</body>
+</html>

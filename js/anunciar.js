@@ -298,10 +298,13 @@
       publicado = { ...dados, slug: typeof slug === "string" ? slug : null };
 
       form.classList.add("hidden");
-      $("an-previa").innerHTML = cardAnuncio({ ...publicado, logo_url: publicado.logo_url ? logoLocal || publicado.logo_url : "" });
+      const previa = { ...publicado, status: "em_verificacao", destaque: false, logo_url: publicado.logo_url ? logoLocal || publicado.logo_url : "" };
+      $("an-previa").innerHTML = window.VK ? window.VK.cardAnuncio(previa, { link: false, contatos: false }) : cardAnuncio(previa);
+      const ver = $("an-ver-anuncio");
+      if (ver && publicado.slug) { ver.href = `/a/${encodeURIComponent(publicado.slug)}`; ver.classList.remove("hidden"); ver.classList.add("inline-flex"); }
       $("an-sucesso").classList.remove("hidden");
       $("an-sucesso").scrollIntoView({ behavior: "smooth", block: "start" });
-      const texto = `Meu negócio agora está no VotoniKem, o diretório de negócios de quem compartilha os mesmos valores: ${location.origin}`;
+      const texto = `Meu negócio agora está no VotoniKem, o diretório de negócios de quem compartilha os mesmos valores: ${location.origin}${publicado.slug ? "/a/" + encodeURIComponent(publicado.slug) : ""}`;
       $("btn-compartilhar").href = `https://wa.me/?text=${encodeURIComponent(texto)}`;
       $("btn-abrir-kit").classList.toggle("hidden", !window.VotoniKit);
       if (window.soltarConfete) {

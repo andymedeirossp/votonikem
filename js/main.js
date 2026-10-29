@@ -245,6 +245,11 @@
     [abas.anunciar, abas.cliente].forEach((b) => b.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight" || e.key === "ArrowLeft") trocarAba(b === abas.anunciar ? "cliente" : "anunciar", true);
     }));
+    // chegando de outra página com /#procuro: abre direto a aba do consumidor
+    if (location.hash === "#procuro") {
+      trocarAba("cliente");
+      setTimeout(() => $("planos").scrollIntoView({ block: "start" }), 50);
+    }
     // links com #procuro abrem direto a aba do consumidor
     document.querySelectorAll('a[href="#procuro"]').forEach((a) => a.addEventListener("click", (e) => {
       e.preventDefault();

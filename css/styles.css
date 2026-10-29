@@ -577,6 +577,24 @@ html { scroll-padding-top: 76px; } /* âncoras não ficam escondidas atrás do t
 }
 .anuncio-real::before { content: none; }
 
+/* Diretório e página do anúncio */
+.btn-zap.hidden, .btn-link.hidden, .btn-zap[hidden], .btn-link[hidden] { display: none; } /* o estilo do botão não pode vencer o "esconder" */
+a.btn-zap, a.btn-link { cursor: pointer; opacity: 1; user-select: auto; transition: filter 0.2s ease, transform 0.2s ease; }
+a.btn-zap:hover, a.btn-link:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.anuncio-link { color: inherit; }
+.anuncio-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 1; } /* card inteiro clicável */
+.anuncio-real [data-contato] { position: relative; z-index: 2; } /* botões de contato continuam funcionando por cima */
+.anuncio-real:has(.anuncio-link):hover { border-color: rgba(245, 158, 11, 0.45); }
+.anuncio-real .anuncio-link:focus-visible { outline: none; }
+.anuncio-real:has(.anuncio-link:focus-visible) { outline: 2px solid #fbbf24; outline-offset: 2px; }
+.avatar-grande { width: 96px; height: 96px; border-radius: 24px; font-size: 34px; }
+.bandeira-sutil {
+  background:
+    radial-gradient(60% 120% at 100% 0%, rgba(22, 163, 74, 0.14), transparent 60%),
+    radial-gradient(50% 100% at 0% 100%, rgba(250, 204, 21, 0.08), transparent 60%);
+}
+.pagina-anuncio { box-shadow: 0 30px 70px -40px rgba(0, 0, 0, 0.8); }
+
 /* Janela da Política / Termos */
 .modal-legal::backdrop {
   background: rgba(2, 6, 23, 0.75);

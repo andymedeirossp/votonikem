@@ -81,7 +81,7 @@
 
       <!-- Navegação e Botão Dourado -->
       <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
-        <a href="#exemplos" class="hover:text-amber-400 transition">Diretório</a>
+        <a href="/diretorio" class="hover:text-amber-400 transition">Diretório</a>
         <a href="#como-funciona" class="hover:text-amber-400 transition">Como funciona</a>
         <a href="#precos" class="hover:text-amber-400 transition">Anunciar</a>
         <a href="politica-de-privacidade.html" class="hover:text-amber-400 transition inline-flex items-center gap-1.5"><span aria-hidden="true">🔒</span> LGPD</a>
@@ -103,7 +103,7 @@
     <!-- Menu de celular -->
     <nav id="menu-celular" class="menu-celular md:hidden" aria-label="Menu" hidden>
       <ul class="px-4 pt-2 pb-5 space-y-1">
-        <li><a href="#exemplos" class="menu-item"><span aria-hidden="true">🔎</span> Diretório</a></li>
+        <li><a href="/diretorio" class="menu-item"><span aria-hidden="true">🔎</span> Buscar no diretório</a></li>
         <li><a href="#como-funciona" class="menu-item"><span aria-hidden="true">🧭</span> Como funciona</a></li>
         <li><a href="#precos" class="menu-item"><span aria-hidden="true">📣</span> Anunciar</a></li>
         <li><a href="#mapa" class="menu-item"><span aria-hidden="true">🗺️</span> Rede pelo Brasil</a></li>
@@ -149,8 +149,13 @@
     </h1>
     
     <p class="text-sm md:text-base text-slate-400 mb-7 max-w-2xl mx-auto leading-relaxed">
-      <strong class="text-slate-200 font-semibold">Valores em comum, foco em negócios.</strong> Estamos construindo uma plataforma segura para conectar empresários, autônomos e clientes de todo o Brasil que acreditam na liberdade e no trabalho.
+      <strong class="text-slate-200 font-semibold">Valores em comum, foco em negócios.</strong> Uma plataforma segura para conectar empresários, autônomos e clientes de todo o Brasil que acreditam na liberdade e no trabalho.
     </p>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <a href="/diretorio" class="inline-flex items-center gap-2 bg-white/95 hover:bg-white text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl shadow-lg">🔎 Encontrar profissionais</a>
+      <a href="#planos" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl shadow-lg shadow-amber-500/20">🚀 Anunciar grátis</a>
+    </div>
 
     <!-- Posicionamento: negócios, não debate -->
     <div class="faixa-negocios grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto mb-8 text-left">
@@ -300,6 +305,7 @@
           </div>
           <div id="an-previa" class="mb-5"></div>
           <div class="flex flex-col items-center gap-3">
+            <a id="an-ver-anuncio" href="#" class="hidden items-center gap-2 bg-[#0d1424] hover:bg-slate-800 border border-slate-600 text-white text-sm font-bold px-5 py-2.5 rounded-lg">Ver meu anúncio no diretório →</a>
             <button type="button" id="btn-abrir-kit" class="kit-cta inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-lg shadow-lg shadow-amber-500/25">
               🎁 Gerar meu kit de divulgação grátis
             </button>
@@ -313,7 +319,8 @@
         <div id="painel-cliente" role="tabpanel" aria-labelledby="aba-cliente" hidden>
           <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">Para quem contrata</span>
           <h3 class="text-xl font-bold text-white mb-2">Procurando um profissional de confiança?</h3>
-          <p class="text-slate-400 text-xs mb-5">Deixe seu WhatsApp e avisamos assim que a busca for liberada na sua região. É grátis e leva 20 segundos.</p>
+          <p class="text-slate-400 text-xs mb-3">A busca já está aberta: <a href="/diretorio" class="text-emerald-400 font-bold underline">procure no diretório</a>.</p>
+          <p class="text-slate-400 text-xs mb-5">Não achou na sua região? Deixe seu WhatsApp e avisamos quando chegarem profissionais aí. É grátis e leva 20 segundos.</p>
 
           <form id="cliente-form" class="space-y-4" novalidate>
             <div>
@@ -560,7 +567,8 @@
         </article>
       </div>
 
-      <p class="text-center text-xs text-slate-400 mt-6">O anúncio em destaque é real. Os demais são exemplos ilustrativos com nomes fictícios; os anúncios da comunidade serão publicados após o lançamento.</p>
+      <p class="text-center text-xs text-slate-400 mt-6">O anúncio em destaque é real. Os demais são exemplos ilustrativos com nomes fictícios.</p>
+      <div class="text-center mt-6"><a href="/diretorio" class="inline-flex items-center gap-2 bg-[#0d1424] hover:bg-slate-800 border border-slate-600 text-white text-sm font-bold px-6 py-3 rounded-xl">Ver os anúncios reais no diretório →</a></div>
     </div>
   </section>
 
@@ -594,7 +602,7 @@
           <p class="text-xs text-slate-400 leading-relaxed">Cada membro que posta o seu kit de divulgação leva o VotoniKem a novos clientes.</p>
         </div>
       </div>
-      <p class="text-center text-sm text-slate-300 mt-8">E quem procura profissionais já pode entrar na lista: <a href="#procuro" class="text-emerald-400 font-bold underline">quero ser avisado</a>.</p>
+      <p class="text-center text-sm text-slate-300 mt-8">E quem procura profissionais já pode <a href="/diretorio" class="text-emerald-400 font-bold underline">buscar no diretório</a>.</p>
     </div>
   </section>
 
@@ -755,8 +763,8 @@
           <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Sim. Os cadastros ficam em banco de dados no Brasil, tratados conforme a LGPD, e não são publicados sem a sua autorização. Veja os detalhes na <a href="politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</p>
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
-          <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Quando a busca de profissionais abre?<span class="faq-icone" aria-hidden="true">+</span></summary>
-          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Os anúncios já podem ser publicados. A página de busca está chegando: quem deixou o WhatsApp na aba “Procuro profissionais” recebe o aviso primeiro.</p>
+          <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Como encontro um profissional?<span class="faq-icone" aria-hidden="true">+</span></summary>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">No <a href="/diretorio" class="text-amber-400 underline">diretório</a>, busque por palavra, estado, cidade ou profissão e fale direto com o negócio pelo WhatsApp. Se ainda não houver ninguém na sua região, deixe seu WhatsApp na aba “Procuro profissionais” e avisamos quando chegar.</p>
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Para que serve o apoio via PIX?<span class="faq-icone" aria-hidden="true">+</span></summary>
@@ -859,6 +867,7 @@
   <script src="js/config.js" defer></script>
   <script src="js/intro.js" defer></script>
   <script src="js/confete.js" defer></script>
+  <script src="js/vk-comum.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/anunciar.js" defer></script>
   <script src="js/kit.js" defer></script>
