@@ -65,3 +65,20 @@ returns json language sql security definer set search_path = public stable as $$
 $$;
 revoke all on function public.contagem_por_uf() from public, anon, authenticated;
 grant execute on function public.contagem_por_uf() to anon;
+
+-- Migração 2026-10-28: meta de arrecadação editável no Supabase (site só lê)
+create table if not exists public.meta_arrecadacao (
+  id int primary key default 1 check (id = 1),
+  arrecadado numeric(10,2) not null default 0 check (arrecadado >= 0),
+  total numeric(10,2) not null check (total > 0),
+  atualizado_em timestamptz not null default now()
+);
+insert into public.meta_arrecadacao (id, arrecadado, total) values (1, 240, 600) on conflict (id) do nothing;
+create or replace function public.meta_tocar_data() returns trigger language plpgsql set search_path = public as $$
+begin new.atualizado_em := now(); return new; end; $$;
+create trigger meta_atualizado_em before update on public.meta_arrecadacao for each row execute function public.meta_tocar_data();
+revoke execute on function public.meta_tocar_data() from public, anon, authenticated;
+alter table public.meta_arrecadacao enable row level security;
+create policy "site pode ler a meta" on public.meta_arrecadacao for select to anon using (true);
+revoke all on public.meta_arrecadacao from anon, authenticated;
+grant select (arrecadado, total, atualizado_em) on public.meta_arrecadacao to anon;

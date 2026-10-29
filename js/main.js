@@ -154,18 +154,52 @@
 
   /* ---------------- Meta do servidor ---------------- */
 
+  // Lê a meta do Supabase (tabela meta_arrecadacao); se falhar, usa os valores do config.js
   const metaBarra = $("meta-barra");
-  if (metaBarra && CFG.META_TOTAL) {
+  if (metaBarra) {
     const brl = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-    $("meta-texto").textContent = `${brl(CFG.META_ARRECADADO)} de ${brl(CFG.META_TOTAL)}`;
-    const pct = Math.min(100, (CFG.META_ARRECADADO / CFG.META_TOTAL) * 100);
-    const animar = () => requestAnimationFrame(() => (metaBarra.style.width = pct + "%"));
+    let visivel = false, pctAtual = null;
+    const pintar = () => {
+      if (visivel && pctAtual !== null) requestAnimationFrame(() => (metaBarra.style.width = pctAtual + "%"));
+    };
+    const mostrarMeta = (arrecadado, total, atualizadoEm) => {
+      if (!(total > 0)) return;
+      $("meta-texto").textContent = `${brl(arrecadado)} de ${brl(total)}`;
+      pctAtual = Math.min(100, (arrecadado / total) * 100);
+      const info = $("meta-info");
+      if (info) {
+        const partes = [];
+        if (pctAtual >= 100) partes.push("Meta batida! Obrigado a todos os apoiadores 🎉");
+        else partes.push(`${Math.floor(pctAtual)}% da meta`);
+        if (atualizadoEm) {
+          const d = new Date(atualizadoEm);
+          if (!isNaN(d)) partes.push(`atualizado em ${d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" })}`);
+        }
+        info.textContent = partes.join(" · ");
+      }
+      pintar();
+    };
+
     if ("IntersectionObserver" in window) {
       const obs = new IntersectionObserver((entradas) => {
-        if (entradas.some((e) => e.isIntersecting)) { animar(); obs.disconnect(); }
+        if (entradas.some((e) => e.isIntersecting)) { visivel = true; pintar(); obs.disconnect(); }
       });
       obs.observe(metaBarra);
-    } else animar();
+    } else visivel = true;
+
+    const usarConfig = () => mostrarMeta(Number(CFG.META_ARRECADADO) || 0, Number(CFG.META_TOTAL) || 0);
+    if (supabaseConfigurado()) {
+      const chave = CFG.SUPABASE_ANON_KEY;
+      fetch(`${CFG.SUPABASE_URL}/rest/v1/meta_arrecadacao?select=arrecadado,total,atualizado_em&limit=1`, {
+        headers: { apikey: chave, ...(chave.startsWith("eyJ") ? { Authorization: `Bearer ${chave}` } : {}) }
+      })
+        .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+        .then((linhas) => {
+          const m = linhas && linhas[0];
+          m ? mostrarMeta(Number(m.arrecadado), Number(m.total), m.atualizado_em) : usarConfig();
+        })
+        .catch(usarConfig);
+    } else usarConfig();
   }
 
   /* ---------------- Formulário da Lista VIP ---------------- */

@@ -11,7 +11,8 @@ window.VOTONIKEM_CONFIG = {
   PIX_CIDADE: "SAO PAULO",                  // cidade do titular, até 15 caracteres, sem acentos
   PIX_DESCRICAO: "APOIO VOTONIKEM",
 
-  // Meta do servidor (atualize à mão por enquanto)
+  // Meta do servidor: valores reserva. O site lê a meta real da tabela meta_arrecadacao
+  // no Supabase (Table Editor), então normalmente não é preciso mudar aqui.
   META_ARRECADADO: 240,
   META_TOTAL: 600
 };
