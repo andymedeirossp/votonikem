@@ -33,13 +33,19 @@
       document.execCommand("copy");
       ta.remove();
     }
-    const original = botao.textContent;
+    if (!botao.dataset.rotulo) botao.dataset.rotulo = botao.textContent; // evita perder o texto em cliques seguidos
     botao.textContent = rotuloOk;
     botao.classList.add("!bg-emerald-600", "!text-white");
-    setTimeout(() => {
-      botao.textContent = original;
+    clearTimeout(botao._timer);
+    botao._timer = setTimeout(() => {
+      botao.textContent = botao.dataset.rotulo;
       botao.classList.remove("!bg-emerald-600", "!text-white");
     }, 2000);
+
+    // Comemoração: confete saindo do botão e agradecimento
+    const r = botao.getBoundingClientRect();
+    if (window.soltarConfete) window.soltarConfete(r.left + r.width / 2, r.top + r.height / 2);
+    if (window.mostrarAviso) window.mostrarAviso("Copiado! Agora é só colar no app do seu banco. Obrigado pelo apoio! 💚");
   };
 
   /* ---------------- PIX (BR Code / EMV) ---------------- */
