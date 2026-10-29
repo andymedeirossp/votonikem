@@ -117,3 +117,6 @@ grant insert (consentimento_versao) on public.clientes_interessados to anon;
 -- Storage: bucket público "logos" (300 KB, webp/png/jpeg); anon só envia para a pasta anuncios/.
 -- Moderação: no Table Editor, mude status para 'verificado' (selo) ou 'oculto' (sai do site);
 -- destaque=true marca o anúncio em destaque.
+
+-- Migração 2026-10-29: função publicar_anuncio(p jsonb) -> slug (security invoker; anon pode executar).
+-- Motivo: inserir pela API com "return=representation" exige ler todas as colunas, inclusive as privadas.

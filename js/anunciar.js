@@ -286,15 +286,16 @@
         console.error("Falha ao enviar logo:", err);
         dados.logo_url = null; // publica sem logo; dá para incluir depois
       }
-      const r = await fetch(`${CFG.SUPABASE_URL}/rest/v1/anuncios?select=slug`, {
+      // A função publicar_anuncio grava e devolve só o slug (o site não pode ler dados privados)
+      const r = await fetch(`${CFG.SUPABASE_URL}/rest/v1/rpc/publicar_anuncio`, {
         method: "POST",
-        headers: cabecalhos({ "Content-Type": "application/json", Prefer: "return=representation" }),
-        body: JSON.stringify(dados)
+        headers: cabecalhos({ "Content-Type": "application/json" }),
+        body: JSON.stringify({ p: dados })
       });
       if (r.status === 409) return mostrarErro("Este CNPJ já tem um anúncio no VotoniKem. Se for seu e quiser alterar, fale com a gente pelo dpo@votonikem.com.br.");
       if (!r.ok) throw new Error(`HTTP ${r.status} ${await r.text()}`);
-      const [linha] = await r.json();
-      publicado = { ...dados, slug: linha && linha.slug };
+      const slug = await r.json();
+      publicado = { ...dados, slug: typeof slug === "string" ? slug : null };
 
       form.classList.add("hidden");
       $("an-previa").innerHTML = cardAnuncio({ ...publicado, logo_url: publicado.logo_url ? logoLocal || publicado.logo_url : "" });
