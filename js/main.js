@@ -1,6 +1,6 @@
 (() => {
   const CFG = window.VOTONIKEM_CONFIG || {};
-  const SITE_URL = "https://votonikem.com.br";
+  const SITE_URL = window.location.origin; // segue o domínio em uso (vercel.app hoje, .com.br no lançamento)
   const MIN_PARA_MOSTRAR_ESTATISTICAS = 20; // evita exibir números baixos no começo
 
   const $ = (id) => document.getElementById(id);
