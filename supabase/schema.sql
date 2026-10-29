@@ -51,3 +51,8 @@ grant execute on function public.estatisticas_fila() to anon;
 alter table public.leads
   add column if not exists profissao text check (profissao is null or char_length(profissao) between 2 and 80);
 grant insert (profissao) on public.leads to anon;
+
+-- Migração 2026-10-28: site do negócio (opcional)
+alter table public.leads
+  add column if not exists site text check (site is null or char_length(site) between 4 and 200);
+grant insert (site) on public.leads to anon;

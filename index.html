@@ -183,20 +183,28 @@
             </div>
           </div>
 
-          <div>
-            <label for="lead-social" class="block text-xs font-medium text-slate-300 mb-1">Instagram ou Rede Social Principal *</label>
-            <input id="lead-social" name="rede_social" type="text" required minlength="2" maxlength="120" placeholder="@seu.perfil.oficial" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div>
+              <label for="lead-social" class="block text-xs font-medium text-slate-300 mb-1">Instagram ou Rede Social *</label>
+              <input id="lead-social" name="rede_social" type="text" required minlength="2" maxlength="120" placeholder="@seu.perfil.oficial" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            </div>
+            <div>
+              <label for="lead-site" class="block text-xs font-medium text-slate-300 mb-1">Site <span class="text-slate-500">(opcional)</span></label>
+              <input id="lead-site" name="site" type="text" inputmode="url" maxlength="200" autocomplete="url" placeholder="www.seusite.com.br" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            </div>
           </div>
 
           <!-- Anti-spam: campo invisível que só robôs preenchem -->
           <div class="hidden" aria-hidden="true">
-            <label>Não preencha <input type="text" name="site" tabindex="-1" autocomplete="off"></label>
+            <label>Não preencha <input type="text" name="confirmar_email" tabindex="-1" autocomplete="off"></label>
           </div>
 
           <label class="flex items-start gap-2.5 text-[11px] text-slate-400 leading-relaxed cursor-pointer">
             <input id="lead-consentimento" name="consentimento" type="checkbox" required class="mt-0.5 accent-amber-500 w-4 h-4 shrink-0">
             <span>Autorizo o VotoniKem a usar estes dados para me avisar sobre o lançamento, conforme a <a href="politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
           </label>
+
+          <p class="text-[11px] text-slate-500 leading-relaxed">Ao se cadastrar, você concorda com os <a href="termos-de-uso.html" class="text-slate-300 underline">Termos de Uso</a> e com o <a href="codigo-de-conduta.html" class="text-slate-300 underline">Código de Conduta</a> da comunidade.</p>
 
           <p id="lead-erro" class="hidden text-xs text-red-400 font-semibold" role="alert"></p>
 
@@ -363,7 +371,7 @@
       <div class="text-center max-w-2xl mx-auto mb-10">
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Prévia do diretório</span>
         <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-4 mb-3">Veja como o seu anúncio vai aparecer</h2>
-        <p class="text-slate-400 text-xs md:text-sm">Perfil verificado, sua cidade, o que você faz e um botão direto para o seu WhatsApp.</p>
+        <p class="text-slate-400 text-xs md:text-sm">Perfil verificado, sua cidade, o que você faz e botões diretos para o seu WhatsApp, Instagram e site.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -379,7 +387,10 @@
             <span class="tag-prof">Confeitaria</span><span class="tag-ok">✓ Verificado</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed mb-5 flex-1">Bolos, doces finos e encomendas para festas. Entrega na região de Curitiba.</p>
-          <span class="btn-zap" aria-disabled="true">WhatsApp</span>
+          <div class="space-y-2">
+            <span class="btn-zap" aria-disabled="true">WhatsApp</span>
+            <div class="flex gap-2"><span class="btn-link btn-insta" aria-disabled="true">Instagram</span></div>
+          </div>
         </article>
 
         <article class="anuncio bg-[#162032] border border-slate-800 rounded-2xl p-5 flex flex-col">
@@ -394,7 +405,10 @@
             <span class="tag-prof">Elétrica</span><span class="tag-ok">✓ Verificado</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed mb-5 flex-1">Instalações, reparos e padrão de entrada. Atendimento residencial e comercial.</p>
-          <span class="btn-zap" aria-disabled="true">WhatsApp</span>
+          <div class="space-y-2">
+            <span class="btn-zap" aria-disabled="true">WhatsApp</span>
+            <div class="flex gap-2"><span class="btn-link btn-insta" aria-disabled="true">Instagram</span></div>
+          </div>
         </article>
 
         <article class="anuncio bg-[#162032] border border-slate-800 rounded-2xl p-5 flex flex-col">
@@ -409,7 +423,10 @@
             <span class="tag-prof">Advocacia</span><span class="tag-ok">✓ Verificado</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed mb-5 flex-1">Direito empresarial, trabalhista e contratos. Consultas presenciais e online.</p>
-          <span class="btn-zap" aria-disabled="true">WhatsApp</span>
+          <div class="space-y-2">
+            <span class="btn-zap" aria-disabled="true">WhatsApp</span>
+            <div class="flex gap-2"><span class="btn-link btn-insta" aria-disabled="true">Instagram</span><span class="btn-link btn-site" aria-disabled="true">Site</span></div>
+          </div>
         </article>
 
         <article class="anuncio bg-[#162032] border border-slate-800 rounded-2xl p-5 flex flex-col">
@@ -424,7 +441,10 @@
             <span class="tag-prof">Mecânica e Auto</span><span class="tag-ok">✓ Verificado</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed mb-5 flex-1">Revisão, suspensão, freios e injeção eletrônica. Orçamento sem compromisso.</p>
-          <span class="btn-zap" aria-disabled="true">WhatsApp</span>
+          <div class="space-y-2">
+            <span class="btn-zap" aria-disabled="true">WhatsApp</span>
+            <div class="flex gap-2"><span class="btn-link btn-insta" aria-disabled="true">Instagram</span><span class="btn-link btn-site" aria-disabled="true">Site</span></div>
+          </div>
         </article>
       </div>
 
@@ -450,7 +470,7 @@
             <li class="item-ok">Perfil verificado no diretório</li>
             <li class="item-ok">Profissão, cidade e descrição</li>
             <li class="item-ok">Botão direto para o seu WhatsApp</li>
-            <li class="item-ok">Link do seu Instagram</li>
+            <li class="item-ok">Links do seu <strong class="text-white">Instagram</strong> e do seu <strong class="text-white">site</strong></li>
           </ul>
           <a href="#planos" class="block text-center bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-white text-sm font-bold py-3 rounded-xl">Garantir minha vaga</a>
         </div>
@@ -464,7 +484,7 @@
             <li class="item-ok">Tudo do Básico</li>
             <li class="item-ok"><strong class="text-white">Aparece primeiro</strong> nas buscas da sua cidade</li>
             <li class="item-ok">Selo <strong class="text-amber-400">Destaque</strong> no anúncio</li>
-            <li class="item-ok">Mais fotos e links (site, cardápio, portfólio)</li>
+            <li class="item-ok">Mais fotos e links extras (cardápio, portfólio, catálogo)</li>
           </ul>
           <a href="#planos" class="block text-center bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold py-3 rounded-xl shadow-lg shadow-amber-500/20">Garantir minha vaga</a>
         </div>
@@ -490,7 +510,7 @@
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">É um grupo político?<span class="faq-icone" aria-hidden="true">+</span></summary>
-          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Não. É uma comunidade de negócios: o assunto aqui é cliente, parceria e oportunidade. O projeto é independente e não tem vínculo com partidos, candidatos ou campanhas.</p>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Não. É uma comunidade de negócios: o assunto aqui é cliente, parceria e oportunidade. O projeto é independente e não tem vínculo com partidos, candidatos ou campanhas. Veja o nosso <a href="codigo-de-conduta.html" class="text-amber-400 underline">Código de Conduta</a>.</p>
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Quanto custa?<span class="faq-icone" aria-hidden="true">+</span></summary>
@@ -498,7 +518,7 @@
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">Quem pode anunciar?<span class="faq-icone" aria-hidden="true">+</span></summary>
-          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Empresas, MEIs, autônomos e profissionais liberais de todo o Brasil, de qualquer área: do docinho caseiro à consultoria. Basta passar pela triagem e seguir as regras da comunidade. Quem está começando tem o anúncio Básico gratuito.</p>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">Empresas, MEIs, autônomos e profissionais liberais de todo o Brasil, de qualquer área: do docinho caseiro à consultoria. Basta passar pela verificação de autenticidade e seguir o <a href="codigo-de-conduta.html" class="text-amber-400 underline">Código de Conduta</a>. Quem está começando tem o anúncio Básico gratuito.</p>
         </details>
         <details class="faq group bg-[#162032] border border-slate-800 rounded-xl">
           <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-sm font-bold text-white">O que é o kit de divulgação grátis?<span class="faq-icone" aria-hidden="true">+</span></summary>
@@ -531,6 +551,7 @@
       <div class="flex items-center space-x-6">
         <a href="politica-de-privacidade.html" class="hover:text-amber-400 transition">Política de Privacidade (LGPD)</a>
         <a href="termos-de-uso.html" class="hover:text-amber-400 transition">Termos de Uso</a>
+        <a href="codigo-de-conduta.html" class="hover:text-amber-400 transition">Código de Conduta</a>
       </div>
     </div>
   </footer>

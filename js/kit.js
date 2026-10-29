@@ -36,6 +36,9 @@
     return r.startsWith("@") ? r : "";
   };
 
+  const dominio = (url) => String(url || "").trim()
+    .replace(/^https?:\/\//i, "").replace(/\/+$/, "");
+
   const slug = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
     .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "kit";
 
@@ -199,13 +202,13 @@
     ctx.font = `700 42px ${FONTE}`; ctx.fillStyle = "#cbd5e1"; ctx.textAlign = "center"; ctx.textBaseline = "top";
     ctx.fillText(`${d.cidade} · ${d.uf}`, W / 2, y + 26);
     ctx.font = `700 34px ${FONTE}`; ctx.fillStyle = "#94a3b8";
-    ctx.fillText("Chame no WhatsApp", W / 2, 1390);
-    let fimZap = botaoZap(ctx, W / 2, 1450, formatarZap(d.whatsapp), 44);
+    ctx.fillText("Chame no WhatsApp", W / 2, 1360);
+    let yLinks = botaoZap(ctx, W / 2, 1420, formatarZap(d.whatsapp), 44) + 36;
+    ctx.font = `800 38px ${FONTE}`; ctx.fillStyle = "#e2e8f0"; ctx.textBaseline = "top";
     const insta = instagram(d.rede_social);
-    if (insta) {
-      ctx.font = `800 40px ${FONTE}`; ctx.fillStyle = "#e2e8f0"; ctx.textBaseline = "top";
-      ctx.fillText(`Instagram ${insta}`, W / 2, fimZap + 40);
-    }
+    if (insta) { ctx.fillText(`Instagram ${insta}`, W / 2, yLinks); yLinks += 56; }
+    const site = dominio(d.site);
+    if (site) ctx.fillText(ajustarTexto(ctx, site, 900, 38, 26, 1, 800).linhas[0], W / 2, yLinks);
     rodapeMarca(ctx, W, 1800, 30);
     return c;
   };

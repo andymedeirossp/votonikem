@@ -209,7 +209,14 @@
       e.preventDefault();
       mostrarErro("");
 
-      if (form.site.value) return mostrarSucesso(false); // robô
+      if (form.confirmar_email.value) return mostrarSucesso(false); // robô
+
+      // Site opcional: aceita "seusite.com.br", "www..." ou "https://..."
+      let site = form.site.value.trim().replace(/\s+/g, "");
+      if (site && !/^https?:\/\//i.test(site)) site = "https://" + site;
+      if (site && !/^https?:\/\/[^\s/.]+\.[^\s]{2,}/i.test(site)) {
+        return mostrarErro("O endereço do site parece incompleto. Ex: www.seusite.com.br (ou deixe em branco).");
+      }
 
       const dados = {
         nome: form.nome.value.trim(),
@@ -218,6 +225,7 @@
         uf: form.uf.value,
         cidade: form.cidade.value.trim(),
         rede_social: form.rede_social.value.trim(),
+        ...(site ? { site: site.slice(0, 200) } : {}),
         consentimento: form.consentimento.checked,
         origem: (document.referrer || "direto").slice(0, 200)
       };
@@ -313,7 +321,7 @@
     });
 
     document.addEventListener("click", async (e) => {
-      const link = e.target.closest('a[href$="politica-de-privacidade.html"], a[href$="termos-de-uso.html"]');
+      const link = e.target.closest('a[href$="politica-de-privacidade.html"], a[href$="termos-de-uso.html"], a[href$="codigo-de-conduta.html"]');
       if (!link || link.id === "modal-legal-link" || e.metaKey || e.ctrlKey) return;
       e.preventDefault();
       const url = link.getAttribute("href");
