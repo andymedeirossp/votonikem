@@ -1,11 +1,11 @@
-// Abertura: partículas verde-amarelas se juntam formando o logo VK.
+// Abertura: partículas nas cores do Brasil se juntam formando o logo VK.
 // Curta (cerca de 2,3 s), pulável com toque/clique/tecla e exibida só uma vez por sessão.
 // O <head> já decidiu se deve mostrar (classe "intro-ativa" no <html>).
 (() => {
   const raiz = document.documentElement;
   if (!raiz.classList.contains("intro-ativa")) return;
 
-  const CORES = ["#16a34a", "#22c55e", "#facc15", "#fde047", "#f59e0b", "#ffffff"];
+  const CORES = ["#16a34a", "#22c55e", "#facc15", "#fde047", "#facc15", "#3b82f6", "#1d4ed8", "#ffffff"]; // verde, amarelo, azul e branco
   const DURACAO_FORMAR = 1100;  // ms até o VK se formar
   const DURACAO_TOTAL = 2300;   // ms até a página aparecer
 
