@@ -213,10 +213,8 @@
     } else usarConfig();
   }
 
-  /* ---------------- Formulário da Lista VIP ---------------- */
-
-  const form = $("lead-form");
-  const inputZap = $("lead-whatsapp");
+  /* ---------------- Máscara de WhatsApp (usada nos formulários) ---------------- */
+  // O formulário de anúncio fica em js/anunciar.js
 
   function mascararZap(valor) {
     const d = valor.replace(/\D/g, "").slice(0, 11);
@@ -225,93 +223,7 @@
     if (d.length > 6) v = `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}`;
     return v;
   }
-
-  if (inputZap) inputZap.addEventListener("input", () => { inputZap.value = mascararZap(inputZap.value); });
-
-  const mostrarErro = (msg) => {
-    const el = $("lead-erro");
-    el.textContent = msg;
-    el.classList.toggle("hidden", !msg);
-  };
-
-  let ultimoCadastro = null;
-
-  const mostrarSucesso = (jaCadastrado, dados) => {
-    form.classList.add("hidden");
-    const box = $("lead-sucesso");
-    if (jaCadastrado) box.querySelector("h4").textContent = "Você já está na fila!";
-    box.classList.remove("hidden");
-    const texto = `Conheça o VotoniKem, o diretório de negócios da direita no Brasil. Entrei na lista VIP de lançamento: ${SITE_URL}`;
-    $("btn-compartilhar").href = `https://wa.me/?text=${encodeURIComponent(texto)}`;
-    ultimoCadastro = dados || null;
-    const btnKit = $("btn-abrir-kit");
-    if (btnKit) btnKit.classList.toggle("hidden", !ultimoCadastro || !window.VotoniKit);
-  };
-
-  const btnAbrirKit = $("btn-abrir-kit");
-  if (btnAbrirKit) {
-    btnAbrirKit.addEventListener("click", () => {
-      if (ultimoCadastro && window.VotoniKit) window.VotoniKit.abrir(ultimoCadastro);
-    });
-  }
-
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      mostrarErro("");
-
-      if (form.confirmar_email.value) return mostrarSucesso(false); // robô
-
-      // Site opcional: aceita "seusite.com.br", "www..." ou "https://..."
-      let site = form.site.value.trim().replace(/\s+/g, "");
-      if (site && !/^https?:\/\//i.test(site)) site = "https://" + site;
-      if (site && !/^https?:\/\/[^\s/.]+\.[^\s]{2,}/i.test(site)) {
-        return mostrarErro("O endereço do site parece incompleto. Ex: www.seusite.com.br (ou deixe em branco).");
-      }
-
-      const dados = {
-        nome: form.nome.value.trim(),
-        profissao: form.profissao.value.trim(),
-        whatsapp: form.whatsapp.value.replace(/\D/g, ""),
-        uf: form.uf.value,
-        cidade: form.cidade.value.trim(),
-        rede_social: form.rede_social.value.trim(),
-        ...(site ? { site: site.slice(0, 200) } : {}),
-        consentimento: form.consentimento.checked,
-        consentimento_versao: VERSAO_CONSENTIMENTO,
-        origem: (document.referrer || "direto").slice(0, 200)
-      };
-
-      if (dados.nome.length < 3) return mostrarErro("Informe seu nome ou a razão social.");
-      if (dados.profissao.length < 2) return mostrarErro("Informe sua profissão ou área de atuação.");
-      if (!/^\d{10,11}$/.test(dados.whatsapp)) return mostrarErro("Informe um WhatsApp válido com DDD.");
-      if (!dados.uf) return mostrarErro("Selecione o seu estado.");
-      if (dados.cidade.length < 2) return mostrarErro("Informe a sua cidade.");
-      if (dados.rede_social.length < 2) return mostrarErro("Informe seu Instagram ou rede social.");
-      if (!dados.consentimento) return mostrarErro("Marque a autorização para podermos te avisar.");
-
-      if (!supabaseConfigurado()) {
-        return mostrarErro("O cadastro está em configuração. Tente novamente em instantes.");
-      }
-
-      const botao = $("lead-enviar");
-      botao.disabled = true;
-      $("lead-enviar-texto").textContent = "Enviando...";
-
-      try {
-        const resp = await supabaseFetch("leads", dados);
-        if (resp.ok) return mostrarSucesso(false, dados);
-        if (resp.status === 409) return mostrarSucesso(true, dados);
-        throw new Error(`HTTP ${resp.status}`);
-      } catch (err) {
-        console.error("Erro ao enviar cadastro:", err);
-        mostrarErro("Não foi possível enviar agora. Verifique sua conexão e tente de novo.");
-      } finally {
-        botao.disabled = false;
-        $("lead-enviar-texto").textContent = "Entrar para a Lista VIP de Lançamento";
-      }
-    });
-  }
+  window.VKmascararZap = mascararZap;
 
   /* ---------------- Abas: Quero anunciar / Procuro profissionais ---------------- */
 

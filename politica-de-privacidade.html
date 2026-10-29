@@ -25,17 +25,15 @@
 
       <section>
         <h2 class="text-lg font-bold text-white mb-2">2. Quais dados coletamos</h2>
-        <p><strong class="text-white">Cadastro na Lista VIP de lançamento</strong>, informados por você:</p>
+        <p><strong class="text-white">Anúncio no diretório</strong>, informados por você:</p>
         <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li>Nome completo ou razão social;</li>
-          <li>Profissão ou área de atuação;</li>
-          <li>Número de WhatsApp;</li>
-          <li>Estado (UF) e cidade;</li>
-          <li>Instagram ou outra rede social informada;</li>
-          <li>Site do negócio (opcional).</li>
+          <li><strong class="text-white">Publicados no site</strong> (com a sua autorização): nome do negócio, profissão ou área, descrição, estado e cidade, WhatsApp do negócio, Instagram, site e logo;</li>
+          <li><strong class="text-white">Nunca publicados</strong>: e-mail, CNPJ, razão social e a situação do CNPJ na Receita.</li>
         </ul>
+        <p class="mt-2">Quando você informa um CNPJ, o seu navegador consulta a <strong class="text-white">BrasilAPI</strong>, um serviço público que repassa os dados cadastrais abertos da Receita Federal, para conferir se ele está ativo e preencher nome e cidade. Se o nome de um MEI vier com números do CNPJ, eles são removidos antes de publicar.</p>
+        <p class="mt-2">Cadastros feitos antes da abertura dos anúncios (Lista VIP) continuam guardados com os dados informados na época e não são publicados.</p>
         <p class="mt-3"><strong class="text-white">Cadastro de quem procura profissionais</strong>, informados por você: número de WhatsApp e estado (UF) e, se quiser, nome, cidade e o tipo de profissional que costuma procurar.</p>
-        <p class="mt-2">Em ambos os cadastros, registramos também, automaticamente, a data e hora, a página de onde você chegou ao site e a sua autorização (consentimento).</p>
+        <p class="mt-2">Em todos os cadastros, registramos também, automaticamente, a data e hora, a página de onde você chegou ao site e a sua autorização (consentimento).</p>
         <p class="mt-3"><strong class="text-white">Apoio voluntário via PIX:</strong> o pagamento é feito no aplicativo do seu banco. Não coletamos dados bancários no site. Recebemos apenas as informações que o próprio sistema PIX repassa ao recebedor, como nome do pagador, valor e data.</p>
         <p class="mt-3"><strong class="text-white">Navegação:</strong> não utilizamos cookies de publicidade nem ferramentas de rastreamento de terceiros. Guardamos no seu navegador apenas a informação de que você já viu o aviso de privacidade. Nossos provedores de hospedagem registram dados técnicos de acesso (como endereço IP e data/hora) para segurança e funcionamento do serviço.</p>
         <p class="mt-3">Não solicitamos CPF, documentos ou dados sensíveis como religião ou saúde, e o formulário não pergunta sua opinião política.</p>
@@ -45,13 +43,14 @@
       <section>
         <h2 class="text-lg font-bold text-white mb-2">3. Para que usamos e com qual base legal</h2>
         <ul class="list-disc pl-5 space-y-1">
-          <li><strong class="text-white">Avisar você sobre o lançamento</strong>, a abertura dos anúncios ou a liberação da busca de profissionais, inclusive por WhatsApp: com base no seu <em>consentimento</em> (art. 7º, I).</li>
+          <li><strong class="text-white">Publicar o seu anúncio</strong> no diretório e permitir que clientes entrem em contato: com base no seu <em>consentimento</em> (art. 7º, I).</li>
+          <li><strong class="text-white">Avisar você</strong> sobre novidades do anúncio ou a liberação da busca de profissionais, inclusive por WhatsApp: com base no seu <em>consentimento</em> (art. 7º, I).</li>
           <li><strong class="text-white">Participação na comunidade</strong>, na medida em que revele opinião política: com base no seu <em>consentimento específico e destacado</em> para dados sensíveis (art. 11, I).</li>
           <li><strong class="text-white">Entender a demanda</strong> por região e área de atuação, de forma agregada (por exemplo, quantos cadastros por estado): <em>legítimo interesse</em> (art. 7º, IX).</li>
-          <li><strong class="text-white">Segurança e prevenção a fraudes</strong>, como evitar cadastros falsos ou automatizados: <em>legítimo interesse</em> (art. 7º, IX).</li>
+          <li><strong class="text-white">Segurança e prevenção a fraudes</strong>, como conferir o CNPJ na Receita, moderar anúncios e evitar cadastros falsos ou automatizados: <em>legítimo interesse</em> (art. 7º, IX).</li>
           <li><strong class="text-white">Registros de apoios recebidos</strong> para fins contábeis e fiscais: <em>cumprimento de obrigação legal</em> (art. 7º, II).</li>
         </ul>
-        <p class="mt-2">Seus dados <strong class="text-white">não serão publicados</strong> no diretório sem uma nova autorização específica, que será pedida quando os anúncios forem liberados.</p>
+        <p class="mt-2">Só publicamos os dados listados acima como públicos, e apenas de quem marcou a autorização de publicação.</p>
       </section>
 
       <section>
@@ -61,6 +60,7 @@
           <li><strong class="text-white">Supabase</strong>: banco de dados onde ficam os cadastros, hospedado em <strong class="text-white">São Paulo, Brasil</strong>;</li>
           <li><strong class="text-white">Vercel</strong>: hospedagem do site;</li>
           <li><strong class="text-white">Cloudflare</strong>: gerenciamento de domínio e encaminhamento de e-mails;</li>
+          <li><strong class="text-white">BrasilAPI</strong>: consulta pública do CNPJ informado, feita pelo seu navegador;</li>
           <li><strong class="text-white">Banco Inter</strong>: recebimento dos apoios via PIX.</li>
         </ul>
         <p class="mt-2">Alguns desses fornecedores podem processar dados técnicos em servidores fora do Brasil. Nesses casos, a transferência internacional ocorre conforme o art. 33 da LGPD, com fornecedores que adotam garantias contratuais e padrões de segurança compatíveis com a lei.</p>
@@ -70,7 +70,8 @@
       <section>
         <h2 class="text-lg font-bold text-white mb-2">5. Por quanto tempo guardamos</h2>
         <ul class="list-disc pl-5 space-y-1">
-          <li><strong class="text-white">Lista VIP e cadastro de quem procura profissionais:</strong> até 12 meses após o lançamento da plataforma, ou até você pedir a exclusão, o que ocorrer primeiro.</li>
+          <li><strong class="text-white">Anúncios:</strong> enquanto o anúncio estiver ativo. Se você pedir a exclusão, ele sai do site na hora e os dados são apagados em até 30 dias, salvo o que a lei obrigar a guardar.</li>
+          <li><strong class="text-white">Lista VIP e cadastro de quem procura profissionais:</strong> até 12 meses após a liberação da busca, ou até você pedir a exclusão, o que ocorrer primeiro.</li>
           <li><strong class="text-white">Registros de apoios via PIX:</strong> pelo prazo exigido pela legislação contábil e fiscal.</li>
           <li><strong class="text-white">Registros técnicos de acesso:</strong> pelo prazo do art. 15 do Marco Civil da Internet (6 meses).</li>
         </ul>

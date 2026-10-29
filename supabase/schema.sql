@@ -106,3 +106,14 @@ alter table public.leads add column if not exists consentimento_versao text chec
 alter table public.clientes_interessados add column if not exists consentimento_versao text check (consentimento_versao is null or char_length(consentimento_versao) <= 40);
 grant insert (consentimento_versao) on public.leads to anon;
 grant insert (consentimento_versao) on public.clientes_interessados to anon;
+
+-- Migração 2026-10-29: diretório (anuncios). Ver migração "anuncios_diretorio" no Supabase.
+-- Resumo: tabela public.anuncios com colunas públicas (slug, tipo, nome, profissao, descricao, uf,
+-- cidade, whatsapp, instagram, site, logo_url, status, destaque, criado_em) e privadas (email, cnpj,
+-- razao_social, cnpj_situacao, consentimento, consentimento_versao, origem).
+-- Gatilho força status 'em_verificacao' e destaque=false em inserções do site, remove números de CNPJ
+-- do início do nome (MEI) e gera o slug. RLS: anon só insere e lê linhas visíveis; grants por coluna
+-- impedem ler dados privados. View public.anuncios_publicos (security_invoker).
+-- Storage: bucket público "logos" (300 KB, webp/png/jpeg); anon só envia para a pasta anuncios/.
+-- Moderação: no Table Editor, mude status para 'verificado' (selo) ou 'oculto' (sai do site);
+-- destaque=true marca o anúncio em destaque.
