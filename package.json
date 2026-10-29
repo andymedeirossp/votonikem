@@ -4,7 +4,8 @@
   "description": "Site do VotoniKem",
   "scripts": {
     "css": "tailwindcss -c tailwind.config.cjs -i css/tailwind.src.css -o css/tailwind.css --minify",
-    "css:watch": "tailwindcss -c tailwind.config.cjs -i css/tailwind.src.css -o css/tailwind.css --watch"
+    "css:watch": "tailwindcss -c tailwind.config.cjs -i css/tailwind.src.css -o css/tailwind.css --watch",
+    "build": "node scripts/build.mjs"
   },
   "devDependencies": {
     "tailwindcss": "3.4.19"

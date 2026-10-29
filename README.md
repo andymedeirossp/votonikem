@@ -25,6 +25,16 @@ npm run css
 
 E inclua o `css/tailwind.css` atualizado no commit.
 
+## Hospedagem (Cloudflare Pages)
+
+- Comando de build: `npm run build` · pasta de saída: `dist`
+- `functions/a/[slug].js`: página de cada anúncio com a prévia do link (WhatsApp/Facebook)
+- `functions/sitemap.xml.js`: mapa do site com todos os anúncios
+- `lib/anuncio.js`: código comum das funções
+- `_headers`: cabeçalhos de segurança
+- A imagem de prévia de cada anúncio é gerada no navegador ao publicar (`js/previa.js`) e fica no Storage do Supabase
+- `.github/workflows/manter-supabase.yml`: consulta diária para o Supabase grátis não pausar
+
 ## Créditos
 
 Mapa do Brasil: [MapSVG](https://mapsvg.com/maps/brazil), via `@svg-maps/brazil`, licença CC BY 4.0.

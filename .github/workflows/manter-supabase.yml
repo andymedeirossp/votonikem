@@ -1,0 +1,23 @@
+# Faz uma consulta simples ao banco todo dia, para o Supabase (plano grátis)
+# não pausar o projeto por inatividade. Usa só a chave pública do site.
+name: Manter o banco ativo
+
+on:
+  schedule:
+    - cron: "17 9 * * *" # todo dia às 06:17 (horário de Brasília)
+  workflow_dispatch: {}
+
+permissions: {}
+
+jobs:
+  consultar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Consultar contagem de anúncios
+        env:
+          SUPABASE_URL: https://jmvdgwtvyubwmhfyqras.supabase.co
+          SUPABASE_KEY: sb_publishable_kWlOHA3mmh4vetrifiDUcg_6HeTk9_B
+        run: |
+          curl -fsS --retry 3 --retry-delay 20 -X POST "$SUPABASE_URL/rest/v1/rpc/estatisticas_fila" \
+            -H "apikey: $SUPABASE_KEY" -H "Authorization: Bearer $SUPABASE_KEY" -H "Content-Type: application/json" -d '{}'

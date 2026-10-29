@@ -2,7 +2,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ImageResponse } from "@vercel/og";
-import { buscarAnuncio, logoConfiavel, resumir, slugValido } from "./_lib/anuncio.js";
+import { buscarAnuncio, logoConfiavel, resumir, slugValido } from "../lib/anuncio.js";
 
 const fonte = (peso) => readFileSync(join(process.cwd(), "api/_lib/fonts", `inter-${peso}.woff`));
 let fontes;

@@ -190,17 +190,26 @@
     }
   });
 
-  const enviarLogo = async () => {
-    if (!logoBlob) return null;
-    const ext = logoBlob.type === "image/webp" ? "webp" : "jpg";
-    const caminho = `anuncios/${crypto.randomUUID ? crypto.randomUUID() : Date.now() + "-" + Math.random().toString(36).slice(2)}.${ext}`;
+  // Envia um arquivo para o Storage (pasta anuncios/) e devolve o endereço público
+  const enviarArquivo = async (blob, prefixo = "") => {
+    const ext = blob.type === "image/webp" ? "webp" : blob.type === "image/png" ? "png" : "jpg";
+    const id = crypto.randomUUID ? crypto.randomUUID() : Date.now() + "-" + Math.random().toString(36).slice(2);
+    const caminho = `anuncios/${prefixo}${id}.${ext}`;
     const r = await fetch(`${CFG.SUPABASE_URL}/storage/v1/object/logos/${caminho}`, {
       method: "POST",
-      headers: cabecalhos({ "Content-Type": logoBlob.type, "x-upsert": "false" }),
-      body: logoBlob
+      headers: cabecalhos({ "Content-Type": blob.type, "x-upsert": "false" }),
+      body: blob
     });
-    if (!r.ok) throw new Error(`logo HTTP ${r.status}`);
+    if (!r.ok) throw new Error(`upload HTTP ${r.status}`);
     return `${CFG.SUPABASE_URL}/storage/v1/object/public/logos/${caminho}`;
+  };
+  const enviarLogo = async () => (logoBlob ? enviarArquivo(logoBlob) : null);
+
+  // Imagem da prévia do link (WhatsApp/Facebook): opcional, se falhar o site usa a imagem padrão
+  const enviarImagemPrevia = async (dados) => {
+    if (!window.VKPrevia) return null;
+    const blob = await window.VKPrevia.gerar(dados, logoBlob);
+    return enviarArquivo(blob, "og-");
   };
 
   /* ---------- envio ---------- */
@@ -283,6 +292,12 @@
       } catch (err) {
         console.error("Falha ao enviar logo:", err);
         dados.logo_url = null; // publica sem logo; dá para incluir depois
+      }
+      try {
+        dados.imagem_url = await enviarImagemPrevia(dados);
+      } catch (err) {
+        console.error("Falha ao gerar a imagem de prévia:", err);
+        dados.imagem_url = null;
       }
       // A função publicar_anuncio grava e devolve só o slug (o site não pode ler dados privados)
       const r = await fetch(`${CFG.SUPABASE_URL}/rest/v1/rpc/publicar_anuncio`, {
