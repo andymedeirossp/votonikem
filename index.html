@@ -84,10 +84,28 @@
         <a href="politica-de-privacidade.html" class="hover:text-amber-400 transition inline-flex items-center gap-1.5"><span aria-hidden="true">🔒</span> LGPD</a>
       </nav>
 
-      <a href="#doacao" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
-        <span>❤️</span> Apoiar<span class="hidden sm:inline"> Projeto</span>
-      </a>
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="#doacao" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+          <span>❤️</span> Apoiar<span class="hidden sm:inline"> Projeto</span>
+        </a>
+        <button type="button" id="btn-menu" class="menu-botao md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-celular">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
+
+    <!-- Menu de celular -->
+    <nav id="menu-celular" class="menu-celular md:hidden" aria-label="Menu" hidden>
+      <ul class="px-4 pt-2 pb-5 space-y-1">
+        <li><a href="#exemplos" class="menu-item"><span aria-hidden="true">🔎</span> Diretório</a></li>
+        <li><a href="#como-funciona" class="menu-item"><span aria-hidden="true">🧭</span> Como funciona</a></li>
+        <li><a href="#precos" class="menu-item"><span aria-hidden="true">📣</span> Anunciar</a></li>
+        <li><a href="#mapa" class="menu-item"><span aria-hidden="true">🗺️</span> Rede pelo Brasil</a></li>
+        <li><a href="#faq" class="menu-item"><span aria-hidden="true">💬</span> Perguntas frequentes</a></li>
+        <li><a href="politica-de-privacidade.html" class="menu-item"><span aria-hidden="true">🔒</span> LGPD e Privacidade</a></li>
+        <li class="pt-3"><a href="#planos" class="block text-center bg-[#064e3b] hover:bg-[#047857] border border-emerald-600/40 text-white text-sm font-extrabold py-3 rounded-xl">🚀 Entrar na Lista VIP</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Topo com a bandeira do Brasil em marca d'água -->
@@ -678,5 +696,6 @@
   <script src="js/mapa-brasil.js" defer></script>
   <script src="js/mapa.js" defer></script>
   <script src="js/cards3d.js" defer></script>
+  <script src="js/menu.js" defer></script>
 </body>
 </html>

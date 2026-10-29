@@ -408,6 +408,38 @@ html.intro-ativa body::before { /* cobre a página antes do script montar a aber
 }
 .intro-pular:hover { color: #fff; border-color: #f59e0b; }
 
+/* Menu de celular */
+.menu-botao {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: #162032; border: 1px solid #334155;
+  display: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+@media (max-width: 767px) { .menu-botao { display: inline-flex; } }
+@media (min-width: 768px) { .menu-celular { display: none !important; } }
+.menu-botao span {
+  display: block; width: 18px; height: 2px; border-radius: 2px; background: #e2e8f0;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.menu-botao.aberto span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-botao.aberto span:nth-child(2) { opacity: 0; }
+.menu-botao.aberto span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-celular {
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  background: rgba(15, 23, 42, 0.98);
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+}
+.menu-celular.aberto { max-height: 80vh; opacity: 1; overflow-y: auto; }
+.menu-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: 12px;
+  color: #e2e8f0; font-size: 15px; font-weight: 700;
+}
+.menu-item:hover, .menu-item:focus-visible { background: #162032; color: #fbbf24; }
+.menu-item span { width: 22px; text-align: center; }
+html { scroll-padding-top: 76px; } /* âncoras não ficam escondidas atrás do topo fixo */
+
 /* Janela da Política / Termos */
 .modal-legal::backdrop {
   background: rgba(2, 6, 23, 0.75);
