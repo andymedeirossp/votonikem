@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VotoniKem | Diretório de Negócios e Serviços da Direita no Brasil</title>
+  <script>
+    // Abertura com partículas: só na primeira visita da sessão e sem "reduzir movimento".
+    (function () {
+      try {
+        var r = document.documentElement;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (sessionStorage.getItem("vk_intro")) return;
+        sessionStorage.setItem("vk_intro", "1");
+        r.classList.add("intro-ativa");
+        setTimeout(function () { r.classList.remove("intro-ativa"); }, 5000); // segurança
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Comunidade de negócios de Norte a Sul do Brasil: conecte-se a empresários, profissionais e autônomos que compartilham dos mesmos valores. Publique seu negócio grátis.">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Prévia ao compartilhar (WhatsApp, Facebook, Instagram, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="VotoniKem">
+  <meta property="og:title" content="VotoniKem | Diretório de Negócios e Serviços da Direita no Brasil">
+  <meta property="og:description" content="Comunidade de negócios, não de debates. Networking, parcerias e novos clientes de Norte a Sul. Publique seu negócio grátis.">
+  <meta property="og:url" content="https://votonikem.com.br/">
+  <meta property="og:image" content="https://votonikem.com.br/img/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://votonikem.com.br/img/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="VotoniKem: o diretório de negócios e serviços da direita no Brasil">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://votonikem.com.br/">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+</head>
+<body class="bg-[#0f172a] text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+  <header class="border-b border-slate-800/80 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <div class="logo-vk shrink-0 text-lg sm:text-xl px-2 sm:px-2.5 py-1 rounded-lg">
+          VK
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-lg sm:text-2xl font-extrabold text-white tracking-wider whitespace-nowrap">VOTONI KEM</span>
+            <svg class="bandeira-mini w-4 h-3 sm:w-5 sm:h-3.5" viewBox="0 0 20 14" role="img" aria-label="Bandeira do Brasil"><rect width="20" height="14" rx="2" fill="#009C3B"/><path d="M10 1.8 18.2 7 10 12.2 1.8 7Z" fill="#FFDF00"/><circle cx="10" cy="7" r="3.3" fill="#002776"/><path d="M6.9 6.5q3.1-1.3 6.2.6" stroke="#fff" stroke-width=".7" fill="none"/></svg>
+          </div>
+          <p class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">PÁTRIA • LIBERDADE • UNIÃO</p>
+        </div>
+      </a>
+
+    </div>
+  </header>
+
+  <main class="flex-1 hero-bandeira relative overflow-hidden isolate">
+    <div class="bandeira-fundo" aria-hidden="true">
+      <svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <path id="faixa-texto" d="M 352 372 Q 500 300 648 372" />
+        </defs>
+        <rect width="1000" height="700" fill="#009C3B"/>
+        <path d="M500 85 L915 350 L500 615 L85 350 Z" fill="#FFDF00"/>
+        <circle cx="500" cy="350" r="175" fill="#002776"/>
+        <path d="M 330 390 Q 500 290 670 390 L 666 415 Q 500 318 334 415 Z" fill="#FFFFFF"/>
+        <text font-family="Inter, sans-serif" font-weight="800" font-size="17" letter-spacing="3" fill="#009C3B">
+          <textPath href="#faixa-texto" startOffset="50%" text-anchor="middle">ORDEM E PROGRESSO</textPath>
+        </text>
+        <g fill="#FFFFFF">
+          <circle cx="450" cy="440" r="5"/><circle cx="500" cy="465" r="6"/><circle cx="550" cy="440" r="5"/>
+          <circle cx="420" cy="480" r="4"/><circle cx="580" cy="480" r="4"/><circle cx="475" cy="500" r="4"/>
+          <circle cx="525" cy="500" r="4"/><circle cx="500" cy="420" r="4"/><circle cx="560" cy="345" r="5"/>
+          <circle cx="390" cy="430" r="3"/><circle cx="610" cy="430" r="3"/><circle cx="500" cy="270" r="4"/>
+        </g>
+      </svg>
+    </div>
+
+
+    <section class="relative py-16 md:py-20 px-4 text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-emerald-950/80 border border-emerald-500/30 px-3.5 py-1 rounded-full text-xs font-semibold text-emerald-400 mb-6">
+        <svg class="bandeira-mini w-4 h-3" viewBox="0 0 20 14" role="img" aria-label="Bandeira do Brasil"><rect width="20" height="14" rx="2" fill="#009C3B"/><path d="M10 1.8 18.2 7 10 12.2 1.8 7Z" fill="#FFDF00"/><circle cx="10" cy="7" r="3.3" fill="#002776"/><path d="M6.9 6.5q3.1-1.3 6.2.6" stroke="#fff" stroke-width=".7" fill="none"/></svg> Em breve
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-5">
+        O Diretório de Negócios e Serviços da <span class="titulo-ouro">Direita no Brasil</span>
+      </h1>
+
+      <p class="text-sm md:text-base text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <strong class="text-slate-200 font-semibold">Valores em comum, foco em negócios.</strong> Uma plataforma segura para conectar empresários, autônomos e clientes de todo o Brasil que acreditam na liberdade e no trabalho.
+      </p>
+
+      <!-- MENSAGEM: troque o texto abaixo quando quiser -->
+      <div class="max-w-xl mx-auto bg-slate-950/80 backdrop-blur border border-amber-500/40 rounded-2xl px-6 py-7 shadow-2xl">
+        <div class="text-3xl mb-3" aria-hidden="true">🛠️</div>
+        <h2 class="text-xl md:text-2xl font-extrabold text-white mb-3">Estamos preparando novidades</h2>
+        <p class="text-sm md:text-base text-slate-300 leading-relaxed">O VotoniKem está passando por ajustes para chegar ainda mais forte. Em breve voltamos com o diretório aberto para empresários, autônomos e profissionais de todo o Brasil.</p>
+        <p class="text-sm text-amber-400 font-bold mt-4">Obrigado pela paciência. Pátria, liberdade e união! 🇧🇷</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0b0f19] border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="space-y-1 md:text-left">
+        <p>© 2026 VotoniKem. Todos os direitos reservados. Segurança e infraestrutura por <a href="https://andersoncyber.com.br/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:underline">Anderson Cyber</a>.</p>
+        <p class="text-[11px] text-slate-400">Anderson de Sá Medeiros ME · CNPJ 12.608.403/0001-05 · São Paulo/SP</p>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="politica-de-privacidade.html" class="hover:text-amber-400 transition">Política de Privacidade (LGPD)</a>
+        <a href="termos-de-uso.html" class="hover:text-amber-400 transition">Termos de Uso</a>
+        <a href="codigo-de-conduta.html" class="hover:text-amber-400 transition">Código de Conduta</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/intro.js" defer></script>
+</body>
+</html>

@@ -35,6 +35,11 @@ E inclua o `css/tailwind.css` atualizado no commit.
 - A imagem de prévia de cada anúncio é gerada no navegador ao publicar (`js/previa.js`) e fica no Storage do Supabase
 - `.github/workflows/manter-supabase.yml`: consulta diária para o Supabase grátis não pausar
 
+## Modo manutenção
+
+- `manutencao/config.json` com `"ativa": true`: o site publica só a página de entrada com o aviso (`manutencao/index.html`) e as páginas legais; diretório e anúncios levam para a página inicial.
+- Para voltar com o site completo: troque para `"ativa": false` e envie para a branch `main`.
+
 ## Créditos
 
 Mapa do Brasil: [MapSVG](https://mapsvg.com/maps/brazil), via `@svg-maps/brazil`, licença CC BY 4.0.

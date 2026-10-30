@@ -9,6 +9,8 @@ const trocarConteudo = (valor) => ({ element: (el) => el.setAttribute("content",
 export async function onRequestGet({ params, request, env }) {
   const url = new URL(request.url);
   const slug = String(params.slug || "").toLowerCase();
+  // Modo manutenção (scripts/build.mjs): anúncios fora do ar, leva para a página inicial
+  if ((await env.ASSETS.fetch(new URL("/manutencao.txt", url))).ok) return Response.redirect(new URL("/", url), 302);
   const modelo = await env.ASSETS.fetch(new URL("/anuncio", url));
   const cabecalhos = new Headers(modelo.headers);
   cabecalhos.set("Content-Type", "text/html; charset=utf-8");
