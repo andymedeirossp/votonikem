@@ -19,7 +19,11 @@ const copiarPastas = () => {
 if (manutencao) {
   for (const f of ["politica-de-privacidade.html", "termos-de-uso.html", "codigo-de-conduta.html", "404.html", "robots.txt", "_headers"]) cpSync(f, `${SAIDA}/${f}`);
   cpSync("manutencao/index.html", `${SAIDA}/index.html`);
-  copiarPastas();
+  // Só o necessário para a página de aviso (sem config.js, que tem a chave PIX)
+  cpSync("css", `${SAIDA}/css`, { recursive: true, filter: (f) => !f.endsWith("tailwind.src.css") });
+  cpSync("img", `${SAIDA}/img`, { recursive: true });
+  mkdirSync(`${SAIDA}/js`);
+  cpSync("js/intro.js", `${SAIDA}/js/intro.js`);
   writeFileSync(`${SAIDA}/manutencao.txt`, "ativa\n"); // as funções leem isto e mandam para a página inicial
   writeFileSync(`${SAIDA}/_redirects`, ["/diretorio / 302", "/diretorio.html / 302", "/anuncio / 302", "/anuncio.html / 302", ""].join("\n"));
 } else {
