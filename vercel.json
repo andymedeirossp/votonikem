@@ -3,6 +3,12 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "destination": "https://votonikem.com.br/",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
       "destination": "https://votonikem.com.br/:path*",
