@@ -13,7 +13,7 @@ window.VOTONIKEM_CONFIG = {
 
   // WhatsApp do projeto para dúvidas (DDI + DDD + número, só dígitos, ex: "5511999998888").
   // Enquanto estiver vazio, os botões de WhatsApp do site ficam escondidos.
-  WHATSAPP_CONTATO: "",
+  WHATSAPP_CONTATO: "5511945976877",
 
   // Meta do servidor: valores reserva. O site lê a meta real da tabela meta_arrecadacao
   // no Supabase (Table Editor), então normalmente não é preciso mudar aqui.
