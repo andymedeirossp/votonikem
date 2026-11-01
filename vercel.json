@@ -1,7 +1,12 @@
 {
   "outputDirectory": "dist",
+  "cleanUrls": true,
   "redirects": [
-    { "source": "/", "destination": "https://votonikem.com.br/", "permanent": true },
-    { "source": "/:path*", "destination": "https://votonikem.com.br/:path*", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "destination": "https://votonikem.com.br/:path*",
+      "permanent": false
+    }
   ]
 }
