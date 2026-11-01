@@ -1,6 +1,7 @@
 {
   "outputDirectory": "dist",
   "redirects": [
+    { "source": "/", "destination": "https://votonikem.com.br/", "permanent": true },
     { "source": "/:path*", "destination": "https://votonikem.com.br/:path*", "permanent": true }
   ]
 }
