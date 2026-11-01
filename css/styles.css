@@ -615,3 +615,8 @@ a.btn-zap:hover, a.btn-link:hover { filter: brightness(1.08); transform: transla
 #modal-legal-corpo li + li { margin-top: 0.25rem; }
 #modal-legal-corpo code { color: #34d399; }
 body.modal-aberto { overflow: hidden; }
+/* Vitrine da página inicial: cards centralizados, de 1 a 4 por linha */
+.vitrine { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.vitrine > article { width: 100%; }
+@media (min-width: 640px) { .vitrine > article { width: calc(50% - .5rem); max-width: 290px; } }
+@media (min-width: 1024px) { .vitrine > article { width: calc(25% - .75rem); } }
