@@ -637,3 +637,13 @@ body.modal-aberto { overflow: hidden; }
 .btn-email { color: #e2e8f0; background: #0d1424; border: 1px solid #334155;
   --icone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3 7 9 6 9-6'/%3E%3C/svg%3E"); }
 .btn-pdf { cursor: pointer; border: 0; }
+
+/* Alerta contra golpes (banco de talentos) */
+.alerta-golpe { background: rgba(127, 29, 29, 0.28); border: 1px solid rgba(248, 113, 113, 0.45); border-radius: 16px; padding: 16px 18px; color: #fecaca; font-size: 13px; line-height: 1.55; text-align: left; }
+.alerta-golpe .alerta-titulo { color: #fff; font-weight: 800; font-size: 14px; margin-bottom: 6px; }
+.alerta-golpe ul { list-style: disc; padding-left: 18px; display: grid; gap: 4px; }
+.alerta-golpe strong { color: #fff; }
+.alerta-golpe .alerta-rodape { margin-top: 8px; font-size: 12px; color: #fca5a5; }
+.alerta-golpe a { color: #fbbf24; text-decoration: underline; }
+.alerta-compacto { font-size: 12px; padding: 12px 14px; }
+.alerta-compacto .alerta-titulo { font-size: 13px; }

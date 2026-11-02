@@ -72,6 +72,15 @@
           <button type="button" class="chip-filtro" data-disp="remoto" aria-pressed="false">Remoto</button>
           <button type="button" class="chip-filtro" data-disp="primeiro_emprego" aria-pressed="false">Primeiro emprego</button>
         </div>
+        <div class="alerta-golpe mt-6" role="note">
+          <p class="alerta-titulo">⚠️ Cuidado com golpes de vaga de emprego</p>
+          <ul>
+            <li><strong>Empresa séria não cobra nada</strong> para você participar de seleção, entrevista, curso, treinamento, exame, uniforme ou "taxa de cadastro".</li>
+            <li>Desconfie de salário alto demais, pressa para fechar, pedido de PIX, dados bancários, senhas ou códigos recebidos por SMS.</li>
+            <li><strong>O VotoniKem não intermedeia vagas</strong> e não tem vínculo com as empresas nem com os profissionais cadastrados. O contato é direto entre vocês, e o VotoniKem nunca cobra nada de candidatos.</li>
+          </ul>
+          <p class="alerta-rodape">Recebeu uma proposta suspeita usando o nome do VotoniKem? Denuncie para <a href="mailto:dpo@votonikem.com.br">dpo@votonikem.com.br</a>.</p>
+        </div>
       </div>
     </section>
 
@@ -141,6 +150,10 @@
             <p class="text-[11px] text-amber-400/90 mt-2 leading-relaxed">⚠️ Antes de enviar, <strong>tire do PDF o seu CPF, RG, endereço e data de nascimento</strong>. Ele pode ser aberto por quem visitar o seu perfil. Máximo de 2 MB.</p>
           </div>
           <div class="hidden" aria-hidden="true"><label>Não preencha <input type="text" id="t-confirmar" tabindex="-1" autocomplete="off"></label></div>
+          <div class="alerta-golpe alerta-compacto" role="note">
+            <p class="alerta-titulo">⚠️ Atenção antes de publicar</p>
+            <p>O VotoniKem só divulga o seu perfil: <strong>não intermedeia vagas, não tem vínculo com as empresas e nunca cobra nada</strong>. Se alguém pedir pagamento para entrevista, curso, treinamento ou "liberar a vaga", é golpe. Não pague e denuncie.</p>
+          </div>
           <label class="flex items-start gap-2.5 text-[11px] text-slate-400 leading-relaxed cursor-pointer">
             <input id="t-consentimento" type="checkbox" required class="mt-0.5 accent-amber-500 w-4 h-4 shrink-0">
             <span>Tenho 18 anos ou mais. Autorizo a <strong class="text-slate-200">publicação</strong> no banco de talentos do VotoniKem, por 90 dias, do meu primeiro nome com a inicial do sobrenome, cargo, resumo, habilidades, experiências, cidade, contato e currículo informados, e consinto, de forma específica, com o tratamento do <strong class="text-slate-200">dado sensível de opinião política</strong> que essa participação pode revelar (LGPD, art. 11). Sei que posso pedir a remoção a qualquer momento. Li os <a href="/termos-de-uso.html" class="text-amber-400 underline">Termos de Uso</a> e a <a href="/politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
@@ -152,6 +165,7 @@
         <div id="t-sucesso" class="hidden text-center bg-[#162032] border border-emerald-500/40 rounded-2xl p-7" role="status">
           <div class="text-4xl mb-2" aria-hidden="true">🎉</div>
           <h3 class="text-xl font-extrabold text-white mb-2">Seu perfil está no ar!</h3>
+          <p class="text-sm text-amber-300 font-semibold mb-3">⚠️ Lembre: ninguém pode cobrar de você para participar de uma vaga. Se pedirem pagamento, é golpe.</p>
           <p class="text-sm text-slate-400 mb-5">Ele fica disponível por 90 dias. Para tirar antes, fale com a gente pelo WhatsApp do projeto ou pelo dpo@votonikem.com.br.</p>
           <div class="flex flex-wrap justify-center gap-3">
             <a id="t-ver" href="#" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl">Ver meu perfil →</a>
