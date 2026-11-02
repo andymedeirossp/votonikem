@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil profissional | VotoniKem</title>
+  <meta name="description" content="Perfil profissional no banco de talentos do VotoniKem.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="VotoniKem">
+  <meta property="og:title" content="Perfil profissional | VotoniKem">
+  <meta property="og:description" content="Perfil profissional no banco de talentos do VotoniKem.">
+  <meta property="og:image" content="https://votonikem.com.br/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <meta name="robots" content="noindex,nofollow">
+</head>
+<body class="bg-[#0f172a] text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+  <header class="border-b border-slate-800/80 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <div class="logo-vk shrink-0 text-lg sm:text-xl px-2 sm:px-2.5 py-1 rounded-lg">VK</div>
+        <div>
+          <span class="text-lg sm:text-2xl font-extrabold text-white tracking-wider whitespace-nowrap">VOTONI KEM</span>
+          <p class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">PÁTRIA • LIBERDADE • UNIÃO</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+        <a href="/diretorio" class="hover:text-amber-400 transition">Diretório</a>
+        <a href="/talentos" class="text-amber-400 font-bold">Talentos</a>
+        <a href="/#como-funciona" class="hover:text-amber-400 transition">Como funciona</a>
+        <a href="/#precos" class="hover:text-amber-400 transition">Anunciar</a>
+      </nav>
+      <a href="/#planos" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+        <span aria-hidden="true">🚀</span> <span class="sm:hidden">Anunciar</span><span class="hidden sm:inline">Anunciar grátis</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 px-4 py-8 md:py-12">
+    <div class="max-w-3xl mx-auto">
+      <a href="/talentos" class="text-sm text-slate-400 hover:text-amber-400">← Voltar aos talentos</a>
+
+      <div id="carregando" class="text-center text-slate-400 py-20">Carregando perfil...</div>
+
+      <div id="nao-encontrado" class="hidden text-center py-16">
+        <div class="text-4xl mb-3" aria-hidden="true">📄</div>
+        <h1 class="text-xl font-extrabold text-white mb-2">Perfil não encontrado</h1>
+        <p class="text-sm text-slate-400 mb-6">Ele pode ter sido removido ou o prazo de 90 dias terminou.</p>
+        <a href="/talentos" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl">Ver o banco de talentos</a>
+      </div>
+
+      <article id="perfil" class="hidden mt-6">
+        <div class="bg-[#162032] border border-slate-800 rounded-3xl p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-5 mb-6">
+            <div id="p-avatar"></div>
+            <div class="min-w-0">
+              <h1 id="p-nome" class="text-2xl md:text-3xl font-black text-white leading-tight"></h1>
+              <p id="p-cargo" class="text-amber-400 font-bold mt-1"></p>
+              <p id="p-local" class="text-sm text-slate-400 mt-1"></p>
+            </div>
+          </div>
+          <section id="p-sobre-sec" class="hidden mb-6">
+            <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 mb-2">Sobre</h2>
+            <p id="p-sobre" class="text-slate-300 leading-relaxed whitespace-pre-line"></p>
+          </section>
+          <section id="p-hab-sec" class="hidden mb-6">
+            <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 mb-2">Habilidades</h2>
+            <div id="p-hab" class="perfil-hab flex flex-wrap gap-2"></div>
+          </section>
+          <section id="p-exp-sec" class="hidden mb-6">
+            <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 mb-2">Experiência</h2>
+            <ul id="p-exp" class="space-y-2"></ul>
+          </section>
+          <div id="p-acoes" class="grid gap-3 sm:grid-cols-2"></div>
+          <p class="text-xs text-slate-500 mt-5 leading-relaxed">Ao entrar em contato, trate o profissional com respeito. O VotoniKem nunca cobra taxa de candidatos. Desconfie de quem pedir dinheiro em troca de vaga.</p>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-3 mt-5">
+          <span id="p-validade" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-blue-300 bg-blue-500/10 rounded-full px-3 py-1"></span>
+          <a id="p-denunciar" href="#" class="text-xs text-slate-500 hover:text-red-400 underline">Denunciar este perfil</a>
+        </div>
+      </article>
+
+      <section class="mt-12 bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-6 text-center">
+        <h2 class="text-lg font-extrabold text-white mb-1">Está procurando trabalho também?</h2>
+        <p class="text-sm text-slate-400 mb-4">Cadastre seu currículo grátis no banco de talentos do VotoniKem.</p>
+        <a href="/talentos#cadastrar" class="inline-flex bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-3 rounded-xl">📄 Cadastrar meu currículo</a>
+      </section>
+    </div>
+  </main>
+  <footer class="mt-auto bg-[#0b0f19] border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="space-y-1 md:text-left">
+        <p>© 2026 VotoniKem. Todos os direitos reservados.</p>
+        <p class="text-[11px] text-slate-400">Anderson de Sá Medeiros ME · São Paulo/SP</p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+        <a href="/politica-de-privacidade.html" class="hover:text-amber-400 transition">Política de Privacidade (LGPD)</a>
+        <a href="/termos-de-uso.html" class="hover:text-amber-400 transition">Termos de Uso</a>
+        <a href="/codigo-de-conduta.html" class="hover:text-amber-400 transition">Código de Conduta</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/config.js" defer></script>
+  <script src="/js/vk-comum.js" defer></script>
+  <script src="/js/talentos-comum.js" defer></script>
+  <script src="/js/talento.js" defer></script>
+</body>
+</html>

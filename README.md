@@ -35,6 +35,12 @@ E inclua o `css/tailwind.css` atualizado no commit.
 - A imagem de prévia de cada anúncio é gerada no navegador ao publicar (`js/previa.js`) e fica no Storage do Supabase
 - `.github/workflows/manter-supabase.yml`: consulta diária para o Supabase grátis não pausar
 
+## Banco de talentos
+
+- `talentos.html` (lista, busca e cadastro) e `talento.html` (perfil, servido em `/t/<slug>` por `functions/t/[slug].js`, fora do Google)
+- `js/talentos-comum.js`, `js/talentos.js`, `js/talento.js`
+- Perfis valem 90 dias; PDFs ficam num espaço privado e só abrem por link temporário enquanto o perfil está ativo
+
 ## Modo manutenção
 
 - `manutencao/config.json` com `"ativa": true`: o site publica só a página de entrada com o aviso (`manutencao/index.html`) e as páginas legais; diretório e anúncios levam para a página inicial.

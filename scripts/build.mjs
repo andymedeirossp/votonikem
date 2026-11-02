@@ -25,7 +25,7 @@ if (manutencao) {
   mkdirSync(`${SAIDA}/js`);
   cpSync("js/intro.js", `${SAIDA}/js/intro.js`);
   writeFileSync(`${SAIDA}/manutencao.txt`, "ativa\n"); // as funções leem isto e mandam para a página inicial
-  writeFileSync(`${SAIDA}/_redirects`, ["/diretorio / 302", "/diretorio.html / 302", "/anuncio / 302", "/anuncio.html / 302", ""].join("\n"));
+  writeFileSync(`${SAIDA}/_redirects`, ["/diretorio / 302", "/diretorio.html / 302", "/anuncio / 302", "/anuncio.html / 302", "/talentos / 302", "/talentos.html / 302", "/talento / 302", "/talento.html / 302", ""].join("\n"));
 } else {
   const arquivos = readdirSync(".").filter((f) => /\.(html|txt|xml)$/.test(f));
   for (const f of [...arquivos, "_headers"]) cpSync(f, `${SAIDA}/${f}`);

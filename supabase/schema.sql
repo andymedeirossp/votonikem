@@ -142,3 +142,14 @@ grant insert (imagem_url), select (imagem_url) on public.anuncios to anon;
 alter table public.anuncios add column if not exists destaque_ate date;
 -- anuncios_publicos: destaque = destaque and (destaque_ate is null or destaque_ate >= hoje em America/Sao_Paulo)
 grant select (destaque_ate) on public.anuncios to anon;
+
+-- 2026-11-01: banco de talentos (migração banco_de_talentos no Supabase)
+-- Tabela public.talentos (nome_completo e email privados; nome exibido = primeiro nome + inicial),
+-- visão public.talentos_publicos (status ativo e expira_em > agora), função publicar_talento(p jsonb),
+-- validade de 90 dias, índice único de e-mail entre perfis ativos,
+-- bucket "curriculos" (público por link, 2 MB, só PDF; anon envia apenas para pdf/).
+-- 2026-11-01: currículos em espaço privado (bucket curriculos com public = false). O site pede um link assinado
+-- (POST /storage/v1/object/sign/...) e a política "site le curriculo de perfil ativo" só libera PDFs de perfis ativos.
+-- pg_cron: job "apagar-talentos-vencidos" (todo dia 07:20 UTC) apaga perfis vencidos há mais de 30 dias.
+-- Os arquivos PDF não podem ser apagados por SQL; limpar pelo painel (Storage → curriculos) uma vez por mês
+-- os arquivos de perfis que não existem mais.

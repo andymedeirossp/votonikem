@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco de talentos | VotoniKem</title>
+  <meta name="description" content="Profissionais disponíveis para vagas CLT, PJ e freelance, de todo o Brasil. Cadastre seu currículo grátis.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="VotoniKem">
+  <meta property="og:title" content="Banco de talentos | VotoniKem">
+  <meta property="og:description" content="Profissionais disponíveis para vagas CLT, PJ e freelance, de todo o Brasil. Cadastre seu currículo grátis.">
+  <meta property="og:image" content="https://votonikem.com.br/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://votonikem.com.br/talentos">
+  <link rel="canonical" href="https://votonikem.com.br/talentos">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+</head>
+<body class="bg-[#0f172a] text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+  <header class="border-b border-slate-800/80 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <div class="logo-vk shrink-0 text-lg sm:text-xl px-2 sm:px-2.5 py-1 rounded-lg">VK</div>
+        <div>
+          <span class="text-lg sm:text-2xl font-extrabold text-white tracking-wider whitespace-nowrap">VOTONI KEM</span>
+          <p class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">PÁTRIA • LIBERDADE • UNIÃO</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+        <a href="/diretorio" class="hover:text-amber-400 transition">Diretório</a>
+        <a href="/talentos" class="text-amber-400 font-bold">Talentos</a>
+        <a href="/#como-funciona" class="hover:text-amber-400 transition">Como funciona</a>
+        <a href="/#precos" class="hover:text-amber-400 transition">Anunciar</a>
+      </nav>
+      <a href="/#planos" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+        <span aria-hidden="true">🚀</span> <span class="sm:hidden">Anunciar</span><span class="hidden sm:inline">Anunciar grátis</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="px-4 pt-10 pb-6 border-b border-slate-800/80 bandeira-sutil">
+      <div class="max-w-6xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Banco de talentos</span>
+        <h1 class="text-2xl md:text-4xl font-black text-white mt-2 mb-2">Profissionais disponíveis para trabalhar</h1>
+        <p class="text-slate-400 text-sm mb-6">Gente que compartilha os seus valores, pronta para uma vaga CLT, PJ ou um freelance. Fale direto com o profissional.</p>
+
+        <form id="busca" class="busca grid gap-3 md:grid-cols-[1.6fr_1fr_1fr_auto]" role="search">
+          <div><label for="f-q" class="sr-only">Cargo ou habilidade</label>
+            <input id="f-q" name="q" type="search" maxlength="60" placeholder="Cargo ou habilidade. Ex: vendedor, Excel" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div><label for="f-uf" class="sr-only">Estado</label>
+            <select id="f-uf" name="uf" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"><option value="">Todos os estados</option><option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option><option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option><option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option><option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option><option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option><option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option><option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option><option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option><option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option></select></div>
+          <div><label for="f-cidade" class="sr-only">Cidade</label>
+            <input id="f-cidade" name="cidade" type="text" maxlength="60" placeholder="Cidade" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-2.5 rounded-lg">Buscar</button>
+        </form>
+        <div id="chips" class="flex flex-wrap gap-2 mt-4" role="group" aria-label="Tipo de vaga">
+          <button type="button" class="chip-filtro" data-disp="" aria-pressed="true">Todos</button>
+          <button type="button" class="chip-filtro" data-disp="clt" aria-pressed="false">CLT</button>
+          <button type="button" class="chip-filtro" data-disp="pj" aria-pressed="false">PJ</button>
+          <button type="button" class="chip-filtro" data-disp="freelance" aria-pressed="false">Freelance</button>
+          <button type="button" class="chip-filtro" data-disp="remoto" aria-pressed="false">Remoto</button>
+          <button type="button" class="chip-filtro" data-disp="primeiro_emprego" aria-pressed="false">Primeiro emprego</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <p id="resumo" class="text-sm text-slate-300" aria-live="polite">Carregando profissionais...</p>
+          <button type="button" id="limpar" class="hidden text-xs text-slate-400 hover:text-amber-400 underline">Limpar filtros</button>
+        </div>
+        <div id="resultados" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+        <div id="vazio" class="hidden text-center py-14 px-4 bg-[#162032] border border-slate-800 rounded-2xl">
+          <div class="text-4xl mb-3" aria-hidden="true">📄</div>
+          <h2 class="text-lg font-extrabold text-white mb-2">Ainda não há profissionais por aqui</h2>
+          <p class="text-sm text-slate-400 mb-6 max-w-md mx-auto">O banco de talentos está começando. Se você está procurando trabalho, seja um dos primeiros.</p>
+          <a href="#cadastrar" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl">📄 Cadastrar meu currículo</a>
+        </div>
+        <p id="erro" class="hidden text-center text-sm text-red-400 py-10" role="alert">Não foi possível carregar os profissionais agora. Atualize a página em instantes.</p>
+        <div class="text-center mt-8"><button type="button" id="mais" class="hidden bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-white text-sm font-bold px-6 py-3 rounded-xl">Carregar mais</button></div>
+      </div>
+    </section>
+
+    <section id="cadastrar" class="px-4 py-12 bg-[#0b0f19] border-t border-slate-800">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Grátis · fica no ar por 90 dias</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-2 mb-2">Está procurando trabalho? Cadastre seu currículo</h2>
+          <p class="text-sm text-slate-400">Empresas e empreendedores do VotoniKem falam direto com você. No site aparece só o seu primeiro nome e a inicial do sobrenome.</p>
+        </div>
+
+        <form id="talento-form" class="bg-[#162032] border border-slate-800 rounded-2xl p-5 sm:p-7 space-y-4" novalidate>
+          <div><label for="t-nome" class="block text-xs font-medium text-slate-300 mb-1">Nome completo * <span class="text-slate-500">(no site aparece só "Primeiro nome + inicial")</span></label>
+            <input id="t-nome" type="text" required minlength="3" maxlength="80" autocomplete="name" placeholder="Ex: João da Silva" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div><label for="t-cargo" class="block text-xs font-medium text-slate-300 mb-1">Cargo ou área que você procura *</label>
+            <input id="t-cargo" type="text" required minlength="2" maxlength="60" placeholder="Ex: Eletricista, Vendedora, Assistente administrativo" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div><label for="t-resumo" class="block text-xs font-medium text-slate-300 mb-1">Sobre você <span class="text-slate-500">(opcional)</span></label>
+            <textarea id="t-resumo" rows="3" maxlength="400" placeholder="Ex: 8 anos de experiência em instalações residenciais. Pontual e organizado." class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea>
+            <p class="text-[11px] text-slate-500 text-right mt-1"><span id="t-resumo-cont">0</span>/400</p></div>
+          <div><label for="t-habilidades" class="block text-xs font-medium text-slate-300 mb-1">Habilidades <span class="text-slate-500">(opcional)</span></label>
+            <input id="t-habilidades" type="text" maxlength="300" placeholder="Separe por vírgula. Ex: NR-10, Excel, Carteira B" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div><label for="t-experiencias" class="block text-xs font-medium text-slate-300 mb-1">Experiências <span class="text-slate-500">(opcional)</span></label>
+            <textarea id="t-experiencias" rows="3" maxlength="600" placeholder="Uma por linha. Ex: Eletricista · Construtora (Campinas) · 2020 a 2026" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea></div>
+          <fieldset>
+            <legend class="block text-xs font-medium text-slate-300 mb-1">Tipo de trabalho que você aceita *</legend>
+            <div class="flex flex-wrap gap-2" id="t-disp">
+              <label class="chip-check"><input type="checkbox" value="clt"> CLT</label>
+              <label class="chip-check"><input type="checkbox" value="pj"> PJ</label>
+              <label class="chip-check"><input type="checkbox" value="freelance"> Freelance</label>
+              <label class="chip-check"><input type="checkbox" value="remoto"> Remoto</label>
+              <label class="chip-check"><input type="checkbox" value="primeiro_emprego"> Primeiro emprego</label>
+            </div>
+          </fieldset>
+          <div class="grid grid-cols-[6rem_1fr] gap-3">
+            <div><label for="t-uf" class="block text-xs font-medium text-slate-300 mb-1">UF *</label>
+              <select id="t-uf" required class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 px-2.5"><option value="">--</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
+            <div><label for="t-cidade" class="block text-xs font-medium text-slate-300 mb-1">Cidade *</label>
+              <input id="t-cidade" type="text" required minlength="2" maxlength="80" autocomplete="address-level2" placeholder="Ex: Campinas" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          </div>
+          <div><label for="t-whatsapp" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp para contato <span class="text-slate-500">(aparece no seu perfil)</span></label>
+            <input id="t-whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(11) 99999-9999" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div><label for="t-email" class="block text-xs font-medium text-slate-300 mb-1">Seu e-mail *</label>
+            <input id="t-email" type="email" required maxlength="160" autocomplete="email" placeholder="voce@email.com" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            <label class="flex items-center gap-2 text-[11px] text-slate-400 mt-2 cursor-pointer"><input id="t-mostrar-email" type="checkbox" class="accent-amber-500 w-4 h-4"> Mostrar meu e-mail no perfil como forma de contato</label>
+            <p class="text-[11px] text-slate-500 mt-1">Informe um WhatsApp ou marque para mostrar o e-mail, para as empresas conseguirem falar com você.</p></div>
+          <div class="bg-[#0d1424] border border-slate-800 rounded-xl p-4">
+            <label for="t-pdf" class="block text-xs font-medium text-slate-300 mb-1">Currículo em PDF <span class="text-slate-500">(opcional)</span></label>
+            <input id="t-pdf" type="file" accept="application/pdf" class="text-xs text-slate-400 file:mr-3 file:rounded-lg file:border-0 file:bg-slate-700 file:px-3 file:py-1.5 file:text-xs file:font-bold file:text-white">
+            <p class="text-[11px] text-amber-400/90 mt-2 leading-relaxed">⚠️ Antes de enviar, <strong>tire do PDF o seu CPF, RG, endereço e data de nascimento</strong>. Ele pode ser aberto por quem visitar o seu perfil. Máximo de 2 MB.</p>
+          </div>
+          <div class="hidden" aria-hidden="true"><label>Não preencha <input type="text" id="t-confirmar" tabindex="-1" autocomplete="off"></label></div>
+          <label class="flex items-start gap-2.5 text-[11px] text-slate-400 leading-relaxed cursor-pointer">
+            <input id="t-consentimento" type="checkbox" required class="mt-0.5 accent-amber-500 w-4 h-4 shrink-0">
+            <span>Tenho 18 anos ou mais. Autorizo a <strong class="text-slate-200">publicação</strong> no banco de talentos do VotoniKem, por 90 dias, do meu primeiro nome com a inicial do sobrenome, cargo, resumo, habilidades, experiências, cidade, contato e currículo informados, e consinto, de forma específica, com o tratamento do <strong class="text-slate-200">dado sensível de opinião política</strong> que essa participação pode revelar (LGPD, art. 11). Sei que posso pedir a remoção a qualquer momento. Li os <a href="/termos-de-uso.html" class="text-amber-400 underline">Termos de Uso</a> e a <a href="/politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
+          </label>
+          <p id="t-erro" class="hidden text-xs text-red-400 font-semibold" role="alert"></p>
+          <button id="t-enviar" type="submit" class="w-full bg-amber-500 hover:bg-amber-400 disabled:opacity-60 text-slate-950 font-extrabold py-3.5 rounded-xl text-sm">📄 <span id="t-enviar-texto">Publicar meu perfil grátis</span></button>
+        </form>
+
+        <div id="t-sucesso" class="hidden text-center bg-[#162032] border border-emerald-500/40 rounded-2xl p-7" role="status">
+          <div class="text-4xl mb-2" aria-hidden="true">🎉</div>
+          <h3 class="text-xl font-extrabold text-white mb-2">Seu perfil está no ar!</h3>
+          <p class="text-sm text-slate-400 mb-5">Ele fica disponível por 90 dias. Para tirar antes, fale com a gente pelo WhatsApp do projeto ou pelo dpo@votonikem.com.br.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a id="t-ver" href="#" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl">Ver meu perfil →</a>
+            <a id="t-compartilhar" href="#" target="_blank" rel="noopener" class="bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-white text-sm font-bold px-5 py-3 rounded-xl">Compartilhar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="mt-auto bg-[#0b0f19] border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="space-y-1 md:text-left">
+        <p>© 2026 VotoniKem. Todos os direitos reservados.</p>
+        <p class="text-[11px] text-slate-400">Anderson de Sá Medeiros ME · São Paulo/SP</p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+        <a href="/politica-de-privacidade.html" class="hover:text-amber-400 transition">Política de Privacidade (LGPD)</a>
+        <a href="/termos-de-uso.html" class="hover:text-amber-400 transition">Termos de Uso</a>
+        <a href="/codigo-de-conduta.html" class="hover:text-amber-400 transition">Código de Conduta</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/config.js" defer></script>
+  <script src="/js/vk-comum.js" defer></script>
+  <script src="/js/talentos-comum.js" defer></script>
+  <script src="/js/talentos.js" defer></script>
+</body>
+</html>
