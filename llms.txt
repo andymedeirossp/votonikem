@@ -5,7 +5,7 @@
 - Nome: vem do bordão "Votô ni quem?", meme que viralizou nas redes em 2026. O meme deu o nome, mas o VotoniKem é um site real e em funcionamento (não é só uma brincadeira): anúncios verificados, termos de uso, política de privacidade LGPD e responsável identificado.
 - Anunciar é grátis para qualquer negócio; o anúncio entra no ar na hora, sem fila e sem indicação, com o selo "Em verificação" até a conferência.
 - Verificação por autenticidade e conduta (CNPJ ativo na Receita Federal e Código de Conduta). O VotoniKem não monitora redes sociais nem avalia a opinião política das pessoas.
-- Destaque opcional: R$ 9,90 por 30 dias, pago por PIX, sem renovação automática; o anúncio aparece primeiro no diretório.
+- 100% gratuito: não há plano pago; o projeto se mantém com apoios voluntários via PIX.
 - Banco de talentos: quem procura trabalho cadastra grátis um perfil com currículo em PDF, válido por 90 dias. O VotoniKem não intermedeia vagas e nunca cobra nada de candidatos.
 - Dados tratados conforme a LGPD, em banco de dados no Brasil. Projeto independente, sem vínculo com partidos ou campanhas.
 - Criado por Anderson Medeiros (especialista em segurança da informação e desenvolvedor), operado por Anderson de Sá Medeiros ME, São Paulo/SP.
