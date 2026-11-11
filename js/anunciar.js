@@ -65,6 +65,9 @@
     const m = s.match(/instagram\.com\/([A-Za-z0-9._]+)/i);
     if (m) return "@" + m[1];
     if (/^@?[A-Za-z0-9._]{1,30}$/.test(s)) return s.startsWith("@") ? s : "@" + s;
+    // "usuario Nome Sobrenome" (ou "@usuario - Nome"): fica só com o @ do começo
+    const primeiro = s.match(/^@?([A-Za-z0-9._]{1,30})(?=[\s,;|/-])/);
+    if (primeiro) return "@" + primeiro[1];
     return s.slice(0, 120);
   };
 
