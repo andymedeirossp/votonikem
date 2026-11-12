@@ -50,7 +50,12 @@
   };
 
   // Nome de MEI costuma vir como "12.345.678 Fulano de Tal": não exibimos números do CNPJ
-  const limparNomeMei = (n) => String(n || "").replace(/^\s*\d{2}\.?\d{3}\.?\d{3}\s+/, "").trim();
+  // MEI: a Receita devolve o nome com parte do CPF ("12.345.678 NOME" ou "NOME ***123456**"); tira esses números
+  const limparNomeMei = (n) => String(n || "")
+    .replace(/^\s*\d{2}\.?\d{3}\.?\d{3}\s+/, "")
+    .replace(/\s*\*+\s*\d[\d.\-]*\s*\**\s*$/, "")   // "NOME ***123456**"
+    .replace(/\s+\d[\d.\-]{7,13}\s*$/, "")           // "NOME 12345678901"
+    .replace(/\*+/g, "").replace(/\s+/g, " ").trim();
 
   const normalizarSite = (v) => {
     let s = String(v || "").trim().replace(/\s+/g, "");
