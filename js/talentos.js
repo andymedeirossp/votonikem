@@ -165,7 +165,7 @@
         const r = await fetch(`${CFG.SUPABASE_URL}/rest/v1/rpc/publicar_talento`, {
           method: "POST", headers: T.cabecalhos({ "Content-Type": "application/json" }), body: JSON.stringify({ p: dados })
         });
-        if (r.status === 409) return erro("Já existe um perfil ativo com este e-mail. Para alterar, fale com a gente pelo WhatsApp do projeto ou pelo dpo@votonikem.com.br.");
+        if (r.status === 409) return erro("Já existe um perfil ativo com este e-mail. Para alterar, fale com a gente pelo WhatsApp do projeto ou pelo contato@votonikem.com.br.");
         if (!r.ok) throw new Error(`HTTP ${r.status} ${await r.text()}`);
         const slug = await r.json();
         form.classList.add("hidden");

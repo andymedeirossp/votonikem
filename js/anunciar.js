@@ -313,7 +313,7 @@
         headers: cabecalhos({ "Content-Type": "application/json" }),
         body: JSON.stringify({ p: dados })
       });
-      if (r.status === 409) return mostrarErro("Este CNPJ já tem um anúncio no VotoniKem. Se for seu e quiser alterar, fale com a gente pelo dpo@votonikem.com.br.");
+      if (r.status === 409) return mostrarErro("Este CNPJ já tem um anúncio no VotoniKem. Se for seu e quiser alterar, fale com a gente pelo contato@votonikem.com.br.");
       if (!r.ok) throw new Error(`HTTP ${r.status} ${await r.text()}`);
       const slug = await r.json();
       publicado = { ...dados, slug: typeof slug === "string" ? slug : null };
