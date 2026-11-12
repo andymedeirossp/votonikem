@@ -153,3 +153,12 @@ grant select (destaque_ate) on public.anuncios to anon;
 -- pg_cron: job "apagar-talentos-vencidos" (todo dia 07:20 UTC) apaga perfis vencidos há mais de 30 dias.
 -- Os arquivos PDF não podem ser apagados por SQL; limpar pelo painel (Storage → curriculos) uma vez por mês
 -- os arquivos de perfis que não existem mais.
+
+-- ============================================================
+-- 11/11/2026 — Listas por cidade (migrações listas_por_cidade, listas_enviar_invoker, listas_link_check)
+-- Tabela public.listas: nome, uf, cidade, link (https), descricao, organizador (públicos);
+-- contato (privado, só para confirmar); status pendente|aprovada|oculta (padrão pendente).
+-- anon: insert só nas colunas do formulário (status fica pendente) e select só das aprovadas, sem a coluna contato.
+-- View public.listas_publicas (security_invoker). RPC public.enviar_lista(p jsonb) (security invoker).
+-- Para aprovar: Table Editor → listas → status = aprovada.
+-- ============================================================

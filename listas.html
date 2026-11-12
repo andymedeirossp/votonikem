@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listas de negócios por cidade | VotoniKem</title>
+  <meta name="description" content="Listas de negócios de direita por cidade, reunidas num lugar só. Organiza uma lista? Divulgue grátis no VotoniKem.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="VotoniKem">
+  <meta property="og:title" content="Listas de negócios por cidade | VotoniKem">
+  <meta property="og:description" content="Listas de negócios de direita por cidade, reunidas num lugar só. Organiza uma lista? Divulgue grátis no VotoniKem.">
+  <meta property="og:image" content="https://votonikem.com.br/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://votonikem.com.br/listas">
+  <link rel="canonical" href="https://votonikem.com.br/listas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+</head>
+<body class="bg-[#0f172a] text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+  <header class="border-b border-slate-800/80 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <div class="logo-vk shrink-0 text-lg sm:text-xl px-2 sm:px-2.5 py-1 rounded-lg">VK</div>
+        <div>
+          <span class="text-lg sm:text-2xl font-extrabold text-white tracking-wider whitespace-nowrap">VOTONI KEM</span>
+          <p class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">PÁTRIA • LIBERDADE • UNIÃO</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+        <a href="/diretorio" class="hover:text-amber-400 transition">Diretório</a>
+        <a href="/talentos" class="hover:text-amber-400 transition">Talentos</a>
+        <a href="/listas" class="text-amber-400 font-bold">Listas</a>
+        <a href="/#como-funciona" class="hover:text-amber-400 transition">Como funciona</a>
+        <a href="/#precos" class="hover:text-amber-400 transition">Anunciar</a>
+      </nav>
+      <a href="/#planos" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+        <span aria-hidden="true">🚀</span> <span class="sm:hidden">Anunciar</span><span class="hidden sm:inline">Anunciar grátis</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="px-4 pt-10 pb-8 border-b border-slate-800/80 bandeira-sutil">
+      <div class="max-w-6xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Listas por cidade</span>
+        <h1 class="text-2xl md:text-4xl font-black text-white mt-2 mb-2">Listas de negócios da nossa turma, cidade por cidade</h1>
+        <p class="text-slate-400 text-sm max-w-3xl">Em várias cidades, grupos estão montando listas de negócios de quem compartilha os mesmos valores. Aqui você encontra todas num lugar só. Quem organiza uma lista divulga aqui de graça.</p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="#cadastrar-lista" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl">📋 Divulgar a lista da minha cidade</a>
+          <a href="/#planos" class="bg-[#0d1424] hover:bg-slate-800 border border-slate-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl">🚀 Anunciar meu negócio grátis</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <p id="resumo" class="text-sm text-slate-300" aria-live="polite">Carregando listas...</p>
+          <div><label for="f-uf" class="sr-only">Estado</label>
+            <select id="f-uf" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 !w-auto"><option value="">Todos os estados</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>
+        </div>
+        <div id="resultados" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        <div id="vazio" class="hidden text-center py-14 px-4 bg-[#162032] border border-slate-800 rounded-2xl">
+          <div class="text-4xl mb-3" aria-hidden="true">📋</div>
+          <h2 class="text-lg font-extrabold text-white mb-2">Nenhuma lista por aqui ainda</h2>
+          <p class="text-sm text-slate-400 mb-6 max-w-md mx-auto">Você organiza uma lista de negócios na sua cidade? Seja o primeiro a divulgar aqui. É grátis.</p>
+          <a href="#cadastrar-lista" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-2.5 rounded-xl">📋 Divulgar minha lista</a>
+        </div>
+        <p id="erro" class="hidden text-center text-sm text-red-400 py-10" role="alert">Não foi possível carregar as listas agora. Atualize a página em instantes.</p>
+
+        <div class="mt-10 bg-[#162032] border border-amber-500/40 rounded-2xl p-6 sm:p-8 grid md:grid-cols-[1fr_auto] gap-5 items-center">
+          <div>
+            <h2 class="text-xl font-extrabold text-white mb-1">Seu negócio está numa dessas listas?</h2>
+            <p class="text-sm text-slate-400">Ganhe também uma <strong class="text-white">página própria no VotoniKem</strong>, com selo de verificado e contato direto pelo WhatsApp. É grátis e leva 2 minutos.</p>
+          </div>
+          <a href="/#planos" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-3 rounded-xl text-center whitespace-nowrap">🚀 Anunciar grátis</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cadastrar-lista" class="px-4 py-12 bg-[#0b0f19] border-t border-slate-800">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Grátis · para organizadores</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-2 mb-2">Organiza uma lista? Divulgue aqui</h2>
+          <p class="text-sm text-slate-400">Mostramos a cidade, o nome da lista, quem organiza e o link para ela. A lista aparece depois que a gente confere, normalmente em até 1 dia.</p>
+        </div>
+
+        <form id="lista-form" class="bg-[#162032] border border-slate-800 rounded-2xl p-5 sm:p-7 space-y-4" novalidate>
+          <div><label for="l-nome" class="block text-xs font-medium text-slate-300 mb-1">Nome da lista *</label>
+            <input id="l-nome" type="text" required minlength="3" maxlength="80" placeholder="Ex: Negócios de Direita de Campinas" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div class="grid grid-cols-[6rem_1fr] gap-3">
+            <div><label for="l-uf" class="block text-xs font-medium text-slate-300 mb-1">UF *</label>
+              <select id="l-uf" required class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 px-2.5"><option value="">--</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
+            <div><label for="l-cidade" class="block text-xs font-medium text-slate-300 mb-1">Cidade *</label>
+              <input id="l-cidade" type="text" required minlength="2" maxlength="80" placeholder="Ex: Campinas" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          </div>
+          <div><label for="l-link" class="block text-xs font-medium text-slate-300 mb-1">Link da lista *</label>
+            <input id="l-link" type="url" required maxlength="300" placeholder="Site, Instagram, Google Planilhas, grupo aberto..." class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div><label for="l-descricao" class="block text-xs font-medium text-slate-300 mb-1">Sobre a lista <span class="text-slate-500">(opcional)</span></label>
+            <textarea id="l-descricao" rows="2" maxlength="240" placeholder="Ex: Mais de 80 comércios e prestadores da região, atualizada toda semana." class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea></div>
+          <div><label for="l-organizador" class="block text-xs font-medium text-slate-300 mb-1">Quem organiza * <span class="text-slate-500">(aparece no site: nome, grupo ou @)</span></label>
+            <input id="l-organizador" type="text" required minlength="2" maxlength="60" placeholder="Ex: @direitacampinas" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div><label for="l-contato" class="block text-xs font-medium text-slate-300 mb-1">Seu WhatsApp ou e-mail * <span class="text-slate-500">(não aparece no site: é só para confirmarmos)</span></label>
+            <input id="l-contato" type="text" required maxlength="120" placeholder="(11) 99999-9999 ou voce@email.com" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></div>
+          <div class="hidden" aria-hidden="true"><label>Não preencha <input type="text" id="l-confirmar" tabindex="-1" autocomplete="off"></label></div>
+          <label class="flex items-start gap-2.5 text-[11px] text-slate-400 leading-relaxed cursor-pointer">
+            <input id="l-consentimento" type="checkbox" required class="mt-0.5 accent-amber-500 w-4 h-4 shrink-0">
+            <span>Sou o organizador desta lista ou tenho autorização dele, e ela já é divulgada publicamente pelos próprios participantes. Autorizo o VotoniKem a mostrar o nome da lista, a cidade, a descrição, o organizador e o link. O VotoniKem não copia os negócios da lista: cada um decide se quer anunciar. Li os <a href="/termos-de-uso.html" class="text-amber-400 underline">Termos de Uso</a> e a <a href="/politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
+          </label>
+          <p id="l-erro" class="hidden text-xs text-red-400 font-semibold" role="alert"></p>
+          <button id="l-enviar" type="submit" class="w-full bg-amber-500 hover:bg-amber-400 disabled:opacity-60 text-slate-950 font-extrabold py-3.5 rounded-xl text-sm">📋 <span id="l-enviar-texto">Enviar a lista</span></button>
+        </form>
+
+        <div id="l-sucesso" class="hidden text-center bg-[#162032] border border-emerald-500/40 rounded-2xl p-7" role="status">
+          <div class="text-4xl mb-2" aria-hidden="true">🙌</div>
+          <h3 class="text-xl font-extrabold text-white mb-2">Recebemos a sua lista!</h3>
+          <p class="text-sm text-slate-400 mb-5">Vamos conferir e ela aparece aqui em breve. Enquanto isso, convide os negócios da sua lista a criar a página deles no VotoniKem: é grátis.</p>
+          <a id="l-compartilhar" href="#" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl">Convidar pelo WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="mt-auto bg-[#0b0f19] border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="space-y-1 md:text-left">
+        <p>© 2026 VotoniKem. Todos os direitos reservados.</p>
+        <p class="text-[11px] text-slate-400">Anderson de Sá Medeiros ME · São Paulo/SP</p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+        <a href="/sobre" class="hover:text-amber-400 transition">Sobre</a>
+        <a href="/politica-de-privacidade.html" class="hover:text-amber-400 transition">Política de Privacidade (LGPD)</a>
+        <a href="/termos-de-uso.html" class="hover:text-amber-400 transition">Termos de Uso</a>
+        <a href="/codigo-de-conduta.html" class="hover:text-amber-400 transition">Código de Conduta</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/config.js" defer></script>
+  <script src="/js/vk-comum.js" defer></script>
+  <script src="/js/listas.js" defer></script>
+</body>
+</html>

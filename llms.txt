@@ -16,6 +16,7 @@
 - [Sobre o VotoniKem](https://votonikem.com.br/sobre): descrição completa do projeto
 - [Diretório](https://votonikem.com.br/diretorio): busca de negócios por palavra, estado, cidade e profissão
 - [Banco de talentos](https://votonikem.com.br/talentos): profissionais disponíveis para vagas CLT, PJ, freelance e remoto
+- [Listas por cidade](https://votonikem.com.br/listas): listas de negócios montadas por grupos locais, divulgadas grátis pelos próprios organizadores
 - [Código de Conduta](https://votonikem.com.br/codigo-de-conduta)
 - [Termos de Uso](https://votonikem.com.br/termos-de-uso)
 - [Política de Privacidade](https://votonikem.com.br/politica-de-privacidade)
