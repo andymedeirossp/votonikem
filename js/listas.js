@@ -31,7 +31,7 @@
         <p class="text-xs text-slate-400 mb-3">Organizada por <strong class="text-slate-200">${e(l.organizador)}</strong></p>
         ${l.descricao ? `<p class="text-xs text-slate-400 leading-relaxed mb-4 flex-1">${e(l.descricao)}</p>` : `<div class="flex-1"></div>`}
         ${link ? `<a href="${e(link)}" target="_blank" rel="noopener nofollow ugc" class="btn-link btn-site !py-2.5 text-center">Abrir a lista ↗ <span class="text-slate-400 font-normal">(${e(ondeFica(link))})</span></a>` : ""}
-        <a href="/#planos" class="text-[11px] text-amber-400 hover:underline text-center mt-3">Está nessa lista? Anuncie grátis no VotoniKem</a>
+        <a href="/anunciar" class="text-[11px] text-amber-400 hover:underline text-center mt-3">Está nessa lista? Anuncie grátis no VotoniKem</a>
       </article>`;
     };
 

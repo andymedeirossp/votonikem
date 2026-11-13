@@ -142,7 +142,7 @@
     // Clique (ou Enter) num estado: abre o diretório filtrado; estado sem anúncios leva ao cadastro
     const abrirEstado = (p) => {
       const uf = p.dataset.uf;
-      location.href = porUf[uf] ? `/diretorio?uf=${uf}` : "#planos";
+      location.href = porUf[uf] ? `/diretorio?uf=${uf}` : "/anunciar";
     };
     // No celular: o 1º toque mostra a dica; o 2º toque no mesmo estado abre
     let ultimoToque = null;

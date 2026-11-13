@@ -96,7 +96,7 @@
         <a href="/talentos" class="hover:text-amber-400 transition">Talentos</a>
         <a href="/listas" class="hover:text-amber-400 transition">Listas</a>
         <a href="#como-funciona" class="hover:text-amber-400 transition">Como funciona</a>
-        <a href="#precos" class="hover:text-amber-400 transition">Anunciar</a>
+        <a href="/anunciar" class="hover:text-amber-400 transition">Anunciar</a>
         <a href="politica-de-privacidade.html" class="hover:text-amber-400 transition inline-flex items-center gap-1.5"><span aria-hidden="true">🔒</span> LGPD</a>
       </nav>
 
@@ -104,7 +104,7 @@
         <a href="#doacao" class="hidden lg:inline-flex items-center gap-1.5 text-sm font-bold text-slate-300 hover:text-amber-400 px-3 py-2 rounded-xl border border-slate-700 hover:border-amber-500/60 transition whitespace-nowrap">
           <span aria-hidden="true">❤️</span> Apoiar
         </a>
-        <a href="#planos" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+        <a href="/anunciar" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
           <span aria-hidden="true">🚀</span> <span class="sm:hidden">Anunciar</span><span class="hidden sm:inline">Anunciar grátis</span>
         </a>
         <button type="button" id="btn-menu" class="menu-botao md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-celular">
@@ -120,12 +120,12 @@
         <li><a href="/talentos" class="menu-item"><span aria-hidden="true">📄</span> Banco de talentos</a></li>
         <li><a href="/listas" class="menu-item"><span aria-hidden="true">📋</span> Listas por cidade</a></li>
         <li><a href="#como-funciona" class="menu-item"><span aria-hidden="true">🧭</span> Como funciona</a></li>
-        <li><a href="#precos" class="menu-item"><span aria-hidden="true">📣</span> Anunciar</a></li>
+        <li><a href="/anunciar" class="menu-item"><span aria-hidden="true">📣</span> Anunciar</a></li>
         <li><a href="#mapa" class="menu-item"><span aria-hidden="true">🗺️</span> Rede pelo Brasil</a></li>
         <li><a href="#faq" class="menu-item"><span aria-hidden="true">💬</span> Perguntas frequentes</a></li>
         <li><a href="#doacao" class="menu-item"><span aria-hidden="true">❤️</span> Apoiar o projeto</a></li>
         <li><a href="politica-de-privacidade.html" class="menu-item"><span aria-hidden="true">🔒</span> LGPD e Privacidade</a></li>
-        <li class="pt-3"><a href="#planos" class="block text-center bg-[#064e3b] hover:bg-[#047857] border border-emerald-600/40 text-white text-sm font-extrabold py-3 rounded-xl">🚀 Anunciar grátis</a></li>
+        <li class="pt-3"><a href="/anunciar" class="block text-center bg-[#064e3b] hover:bg-[#047857] border border-emerald-600/40 text-white text-sm font-extrabold py-3 rounded-xl">🚀 Anunciar grátis</a></li>
       </ul>
     </nav>
   </header>
@@ -169,7 +169,7 @@
 
     <div class="flex flex-wrap justify-center gap-3 mb-8">
       <a href="/diretorio" class="inline-flex items-center gap-2 bg-white/95 hover:bg-white text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl shadow-lg">🔎 Encontrar profissionais</a>
-      <a href="#planos" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl shadow-lg shadow-amber-500/20">🚀 Anunciar grátis</a>
+      <a href="/anunciar" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl shadow-lg shadow-amber-500/20">🚀 Anunciar grátis</a>
     </div>
 
     <!-- Posicionamento: negócios, não debate -->
@@ -195,194 +195,23 @@
       <div><div id="stat-estados" class="text-2xl font-black text-emerald-400">0</div><div class="text-[11px] uppercase tracking-wider text-slate-400">estados</div></div>
     </div>
 
-    <!-- Cadastro: publicar anúncio / avisar quem procura -->
-    <div id="planos" class="grid md:grid-cols-[0.85fr_1.15fr] gap-6 md:gap-8 items-start text-left mt-8">
-
-      <!-- Por que entrar agora -->
-      <div class="order-2 md:order-1 md:pt-4">
-        <h2 class="text-lg font-extrabold text-white mb-4">Por que anunciar aqui?</h2>
-        <ul class="space-y-4">
-          <li class="motivo"><span class="motivo-icone" aria-hidden="true">🆓</span><div><strong>Anúncio grátis</strong><p>Sem cartão, sem mensalidade e sem pegadinha. Você pode sair quando quiser.</p></div></li>
-          <li class="motivo"><span class="motivo-icone" aria-hidden="true">🎁</span><div><strong>Kit de divulgação na hora</strong><p>Logo, post e cartão com o seu nome e WhatsApp, prontos para postar.</p></div></li>
-          <li class="motivo"><span class="motivo-icone" aria-hidden="true">⏱️</span><div><strong>No ar na hora</strong><p>Seu anúncio aparece no diretório assim que você publica, com botão direto para o seu WhatsApp.</p></div></li>
-          <li class="motivo"><span class="motivo-icone" aria-hidden="true">✅</span><div><strong>Selo de perfil verificado</strong><p>Mostre aos clientes que o seu negócio é real e confiável.</p></div></li>
-        </ul>
+    <!-- Convite para o cadastro (o formulário fica em /anunciar) -->
+    <div id="planos" class="max-w-3xl mx-auto mt-8 text-left bg-[#162032] border border-amber-500/40 rounded-2xl p-6 sm:p-8 shadow-xl scroll-mt-24">
+      <div class="grid md:grid-cols-[1fr_auto] gap-6 items-center">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-amber-500 block mb-1">Grátis · no ar na hora</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-white mb-3">Tem um negócio? Coloque ele no mapa da turma</h2>
+          <ul class="grid sm:grid-cols-2 gap-x-5 gap-y-2 text-sm text-slate-300">
+            <li>🆓 Sem cartão e sem mensalidade</li>
+            <li>⏱️ No ar em 2 minutos</li>
+            <li>✅ Selo de perfil verificado</li>
+            <li>🎁 Kit de divulgação pronto</li>
+          </ul>
+        </div>
+        <a href="/anunciar" class="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-base font-extrabold px-7 py-4 rounded-xl shadow-lg shadow-amber-500/25 whitespace-nowrap">🚀 Anunciar grátis</a>
       </div>
-
-      <!-- Formulário -->
-      <div class="order-1 md:order-2 bg-[#162032] border border-slate-800 p-6 rounded-2xl shadow-xl">
-        <div class="cadastro-abas" role="tablist" aria-label="Tipo de cadastro">
-          <button type="button" role="tab" id="aba-anunciar" aria-controls="painel-anunciar" aria-selected="true">📣 Quero anunciar</button>
-          <button type="button" role="tab" id="aba-cliente" aria-controls="painel-cliente" aria-selected="false">🔎 Procuro profissionais</button>
-        </div>
-
-        <div id="painel-anunciar" role="tabpanel" aria-labelledby="aba-anunciar">
-        <span class="text-[11px] font-bold uppercase tracking-wider text-amber-500 block mb-1">Grátis · no ar na hora</span>
-        <h3 class="text-xl font-bold text-white mb-2">Publique seu negócio no diretório</h3>
-        <p class="text-slate-400 text-xs mb-5">Preencha uma vez e seu anúncio aparece no VotoniKem com o selo “Em verificação” até a nossa equipe conferir. Sem senha e sem custo.</p>
-
-        <form id="anuncio-form" class="space-y-4" novalidate>
-          <div class="tipo-anuncio" role="radiogroup" aria-label="Tipo de anunciante">
-            <label><input type="radio" name="tipo" value="empresa" checked><span><strong>Tenho CNPJ</strong><small>Empresa ou MEI</small></span></label>
-            <label><input type="radio" name="tipo" value="autonomo"><span><strong>Sou autônomo</strong><small>Sem CNPJ</small></span></label>
-          </div>
-
-          <div id="bloco-cnpj">
-            <label for="an-cnpj" class="block text-xs font-medium text-slate-300 mb-1">CNPJ * <span class="text-slate-500">(não aparece no site)</span></label>
-            <input id="an-cnpj" name="cnpj" type="text" inputmode="numeric" autocomplete="off" placeholder="00.000.000/0000-00" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            <p id="an-cnpj-info" class="text-[11px] mt-1.5 text-slate-400" aria-live="polite">Conferimos na Receita e preenchemos o nome e a cidade para você.</p>
-          </div>
-
-          <div>
-            <label for="an-nome" class="block text-xs font-medium text-slate-300 mb-1">Nome do negócio, como vai aparecer *</label>
-            <input id="an-nome" name="nome" type="text" required minlength="3" maxlength="80" placeholder="Ex: Doces da Maria / João Eletricista" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-          </div>
-
-          <div>
-            <label for="an-profissao" class="block text-xs font-medium text-slate-300 mb-1">Profissão ou área de atuação *</label>
-            <input id="an-profissao" name="profissao" type="text" list="lista-profissoes" required minlength="2" maxlength="80" placeholder="Ex: Confeitaria, Eletricista, Advogado" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            <datalist id="lista-profissoes">
-              <option value="Advocacia"><option value="Alimentação / Confeitaria"><option value="Arquitetura e Engenharia"><option value="Beleza e Estética"><option value="Construção e Reformas"><option value="Contabilidade"><option value="Consultoria"><option value="Educação e Aulas"><option value="Elétrica"><option value="Encanamento / Hidráulica"><option value="Eventos e Festas"><option value="Fotografia e Vídeo"><option value="Imóveis / Corretagem"><option value="Marketing e Design"><option value="Mecânica e Auto"><option value="Moda e Vestuário"><option value="Pet"><option value="Saúde"><option value="Seguros"><option value="Tecnologia / TI"><option value="Transporte e Fretes"><option value="Comércio / Loja">
-            </datalist>
-          </div>
-
-          <div>
-            <label for="an-descricao" class="block text-xs font-medium text-slate-300 mb-1">O que você faz <span class="text-slate-500">(opcional)</span></label>
-            <textarea id="an-descricao" name="descricao" rows="3" maxlength="400" placeholder="Ex: Bolos e doces finos para festas, com entrega na região." class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 resize-none"></textarea>
-            <p class="text-[11px] text-slate-500 text-right mt-1"><span id="an-descricao-cont">0</span>/400</p>
-          </div>
-
-          <div>
-            <label for="an-whatsapp" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp do negócio * <span class="text-slate-500">(vira o botão de contato)</span></label>
-            <input id="an-whatsapp" name="whatsapp" type="tel" inputmode="numeric" required autocomplete="tel-national" placeholder="(11) 99999-9999" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-          </div>
-
-          <div class="grid grid-cols-[6rem_1fr] gap-3">
-            <div>
-              <label for="an-uf" class="block text-xs font-medium text-slate-300 mb-1">UF *</label>
-              <select id="an-uf" name="uf" required class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 px-2.5"><option value="">--</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select>
-            </div>
-            <div>
-              <label for="an-cidade" class="block text-xs font-medium text-slate-300 mb-1">Cidade *</label>
-              <input id="an-cidade" name="cidade" type="text" required minlength="2" maxlength="80" autocomplete="address-level2" placeholder="Ex: São Paulo" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-3">
-            <div>
-              <label for="an-instagram" class="block text-xs font-medium text-slate-300 mb-1">Instagram <span class="text-slate-500">(opcional)</span></label>
-              <input id="an-instagram" name="instagram" type="text" maxlength="120" placeholder="@seu.perfil" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            </div>
-            <div>
-              <label for="an-site" class="block text-xs font-medium text-slate-300 mb-1">Site <span class="text-slate-500">(opcional)</span></label>
-              <input id="an-site" name="site" type="text" inputmode="url" maxlength="200" autocomplete="url" placeholder="www.seusite.com.br" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <div id="an-logo-previa" class="logo-previa" aria-hidden="true">Logo</div>
-            <div class="min-w-0">
-              <label for="an-logo" class="block text-xs font-medium text-slate-300 mb-1">Logo <span class="text-slate-500">(opcional)</span></label>
-              <input id="an-logo" name="logo" type="file" accept="image/png,image/jpeg,image/webp" class="text-xs text-slate-400 file:mr-3 file:rounded-lg file:border-0 file:bg-slate-700 file:px-3 file:py-1.5 file:text-xs file:font-bold file:text-white">
-              <p class="text-[11px] text-slate-500 mt-1">JPG, PNG ou WEBP. Deixamos quadrado automaticamente.</p>
-            </div>
-          </div>
-
-          <div>
-            <label for="an-email" class="block text-xs font-medium text-slate-300 mb-1">Seu e-mail * <span class="text-slate-500">(não aparece no site)</span></label>
-            <input id="an-email" name="email" type="email" required maxlength="160" autocomplete="email" placeholder="voce@email.com" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-            <p class="text-[11px] text-slate-500 mt-1">É por ele que você vai editar o anúncio depois.</p>
-          </div>
-
-          <!-- Anti-spam: campo invisível que só robôs preenchem -->
-          <div class="hidden" aria-hidden="true">
-            <label>Não preencha <input type="text" name="confirmar_email" tabindex="-1" autocomplete="off"></label>
-          </div>
-
-          <label class="flex items-start gap-2.5 text-[11px] text-slate-400 leading-relaxed cursor-pointer">
-            <input id="an-consentimento" name="consentimento" type="checkbox" required class="mt-0.5 accent-amber-500 w-4 h-4 shrink-0">
-            <span>Tenho 18 anos ou mais e sou responsável por este negócio. Autorizo a <strong class="text-slate-200">publicação</strong> no diretório do VotoniKem do nome, profissão, descrição, cidade, WhatsApp, Instagram, site e logo informados, e consinto, de forma específica, com o tratamento do <strong class="text-slate-200">dado sensível de opinião política</strong> que essa participação pode revelar (LGPD, art. 11). Declaro que as informações são verdadeiras e concordo com os <a href="termos-de-uso.html" class="text-amber-400 underline">Termos de Uso</a>, o <a href="codigo-de-conduta.html" class="text-amber-400 underline">Código de Conduta</a> e a <a href="politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
-          </label>
-
-          <p id="an-erro" class="hidden text-xs text-red-400 font-semibold" role="alert"></p>
-
-          <button id="an-enviar" type="submit" class="w-full bg-[#064e3b] hover:bg-[#047857] disabled:opacity-60 disabled:cursor-wait text-white text-sm font-bold py-3 rounded-lg transition flex items-center justify-center gap-2 border border-emerald-600/30 shadow-lg mt-2">
-            <span>🚀</span> <span id="an-enviar-texto">Publicar meu anúncio grátis</span>
-          </button>
-          <p class="text-[11px] text-slate-500 text-center">CNPJ, razão social e e-mail nunca aparecem no site. Você pode sair quando quiser.</p>
-        </form>
-
-        <!-- Sucesso: anúncio publicado -->
-        <div id="an-sucesso" class="hidden py-4" role="status">
-          <div class="text-center mb-5">
-            <div class="text-4xl mb-2">🎉</div>
-            <h4 class="text-lg font-bold text-white mb-1">Seu anúncio está no ar!</h4>
-            <p class="text-xs text-slate-400">Ele aparece com o selo “Em verificação” até a nossa equipe conferir.</p>
-          </div>
-          <div id="an-previa" class="mb-5"></div>
-          <div class="flex flex-col items-center gap-3">
-            <a id="an-ver-anuncio" href="#" class="hidden items-center gap-2 bg-[#0d1424] hover:bg-slate-800 border border-slate-600 text-white text-sm font-bold px-5 py-2.5 rounded-lg">Ver meu anúncio no diretório →</a>
-            <button type="button" id="btn-abrir-kit" class="kit-cta inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-lg shadow-lg shadow-amber-500/25">
-              🎁 Gerar meu kit de divulgação grátis
-            </button>
-            <a id="btn-compartilhar" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-sm font-bold px-5 py-2.5 rounded-lg transition">
-              Contar no WhatsApp
-            </a>
-          </div>
-        </div>
-        </div>
-
-        <div id="painel-cliente" role="tabpanel" aria-labelledby="aba-cliente" hidden>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">Para quem contrata</span>
-          <h3 class="text-xl font-bold text-white mb-2">Procurando um profissional de confiança?</h3>
-          <p class="text-slate-400 text-xs mb-3">A busca já está aberta: <a href="/diretorio" class="text-emerald-400 font-bold underline">procure no diretório</a>.</p>
-          <p class="text-slate-400 text-xs mb-5">Não achou na sua região? Deixe seu WhatsApp e avisamos quando chegarem profissionais aí. É grátis e leva 20 segundos.</p>
-
-          <form id="cliente-form" class="space-y-4" novalidate>
-            <div>
-              <label for="cli-whatsapp" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp *</label>
-              <input id="cli-whatsapp" name="whatsapp" type="tel" inputmode="numeric" required autocomplete="tel-national" placeholder="(11) 99999-9999" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
-            </div>
-            <div class="grid grid-cols-[6rem_1fr] gap-3">
-              <div>
-                <label for="cli-uf" class="block text-xs font-medium text-slate-300 mb-1">UF *</label>
-                <select id="cli-uf" name="uf" required class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-2.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-                  <option value="">--</option>
-                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
-                </select>
-              </div>
-              <div>
-                <label for="cli-cidade" class="block text-xs font-medium text-slate-300 mb-1">Cidade <span class="text-slate-500">(opcional)</span></label>
-                <input id="cli-cidade" name="cidade" type="text" maxlength="80" autocomplete="address-level2" placeholder="Ex: Campinas" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
-              </div>
-            </div>
-            <div>
-              <label for="cli-procura" class="block text-xs font-medium text-slate-300 mb-1">O que você costuma procurar? <span class="text-slate-500">(opcional)</span></label>
-              <input id="cli-procura" name="procura" type="text" list="lista-profissoes" maxlength="120" placeholder="Ex: Eletricista, Advogado, Confeitaria" class="campo w-full bg-[#0d1424] border border-slate-700/80 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
-            </div>
-            <div class="hidden" aria-hidden="true">
-              <label>Não preencha <input type="text" name="confirmar_email" tabindex="-1" autocomplete="off"></label>
-            </div>
-            <label class="flex items-start gap-2.5 text-[11px] text-slate-400 leading-relaxed cursor-pointer">
-              <input id="cli-consentimento" name="consentimento" type="checkbox" required class="mt-0.5 accent-emerald-500 w-4 h-4 shrink-0">
-              <span>Tenho 18 anos ou mais e autorizo o VotoniKem a me avisar pelo WhatsApp quando chegarem profissionais na minha região. Também consinto, de forma específica, com o tratamento do <strong class="text-slate-200">dado sensível de opinião política</strong> que este cadastro pode revelar (LGPD, art. 11), conforme a <a href="politica-de-privacidade.html" class="text-amber-400 underline">Política de Privacidade</a>.</span>
-            </label>
-            <p id="cli-erro" class="hidden text-xs text-red-400 font-semibold" role="alert"></p>
-            <button id="cli-enviar" type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 disabled:cursor-wait text-white text-sm font-bold py-3 rounded-lg transition flex items-center justify-center gap-2 shadow-lg">
-              <span>🔔</span> <span id="cli-enviar-texto">Quero ser avisado</span>
-            </button>
-          </form>
-
-          <div id="cli-sucesso" class="hidden text-center py-8" role="status">
-            <div class="text-4xl mb-3">🔔</div>
-            <h4 class="text-lg font-bold text-white mb-2">Pronto, você será avisado!</h4>
-            <p class="text-xs text-slate-400 mb-5">Quando chegarem profissionais na sua região, mandamos uma mensagem no seu WhatsApp. Enquanto isso, vale olhar o diretório de vez em quando.</p>
-            <a id="cli-compartilhar" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-sm font-bold px-5 py-2.5 rounded-lg transition">Indicar para um amigo</a>
-          </div>
-        </div>
-      </div>
-
     </div>
+
   </section>
   </div>
 
@@ -465,7 +294,7 @@
         <ul id="mapa-lista-regioes" class="space-y-2 mb-6" aria-label="Estados acesos por região"></ul>
         </div>
 
-        <a href="#planos" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl shadow-lg shadow-amber-500/20">Acenda o seu estado <span aria-hidden="true">→</span></a>
+        <a href="/anunciar" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-5 py-3 rounded-xl shadow-lg shadow-amber-500/20">Acenda o seu estado <span aria-hidden="true">→</span></a>
         <p class="text-[11px] text-slate-400 mt-4">Mapa: <a href="https://mapsvg.com/maps/brazil" target="_blank" rel="noopener" class="underline">MapSVG</a>, licença CC BY 4.0.</p>
       </div>
     </div>
@@ -498,7 +327,7 @@
       </ol>
 
       <div class="text-center mt-8">
-        <a href="#planos" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-3 rounded-xl shadow-lg shadow-amber-500/20">Quero anunciar grátis <span aria-hidden="true">→</span></a>
+        <a href="/anunciar" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-3 rounded-xl shadow-lg shadow-amber-500/20">Quero anunciar grátis <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -517,7 +346,7 @@
       <div id="vitrine-vazia" class="hidden text-center bg-[#162032] border border-slate-800 rounded-2xl p-8 max-w-xl mx-auto">
         <p class="text-white font-bold mb-2">Os primeiros negócios estão chegando 🇧🇷</p>
         <p class="text-sm text-slate-400 mb-5">Seja um dos primeiros a aparecer aqui. É grátis.</p>
-        <a href="#planos" class="inline-flex bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-3 rounded-xl">🚀 Anunciar grátis</a>
+        <a href="/anunciar" class="inline-flex bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold px-6 py-3 rounded-xl">🚀 Anunciar grátis</a>
       </div>
 
       <div class="text-center mt-8"><a href="/diretorio" class="inline-flex items-center gap-2 bg-[#0d1424] hover:bg-slate-800 border border-slate-600 text-white text-sm font-bold px-6 py-3 rounded-xl">Ver todos no diretório →</a></div>
@@ -580,7 +409,7 @@
             <li class="item-ok">Links do seu <strong class="text-white">Instagram</strong> e do seu <strong class="text-white">site</strong></li>
             <li class="item-ok">Página própria e <strong class="text-white">kit de divulgação</strong> grátis</li>
           </ul>
-          <a href="#planos" class="block text-center bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold py-3 rounded-xl shadow-lg shadow-amber-500/20">Anunciar grátis</a>
+          <a href="/anunciar" class="block text-center bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-extrabold py-3 rounded-xl shadow-lg shadow-amber-500/20">Anunciar grátis</a>
         </div>
       </div>
 
@@ -814,5 +643,9 @@
   <script src="js/mapa.js" defer></script>
   <script src="js/cards3d.js" defer></script>
   <script src="js/menu.js" defer></script>
+  <script>
+    // Links antigos (votonikem.com.br/anunciar) levam para a página de cadastro
+    if (location.hash === "#planos") location.replace("/anunciar");
+  </script>
 </body>
 </html>
